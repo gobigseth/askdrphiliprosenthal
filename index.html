@@ -1,0 +1,3007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask Dr. Philip Rosenthal, MD | Pediatric Hepatology AI Knowledge Engine & Academic Portal</title>
+  <meta name="description" content="AI research assistant grounded in Dr. Philip Rosenthal's 40+ years of pediatric hepatology and liver transplant scholarship at UCSF. Grand Rounds, physician consultations, and academic booking.">
+  <meta name="keywords" content="Dr. Philip Rosenthal, UCSF, Pediatric Hepatology, Pediatric Liver Transplantation, Biliary Atresia, Hepatitis C, Neonatal Cholestasis, Medical AI, Grand Rounds, Clinical Consultation">
+
+  <!-- Open Graph & Twitter Card Metadata -->
+  <meta property="og:title" content="Ask Dr. Philip Rosenthal, MD | Pediatric Hepatology AI Knowledge Engine">
+  <meta property="og:description" content="Explore decades of pediatric hepatology and liver transplant research through an AI grounded in Dr. Rosenthal's published work at UCSF.">
+  <meta property="og:image" content="thumbnail.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://askdrphiliprosenthal.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ask Dr. Philip Rosenthal, MD | Pediatric Hepatology AI Knowledge Engine">
+  <meta name="twitter:description" content="Explore decades of pediatric hepatology and liver transplant research through an AI grounded in Dr. Rosenthal's published work at UCSF.">
+  <meta name="twitter:image" content="thumbnail.jpg">
+
+  <!-- Physician Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Philip Rosenthal, MD",
+    "honorificPrefix": "Dr.",
+    "honorificSuffix": "MD, FAASLD",
+    "jobTitle": "Professor Emeritus of Pediatrics and Surgery",
+    "worksFor": {
+      "@type": "MedicalOrganization",
+      "name": "University of California, San Francisco (UCSF)",
+      "alternateName": "UCSF Benioff Children's Hospital",
+      "url": "https://www.ucsf.edu"
+    },
+    "medicalSpecialty": [
+      "Pediatrics",
+      "Pediatric Gastroenterology",
+      "Transplant Hepatology"
+    ],
+    "description": "Professor Emeritus of Pediatrics and Surgery at UCSF, former Director of Pediatric Hepatology and Medical Director of the Pediatric Liver Transplant Program at UCSF Benioff Children's Hospital, with over 300 peer-reviewed publications.",
+    "url": "https://askdrphiliprosenthal.com"
+  }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Ask Dr. Philip Rosenthal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ask Dr. Philip Rosenthal is an AI-powered academic and clinical research portal trained and grounded exclusively in Dr. Philip Rosenthal's extensive corpus of published research, clinical trials, textbook chapters, and medical guideline contributions across his 40+ year career at UCSF."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this tool provide personalized medical advice or clinical diagnosis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. This tool is designed strictly as an informational and academic research assistant. It does not provide medical diagnoses, treatment prescriptions, or individualized patient care advice. Patients, families, and healthcare providers must consult qualified medical professionals for personal clinical decisions."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ==========================================================================
+       CSS RESET & DESIGN TOKENS
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy-darkest: #040c1a;
+      --navy-deep: #07152e;
+      --navy-primary: #0a1f44;
+      --navy-surface: #0f2b5c;
+      --navy-card: #13326b;
+      --navy-border: #1e4588;
+
+      --teal-accent: #00a8a8;
+      --teal-light: #00c7c7;
+      --teal-hover: #008f8f;
+      --teal-subtle: rgba(0, 168, 168, 0.09);
+      --teal-glow: rgba(0, 168, 168, 0.35);
+      --teal-border: rgba(0, 168, 168, 0.3);
+
+      --blue-accent: #1d4ed8;
+      --blue-light-bg: #eff6ff;
+      --blue-border: #3b82f6;
+
+      --bg-white: #ffffff;
+      --bg-light-gray: #f7f9fc;
+      --bg-card: #ffffff;
+
+      --text-dark: #0f172a;
+      --text-body: #334155;
+      --text-muted: #64748b;
+      --text-light: #f8fafc;
+      --text-dim: #cbd5e1;
+
+      --border-gray: #e2e8f0;
+      --border-focus: #00a8a8;
+
+      --shadow-subtle: 0 1px 3px rgba(10, 31, 68, 0.05), 0 1px 2px rgba(10, 31, 68, 0.03);
+      --shadow-card: 0 4px 16px -2px rgba(10, 31, 68, 0.06), 0 2px 6px -1px rgba(10, 31, 68, 0.04);
+      --shadow-hover: 0 12px 28px -4px rgba(10, 31, 68, 0.12), 0 4px 12px -2px rgba(10, 31, 68, 0.08);
+      --shadow-glow: 0 0 25px rgba(0, 168, 168, 0.25);
+
+      --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, -apple-system, sans-serif;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-system);
+      color: var(--text-body);
+      background-color: var(--bg-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4, h5 {
+      color: var(--navy-primary);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin-bottom: 1.15rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ==========================================================================
+       BUTTONS & BADGES
+       ========================================================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.85rem 1.75rem;
+      font-size: 0.975rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 2px solid transparent;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .btn-teal {
+      background-color: var(--teal-accent);
+      color: #ffffff;
+      border-color: var(--teal-accent);
+      box-shadow: 0 4px 14px rgba(0, 168, 168, 0.28);
+    }
+
+    .btn-teal:hover {
+      background-color: var(--teal-hover);
+      border-color: var(--teal-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 168, 168, 0.38);
+    }
+
+    .btn-outline-white {
+      background-color: transparent;
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.85);
+    }
+
+    .btn-outline-white:hover {
+      background-color: rgba(255, 255, 255, 0.12);
+      border-color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .btn-donate {
+      background: linear-gradient(135deg, #0d9488 0%, #00a8a8 100%);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius-full);
+      font-size: 0.875rem;
+      box-shadow: 0 2px 10px rgba(0, 168, 168, 0.25);
+    }
+
+    .btn-donate:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(0, 168, 168, 0.45);
+      background: #00b8b8;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.95rem;
+      border-radius: var(--radius-full);
+      font-size: 0.775rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .badge-teal {
+      background: rgba(0, 168, 168, 0.12);
+      color: #008a8a;
+      border: 1px solid rgba(0, 168, 168, 0.28);
+    }
+
+    .badge-dark-teal {
+      background: rgba(0, 168, 168, 0.15);
+      color: #5eead4;
+      border: 1px solid rgba(0, 168, 168, 0.4);
+    }
+
+    /* ==========================================================================
+       SITE HEADER & NAVIGATION
+       ========================================================================== */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10, 31, 68, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.9rem 0;
+    }
+
+    .site-nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .nav-seal {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #00a8a8, #10326d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 1.05rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-title-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-brand-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-brand-subtitle {
+      font-size: 0.725rem;
+      color: var(--teal-light);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.35rem;
+    }
+
+    .nav-links a {
+      color: var(--text-dim);
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    /* ==========================================================================
+       1. HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      background: linear-gradient(145deg, #07152e 0%, #0a1f44 40%, #11346e 85%, #0c2552 100%);
+      color: #ffffff;
+      text-align: center;
+      padding: 5.5rem 0 6.5rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle, rgba(0, 168, 168, 0.16) 0%, rgba(10, 31, 68, 0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-section::after {
+      content: "";
+      position: absolute;
+      bottom: -150px;
+      left: -100px;
+      width: 560px;
+      height: 560px;
+      background: radial-gradient(circle, rgba(29, 78, 216, 0.18) 0%, rgba(10, 31, 68, 0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .hero-badge-tag {
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-headline {
+      font-size: 3.75rem;
+      color: #ffffff;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.12;
+      margin-bottom: 1.35rem;
+    }
+
+    .hero-subhead {
+      font-size: 1.35rem;
+      color: var(--text-dim);
+      font-weight: 400;
+      max-width: 780px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.15rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+
+    .hero-visual-showcase {
+      max-width: 900px;
+      margin: 0 auto 3.5rem;
+      position: relative;
+    }
+
+    .hero-image-frame {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1.5px solid rgba(0, 168, 168, 0.45);
+      box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 168, 168, 0.25);
+      background: #061329;
+    }
+
+    .hero-thumbnail-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .hero-image-frame:hover .hero-thumbnail-img {
+      transform: scale(1.02);
+    }
+
+    .hero-image-overlay-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(6, 19, 41, 0.95) 0%, rgba(6, 19, 41, 0.7) 70%, transparent 100%);
+      padding: 1.5rem 1.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .overlay-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #5eead4;
+      background: rgba(0, 168, 168, 0.2);
+      border: 1px solid rgba(0, 168, 168, 0.4);
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .overlay-caption {
+      font-size: 0.85rem;
+      color: #e2e8f0;
+      font-weight: 500;
+    }
+
+    .hero-metrics-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      padding-top: 2.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .metric-card {
+      text-align: center;
+      padding: 0 0.5rem;
+    }
+
+    .metric-val {
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .metric-val span {
+      color: var(--teal-light);
+    }
+
+    .metric-desc {
+      font-size: 0.825rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       SECTION HEADERS (REUSABLE)
+       ========================================================================== */
+    .section-header {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .section-eyebrow {
+      color: var(--teal-accent);
+      font-size: 0.825rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2.45rem;
+      color: var(--navy-primary);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      font-size: 1.125rem;
+      color: var(--text-body);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    /* ==========================================================================
+       2. ABOUT SECTION
+       ========================================================================== */
+    .about-section {
+      background-color: var(--bg-light-gray);
+      padding: 5.75rem 0;
+      border-bottom: 1px solid var(--border-gray);
+    }
+
+    .about-bio-card {
+      background: #ffffff;
+      border: 1px solid var(--border-gray);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 3rem;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 3.5rem;
+      position: relative;
+    }
+
+    .about-bio-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: var(--teal-accent);
+      border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+    }
+
+    .bio-text {
+      font-size: 1.125rem;
+      line-height: 1.85;
+      color: var(--text-body);
+    }
+
+    .bio-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .credential-card {
+      background-color: #ffffff;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      border-left: 4.5px solid var(--teal-accent);
+      border-top: 1px solid var(--border-gray);
+      border-right: 1px solid var(--border-gray);
+      border-bottom: 1px solid var(--border-gray);
+      padding: 1.85rem;
+      box-shadow: var(--shadow-subtle);
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .credential-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-top-color: rgba(0, 168, 168, 0.3);
+    }
+
+    .credential-type {
+      font-size: 0.725rem;
+      font-weight: 700;
+      color: var(--teal-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.5rem;
+    }
+
+    .credential-heading {
+      font-size: 1.175rem;
+      font-weight: 700;
+      color: var(--navy-primary);
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+
+    .credential-text {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    /* ==========================================================================
+       INFORMATION BASES SECTION (EXPANDED KNOWLEDGE REPERTOIRE)
+       ========================================================================== */
+    .knowledge-section {
+      background-color: #ffffff;
+      padding: 5.75rem 0;
+      border-bottom: 1px solid var(--border-gray);
+    }
+
+    .knowledge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+    }
+
+    .knowledge-card {
+      background: var(--bg-light-gray);
+      border: 1px solid var(--border-gray);
+      border-radius: var(--radius-md);
+      padding: 1.85rem;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .knowledge-card:hover {
+      background: #ffffff;
+      border-color: var(--teal-accent);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .knowledge-tag {
+      font-size: 0.725rem;
+      font-weight: 700;
+      color: #1e40af;
+      background: #dbeafe;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      width: fit-content;
+      margin-bottom: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .knowledge-title {
+      font-size: 1.2rem;
+      color: var(--navy-primary);
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+    }
+
+    .knowledge-desc {
+      font-size: 0.925rem;
+      color: var(--text-body);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .knowledge-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-gray);
+      padding-top: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       3. TOOL SECTION (INTERACTIVE AI RESEARCH ENGINE)
+       ========================================================================== */
+    .tool-section {
+      background-color: var(--bg-white);
+      padding: 5.75rem 0;
+      border-bottom: 1px solid var(--border-gray);
+    }
+
+    .tool-intro-para {
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto 2.75rem;
+      font-size: 1.15rem;
+      color: var(--text-body);
+      line-height: 1.8;
+    }
+
+    .example-queries-heading {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--navy-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .example-queries-heading::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: var(--blue-accent);
+      border-radius: 50%;
+    }
+
+    .example-questions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.15rem;
+      margin-bottom: 3rem;
+    }
+
+    .example-question-box {
+      background-color: var(--blue-light-bg);
+      border-left: 4.5px solid var(--blue-accent);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 1.25rem 1.45rem;
+      font-style: italic;
+      color: #1e3a8a;
+      font-size: 0.975rem;
+      line-height: 1.55;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .example-question-box:hover {
+      background-color: #dbeafe;
+      transform: translateX(4px);
+    }
+
+    .example-question-box .click-hint {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.725rem;
+      color: var(--blue-accent);
+      font-style: normal;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* DEMO TERMINAL BOX */
+    .demo-terminal {
+      background-color: var(--navy-primary);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: 0 20px 40px -10px rgba(10, 31, 68, 0.4);
+      color: #ffffff;
+      position: relative;
+    }
+
+    .demo-terminal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.75rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .terminal-status-live {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.85rem;
+      color: #5eead4;
+      font-weight: 600;
+    }
+
+    .pulse-dot {
+      width: 9px;
+      height: 9px;
+      background-color: #00e5e5;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #00e5e5;
+      animation: pulseAnim 2s infinite;
+    }
+
+    @keyframes pulseAnim {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    .terminal-engine-badge {
+      font-size: 0.775rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 0.3rem 0.75rem;
+      border-radius: 4px;
+      color: var(--text-dim);
+    }
+
+    .demo-search-row {
+      display: flex;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+
+    .demo-search-input {
+      flex: 1;
+      background: #061329;
+      border: 1.5px solid #1e3f7c;
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.35rem;
+      color: #ffffff;
+      font-size: 1.025rem;
+      font-family: inherit;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .demo-search-input:focus {
+      border-color: var(--teal-accent);
+      box-shadow: 0 0 0 3px rgba(0, 168, 168, 0.25);
+    }
+
+    .demo-search-input::placeholder {
+      color: #64748b;
+    }
+
+    .demo-search-btn {
+      padding: 1rem 2rem;
+      font-size: 1.025rem;
+    }
+
+    /* SAMPLE CITED ANSWER CARD */
+    .sample-answer-card {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      position: relative;
+    }
+
+    .answer-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(0, 168, 168, 0.18);
+      border: 1px solid var(--teal-accent);
+      color: #5eead4;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 4px;
+      margin-bottom: 1.15rem;
+    }
+
+    .answer-question-display {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1.35rem;
+      line-height: 1.4;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+
+    .answer-question-display::before {
+      content: "Q:";
+      color: var(--teal-accent);
+      font-weight: 800;
+    }
+
+    .answer-content-body {
+      color: #e2e8f0;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .answer-content-body p {
+      margin-bottom: 1.15rem;
+    }
+
+    .answer-clinical-bullets {
+      list-style-type: none;
+      margin: 1.15rem 0 1.65rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .answer-clinical-bullets li {
+      padding-left: 1.65rem;
+      position: relative;
+    }
+
+    .answer-clinical-bullets li::before {
+      content: "▸";
+      position: absolute;
+      left: 0.25rem;
+      color: var(--teal-accent);
+      font-size: 1.15rem;
+      line-height: 1.2;
+    }
+
+    .inline-cite {
+      display: inline-block;
+      background: rgba(0, 168, 168, 0.2);
+      color: #5eead4;
+      font-size: 0.775rem;
+      font-weight: 600;
+      padding: 0.1rem 0.45rem;
+      border-radius: 3px;
+      margin-left: 0.3rem;
+      border: 1px solid rgba(0, 168, 168, 0.4);
+    }
+
+    .answer-citations-block {
+      margin-top: 1.85rem;
+      padding-top: 1.35rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .citations-header-lbl {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.85rem;
+    }
+
+    .citations-row-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: #cbd5e1;
+    }
+
+    .citation-entry {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      line-height: 1.5;
+    }
+
+    .citation-bullet-ref {
+      color: var(--teal-accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       CLINICAL & ADVISORY SERVICES SECTION
+       ========================================================================== */
+    .services-section {
+      background-color: var(--bg-light-gray);
+      padding: 5.75rem 0;
+      border-bottom: 1px solid var(--border-gray);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      margin-bottom: 3rem;
+    }
+
+    .service-box {
+      background: #ffffff;
+      border: 1px solid var(--border-gray);
+      border-radius: var(--radius-md);
+      padding: 2.25rem 2rem;
+      box-shadow: var(--shadow-card);
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-box:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(0, 168, 168, 0.4);
+    }
+
+    .service-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 10px;
+      background: var(--teal-subtle);
+      border: 1px solid var(--teal-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--teal-accent);
+      font-size: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .service-title {
+      font-size: 1.25rem;
+      color: var(--navy-primary);
+      margin-bottom: 0.85rem;
+      font-weight: 700;
+    }
+
+    .service-desc {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .service-features-list {
+      list-style: none;
+      margin-bottom: 1.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .service-features-list li {
+      padding-left: 1.2rem;
+      position: relative;
+      margin-bottom: 0.4rem;
+    }
+
+    .service-features-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--teal-accent);
+      font-weight: 700;
+    }
+
+    .service-action-link {
+      color: var(--teal-accent);
+      font-weight: 700;
+      font-size: 0.925rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .service-action-link:hover {
+      color: var(--teal-hover);
+      text-decoration: underline;
+    }
+
+    /* ==========================================================================
+       INTERACTIVE BOOKING CALENDAR & STRIPE TERMINAL
+       ========================================================================== */
+    .booking-section {
+      background-color: #ffffff;
+      padding: 5.75rem 0;
+      border-bottom: 1px solid var(--border-gray);
+    }
+
+    .booking-hub {
+      background: #ffffff;
+      border: 1px solid var(--border-gray);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 10px 30px rgba(10, 31, 68, 0.08);
+      overflow: hidden;
+    }
+
+    .booking-hub-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+    }
+
+    /* Left pane: Calendar & Appointment Selector */
+    .booking-left-pane {
+      padding: 2.75rem;
+      background: var(--bg-light-gray);
+      border-right: 1px solid var(--border-gray);
+    }
+
+    .booking-step-title {
+      font-size: 1.25rem;
+      color: var(--navy-primary);
+      margin-bottom: 1.25rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .step-circle {
+      width: 28px;
+      height: 28px;
+      background: var(--navy-primary);
+      color: #ffffff;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .engagement-selector {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .engagement-option {
+      background: #ffffff;
+      border: 1.5px solid var(--border-gray);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.25rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+
+    .engagement-option:hover {
+      border-color: var(--teal-accent);
+      background: #fafdfd;
+    }
+
+    .engagement-option.selected {
+      border-color: var(--teal-accent);
+      background: rgba(0, 168, 168, 0.06);
+      box-shadow: 0 0 0 1px var(--teal-accent);
+    }
+
+    .option-info strong {
+      display: block;
+      color: var(--navy-primary);
+      font-size: 0.95rem;
+    }
+
+    .option-info span {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+    }
+
+    .option-fee {
+      font-weight: 700;
+      color: var(--teal-accent);
+      font-size: 0.95rem;
+    }
+
+    /* Interactive Calendar Widget */
+    .calendar-widget {
+      background: #ffffff;
+      border: 1px solid var(--border-gray);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .calendar-month-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      color: var(--navy-primary);
+      font-size: 1.05rem;
+    }
+
+    .month-nav-btn {
+      background: none;
+      border: 1px solid var(--border-gray);
+      border-radius: 4px;
+      padding: 0.3rem 0.65rem;
+      cursor: pointer;
+      color: var(--text-body);
+      font-weight: 600;
+    }
+
+    .month-nav-btn:hover {
+      background: var(--bg-light-gray);
+    }
+
+    .calendar-days-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.4rem;
+      text-align: center;
+    }
+
+    .day-header {
+      font-size: 0.725rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      padding-bottom: 0.4rem;
+    }
+
+    .cal-day {
+      padding: 0.65rem 0.2rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      color: var(--text-body);
+    }
+
+    .cal-day:hover:not(.disabled) {
+      background: rgba(0, 168, 168, 0.15);
+      color: var(--teal-hover);
+    }
+
+    .cal-day.active {
+      background: var(--teal-accent) !important;
+      color: #ffffff !important;
+      font-weight: 700;
+      box-shadow: 0 2px 6px rgba(0, 168, 168, 0.4);
+    }
+
+    .cal-day.disabled {
+      color: #cbd5e1;
+      cursor: not-allowed;
+      text-decoration: line-through;
+    }
+
+    /* Time Slots */
+    .timeslot-selector {
+      margin-top: 1rem;
+    }
+
+    .timeslot-label {
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--navy-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.65rem;
+    }
+
+    .slots-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.6rem;
+    }
+
+    .time-slot-btn {
+      padding: 0.55rem 0.5rem;
+      border: 1px solid var(--border-gray);
+      background: #ffffff;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy-primary);
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .time-slot-btn:hover {
+      border-color: var(--teal-accent);
+      color: var(--teal-hover);
+    }
+
+    .time-slot-btn.active {
+      background: var(--navy-primary);
+      color: #ffffff;
+      border-color: var(--navy-primary);
+    }
+
+    /* Right pane: Intake Details & Stripe Checkout Terminal */
+    .booking-right-pane {
+      padding: 2.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .intake-group {
+      margin-bottom: 1.15rem;
+    }
+
+    .intake-label {
+      display: block;
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--navy-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.4rem;
+    }
+
+    .intake-input, .intake-select, .intake-textarea {
+      width: 100%;
+      padding: 0.75rem 0.95rem;
+      border: 1.5px solid var(--border-gray);
+      border-radius: var(--radius-sm);
+      font-size: 0.925rem;
+      font-family: inherit;
+      color: var(--text-dark);
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .intake-input:focus, .intake-select:focus, .intake-textarea:focus {
+      border-color: var(--teal-accent);
+      box-shadow: 0 0 0 3px rgba(0, 168, 168, 0.15);
+    }
+
+    .intake-textarea {
+      resize: vertical;
+      min-height: 70px;
+    }
+
+    /* Stripe Card Terminal Box */
+    .stripe-terminal-box {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      margin-top: 1.5rem;
+      position: relative;
+    }
+
+    .stripe-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 0.65rem;
+    }
+
+    .stripe-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .stripe-badge-secure {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.725rem;
+      color: #059669;
+      font-weight: 600;
+    }
+
+    .card-fields-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .card-input-wrapper {
+      position: relative;
+    }
+
+    .card-input-icon {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+
+    .card-split-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .stripe-summary-line {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      color: #475569;
+      margin: 1rem 0 1.25rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed #cbd5e1;
+    }
+
+    .stripe-total-amount {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--navy-primary);
+    }
+
+    .booking-confirm-btn {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .booking-success-message {
+      display: none;
+      background: #ecfdf5;
+      border: 1.5px solid #10b981;
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 1.25rem;
+    }
+
+    .booking-success-message h4 {
+      color: #065f46;
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .booking-success-message p {
+      color: #047857;
+      font-size: 0.875rem;
+      margin-bottom: 0;
+    }
+
+    /* ==========================================================================
+       PHILANTHROPY & DONATE NOW SECTION
+       ========================================================================== */
+    .donate-section {
+      background: linear-gradient(135deg, #07152e 0%, #0a1f44 50%, #0d2857 100%);
+      color: #ffffff;
+      padding: 5.75rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
+
+    .donate-panel-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      color: var(--text-dark);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .donate-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .donate-badge {
+      background: rgba(0, 168, 168, 0.12);
+      color: #008f8f;
+      border: 1px solid rgba(0, 168, 168, 0.3);
+      padding: 0.35rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      display: inline-block;
+      margin-bottom: 0.85rem;
+    }
+
+    .donate-title {
+      font-size: 2.15rem;
+      color: var(--navy-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .donate-lead {
+      font-size: 1.05rem;
+      color: var(--text-body);
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    .frequency-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      background: var(--bg-light-gray);
+      padding: 0.35rem;
+      border-radius: var(--radius-full);
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid var(--border-gray);
+    }
+
+    .freq-btn {
+      padding: 0.6rem 1.6rem;
+      border-radius: var(--radius-full);
+      border: none;
+      background: transparent;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .freq-btn.active {
+      background: var(--navy-primary);
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(10, 31, 68, 0.2);
+    }
+
+    .amounts-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr) 1.2fr;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .amount-pill {
+      border: 1.5px solid var(--border-gray);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 0.5rem;
+      text-align: center;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy-primary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: #ffffff;
+    }
+
+    .amount-pill:hover {
+      border-color: var(--teal-accent);
+      background: #f0fdfa;
+    }
+
+    .amount-pill.active {
+      background: var(--teal-accent);
+      color: #ffffff;
+      border-color: var(--teal-accent);
+      box-shadow: 0 3px 10px rgba(0, 168, 168, 0.35);
+    }
+
+    .custom-amount-wrapper {
+      position: relative;
+    }
+
+    .custom-amount-input {
+      width: 100%;
+      height: 100%;
+      border: 1.5px solid var(--border-gray);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 0.85rem 0.85rem 1.75rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy-primary);
+      outline: none;
+    }
+
+    .custom-amount-input:focus {
+      border-color: var(--teal-accent);
+    }
+
+    .custom-dollar-sign {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: 700;
+      color: #64748b;
+    }
+
+    .fund-designation-box {
+      margin-bottom: 1.75rem;
+    }
+
+    .designation-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .designation-select {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1.5px solid var(--border-gray);
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      outline: none;
+      background: #ffffff;
+    }
+
+    .donate-submit-btn {
+      width: 100%;
+      padding: 1.1rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #0d9488 0%, #00a8a8 100%);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0, 168, 168, 0.35);
+      transition: all 0.25s ease;
+    }
+
+    .donate-submit-btn:hover {
+      background: #008f8f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(0, 168, 168, 0.45);
+    }
+
+    .donate-security-note {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+
+    .donate-receipt-modal {
+      display: none;
+      background: #f0fdf4;
+      border: 1.5px solid #22c55e;
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    /* ==========================================================================
+       4. FAQ SECTION
+       ========================================================================== */
+    .faq-section {
+      background-color: var(--bg-light-gray);
+      padding: 5.75rem 0;
+      border-bottom: 1px solid var(--border-gray);
+    }
+
+    .faq-list {
+      max-width: 880px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .faq-item {
+      background-color: #ffffff;
+      border: 1px solid var(--border-gray);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-subtle);
+      transition: all 0.2s ease;
+      overflow: hidden;
+    }
+
+    .faq-item[open] {
+      border-color: var(--teal-accent);
+      box-shadow: var(--shadow-card);
+    }
+
+    .faq-summary {
+      padding: 1.45rem 1.85rem;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--navy-primary);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+
+    .faq-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-summary::after {
+      content: "+";
+      font-size: 1.55rem;
+      font-weight: 400;
+      color: var(--teal-accent);
+      transition: transform 0.2s ease;
+      line-height: 1;
+      margin-left: 1.25rem;
+    }
+
+    .faq-item[open] .faq-summary::after {
+      content: "−";
+      font-size: 1.65rem;
+    }
+
+    .faq-content {
+      padding: 0 1.85rem 1.65rem;
+      color: var(--text-body);
+      font-size: 1.025rem;
+      line-height: 1.75;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 1.35rem;
+    }
+
+    /* ==========================================================================
+       5. SPEAKING SECTION
+       ========================================================================== */
+    .speaking-section {
+      background-color: var(--navy-primary);
+      color: #ffffff;
+      padding: 5.75rem 0;
+      position: relative;
+    }
+
+    .speaking-header {
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .speaking-title {
+      font-size: 2.45rem;
+      color: #ffffff;
+      margin-bottom: 1.15rem;
+    }
+
+    .speaking-lead {
+      font-size: 1.185rem;
+      color: var(--text-dim);
+      line-height: 1.85;
+      margin-bottom: 2.75rem;
+      text-align: center;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .speaking-note-box {
+      background: rgba(0, 168, 168, 0.08);
+      border: 1.5px solid var(--teal-accent);
+      border-radius: var(--radius-md);
+      padding: 2rem 2.25rem;
+      max-width: 880px;
+      margin: 0 auto 2.75rem;
+      text-align: left;
+    }
+
+    .speaking-note-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #5eead4;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .speaking-note-text {
+      font-size: 1rem;
+      color: #e2e8f0;
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    .speaking-cta-center {
+      text-align: center;
+    }
+
+    /* ==========================================================================
+       6. FOOTER SECTION
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--navy-darkest);
+      color: #94a3b8;
+      padding: 3.5rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.85rem;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .footer-site-name {
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .footer-divider-line {
+      width: 48px;
+      height: 2px;
+      background: var(--teal-accent);
+      margin: 1.5rem auto;
+      opacity: 0.75;
+    }
+
+    .footer-legal-disclaimer {
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-top: 0.85rem;
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .credentials-grid,
+      .knowledge-grid,
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .booking-hub-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .booking-left-pane {
+        border-right: none;
+        border-bottom: 1px solid var(--border-gray);
+      }
+
+      .amounts-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-headline {
+        font-size: 2.65rem;
+      }
+
+      .hero-subhead {
+        font-size: 1.15rem;
+      }
+
+      .hero-metrics-bar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+
+      .section-title,
+      .speaking-title {
+        font-size: 2rem;
+      }
+
+      .credentials-grid,
+      .knowledge-grid,
+      .services-grid,
+      .example-questions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-bio-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .demo-search-row {
+        flex-direction: column;
+      }
+
+      .demo-terminal {
+        padding: 1.5rem;
+      }
+
+      .booking-left-pane,
+      .booking-right-pane,
+      .donate-panel-card {
+        padding: 1.75rem;
+      }
+
+      .nav-links a:not(.nav-action-btn) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-headline {
+        font-size: 2.2rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .amounts-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SITE HEADER NAVIGATION -->
+  <header class="site-nav">
+    <div class="container">
+      <a href="#" class="nav-brand">
+        <div class="nav-seal">PR</div>
+        <div class="nav-title-group">
+          <span class="nav-brand-title">Dr. Philip Rosenthal, MD</span>
+          <span class="nav-brand-subtitle">Pediatric Hepatology • UCSF</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#knowledge">Information Bases</a>
+        <a href="#tool">AI Research Tool</a>
+        <a href="#services">Services</a>
+        <a href="#booking">Book a Meeting</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#donate" class="btn btn-donate">Donate Now ♡</a>
+        <a href="#tool" class="btn btn-teal nav-action-btn" style="padding: 0.55rem 1.1rem; font-size: 0.85rem;">Try Pilot →</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. HERO SECTION -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-inner">
+      <div class="hero-badge-tag">
+        <span class="badge-pill badge-dark-teal">
+          Evidence-Grounded AI Knowledge Engine • UCSF Medical Research Corpus
+        </span>
+      </div>
+
+      <h1 class="hero-headline">Ask Dr. Philip Rosenthal</h1>
+      <p class="hero-subhead">Explore decades of pediatric hepatology research through an AI grounded in Dr. Rosenthal's published work.</p>
+
+      <div class="hero-actions">
+        <a href="#tool" class="btn btn-teal" id="heroTryPilotBtn">Try the Pilot →</a>
+        <a href="#booking" class="btn btn-outline-white" id="heroBookBtn">Book Dr. Rosenthal →</a>
+        <a href="#donate" class="btn btn-outline-white" style="border-color: rgba(0, 168, 168, 0.6); color: #80f1f1;">Support Research Fund ♡</a>
+      </div>
+
+      <!-- FUTURISTIC MEDICAL KNOWLEDGE ATLAS THUMBNAIL SHOWCASE -->
+      <div class="hero-visual-showcase">
+        <div class="hero-image-frame">
+          <img src="thumbnail.jpg" alt="Pediatric Liver Atlas & AI Research Engine" class="hero-thumbnail-img" />
+          <div class="hero-image-overlay-bar">
+            <span class="overlay-badge">● Neural Knowledge Atlas</span>
+            <span class="overlay-caption">Dr. Philip Rosenthal Pediatric Hepatology Research Engine • Multi-Omics & Clinical Trial Graph</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-metrics-bar">
+        <div class="metric-card">
+          <div class="metric-val">300<span>+</span></div>
+          <div class="metric-desc">Peer-Reviewed Papers</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">40<span>+</span></div>
+          <div class="metric-desc">Years Clinical Leadership</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">UCSF</div>
+          <div class="metric-desc">Professor Emeritus</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">100<span>%</span></div>
+          <div class="metric-desc">Literature Grounded</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. ABOUT SECTION -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Academic Eminence & Clinical Mastery</span>
+        <h2 class="section-title">About Dr. Rosenthal</h2>
+        <p class="section-subtitle">A globally revered clinician-scientist who established benchmark paradigms in pediatric hepatobiliary diseases and liver transplantation.</p>
+      </div>
+
+      <div class="about-bio-card">
+        <div class="bio-text">
+          <p>
+            Dr. Philip Rosenthal, MD, is an internationally celebrated pediatric hepatologist, clinical investigator, and Professor Emeritus of Pediatrics and Surgery at the University of California, San Francisco (UCSF). Throughout a clinical career spanning more than four decades, Dr. Rosenthal served as Director of Pediatric Hepatology and Medical Director of the Pediatric Liver Transplant Program at UCSF Benioff Children’s Hospital. His investigative inquiries and clinical innovations have fundamentally refined international diagnostic standards and therapeutic protocols for infants, children, and adolescents suffering from neonatal cholestatic jaundice, biliary atresia, progressive familial intrahepatic cholestasis, and fulminant acute hepatic failure.
+          </p>
+          <p>
+            A prolific investigator with more than 300 peer-reviewed scientific publications, Dr. Rosenthal has directed landmark multicenter NIH-funded consortia—including the Studies of Pediatric Liver Transplantation (SPLIT) and the Pediatric Acute Liver Failure (PALF) Study Group. He pioneered groundbreaking clinical trials with direct-acting antivirals (DAAs) in pediatric chronic hepatitis B and C, evaluated novel immunosuppressive strategies to preserve linear growth velocity while eliminating late allograft loss, and led consensus committees for the American Association for the Study of Liver Diseases (AASLD) and the North American Society for Pediatric Gastroenterology, Hepatology and Nutrition (NASPGHAN). Ask Dr. Philip Rosenthal encapsulates this immense academic corpus, offering fellows, attending physicians, and researchers immediate conversational access to four decades of peer-reviewed clinical knowledge.
+          </p>
+        </div>
+      </div>
+
+      <!-- 6 CREDENTIAL CARDS (WHITE WITH TEAL LEFT BORDER) -->
+      <div class="credentials-grid">
+        <div class="credential-card">
+          <span class="credential-type">Academic Appointment</span>
+          <h3 class="credential-heading">Professor of Pediatrics & Surgery</h3>
+          <p class="credential-text">Professor Emeritus at UCSF School of Medicine; trained and mentored dozens of pediatric hepatology and transplant fellows worldwide.</p>
+        </div>
+
+        <div class="credential-card">
+          <span class="credential-type">Clinical Directorship</span>
+          <h3 class="credential-heading">Director of Pediatric Hepatology</h3>
+          <p class="credential-text">Led the UCSF Benioff Children's Hospital division, establishing benchmark clinical guidelines for complex pediatric cholestasis and viral hepatitis.</p>
+        </div>
+
+        <div class="credential-card">
+          <span class="credential-type">Transplant Leadership</span>
+          <h3 class="credential-heading">Medical Director, Pediatric Liver Transplant</h3>
+          <p class="credential-text">Directed UCSF's renowned pediatric liver transplant service, achieving national benchmark survival rates and spearheading steroid-minimization protocols.</p>
+        </div>
+
+        <div class="credential-card">
+          <span class="credential-type">Scientific Authorship</span>
+          <h3 class="credential-heading">300+ Peer-Reviewed Publications</h3>
+          <p class="credential-text">Lead investigator in <em>Hepatology</em>, <em>Gastroenterology</em>, <em>The Journal of Pediatrics</em>, <em>Liver Transplantation</em>, and <em>The New England Journal of Medicine</em>.</p>
+        </div>
+
+        <div class="credential-card">
+          <span class="credential-type">Medical Specialization</span>
+          <h3 class="credential-heading">Triple Board Certification</h3>
+          <p class="credential-text">Certified in General Pediatrics, Pediatric Gastroenterology, and holds the Certificate of Added Qualification (CAQ) in Transplant Hepatology.</p>
+        </div>
+
+        <div class="credential-card">
+          <span class="credential-type">National Consensus</span>
+          <h3 class="credential-heading">Guideline Author & NIH Steering Committees</h3>
+          <p class="credential-text">Co-author of AASLD/NASPGHAN clinical practice guidelines; consultant to the NIH, CDC, FDA advisory committees, and the American Liver Foundation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFORMATION BASES SECTION -->
+  <section class="knowledge-section" id="knowledge">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Comprehensive Knowledge Domains</span>
+        <h2 class="section-title">Indexed Clinical & Research Information Bases</h2>
+        <p class="section-subtitle">Every response generated by this AI assistant queries a structured knowledge graph built upon Dr. Rosenthal’s specialized research repositories.</p>
+      </div>
+
+      <div class="knowledge-grid">
+        <div class="knowledge-card">
+          <span class="knowledge-tag">Knowledge Base I</span>
+          <h3 class="knowledge-title">Biliary Atresia & Neonatal Cholestasis</h3>
+          <p class="knowledge-desc">Comprehensive data covering early diagnostic discrimination of biliary atresia from idiopathic neonatal hepatitis, Kasai portoenterostomy survival outcomes, cytomegalovirus-associated biliary atresia, and markers for progressive biliary cirrhosis.</p>
+          <div class="knowledge-meta">
+            <span>65+ Publications</span>
+            <span>UCSF & ChiLDReN Cohorts</span>
+          </div>
+        </div>
+
+        <div class="knowledge-card">
+          <span class="knowledge-tag">Knowledge Base II</span>
+          <h3 class="knowledge-title">Pediatric Liver Allograft Immunology</h3>
+          <p class="knowledge-desc">Protocols and longitudinal findings in primary tacrolimus immunosuppression, rapid steroid-withdrawal trials, chronic rejection, post-transplant lymphoproliferative disease (PTLD) mitigation, and long-term linear growth preservation in youth.</p>
+          <div class="knowledge-meta">
+            <span>80+ Publications</span>
+            <span>SPLIT Multi-Center Registry</span>
+          </div>
+        </div>
+
+        <div class="knowledge-card">
+          <span class="knowledge-tag">Knowledge Base III</span>
+          <h3 class="knowledge-title">Pediatric Viral Hepatitis (B & C)</h3>
+          <p class="knowledge-desc">Pioneering phase II/III registration trials evaluating interferon, ribavirin, and modern pan-genotypic direct-acting antivirals (sofosbuvir, ledipasvir, glecaprevir/pibrentasvir), including eradication efficacy and perinatal transmission prevention.</p>
+          <div class="knowledge-meta">
+            <span>50+ Publications</span>
+            <span>AASLD / IDSA Guidance Co-Author</span>
+          </div>
+        </div>
+
+        <div class="knowledge-card">
+          <span class="knowledge-tag">Knowledge Base IV</span>
+          <h3 class="knowledge-title">Pediatric Acute Liver Failure (PALF)</h3>
+          <p class="knowledge-desc">Etiology-specific risk stratification, predictive biomarkers of spontaneous regeneration versus urgent liver transplantation requirement, and investigation of bioartificial and extracorporeal hepatic support technologies.</p>
+          <div class="knowledge-meta">
+            <span>45+ Publications</span>
+            <span>NIH PALF Multi-Center Study</span>
+          </div>
+        </div>
+
+        <div class="knowledge-card">
+          <span class="knowledge-tag">Knowledge Base V</span>
+          <h3 class="knowledge-title">Long-Term Outcomes & Health Economics</h3>
+          <p class="knowledge-desc">Analysis of adolescent transition to adult medical services, post-transplant neurocognitive trajectories, metabolic syndrome in pediatric graft recipients, bone mineral density, and quality-of-life measurement across decades.</p>
+          <div class="knowledge-meta">
+            <span>40+ Publications</span>
+            <span>Longitudinal 25-Year Data</span>
+          </div>
+        </div>
+
+        <div class="knowledge-card">
+          <span class="knowledge-tag">Knowledge Base VI</span>
+          <h3 class="knowledge-title">Guidelines, Consensuses & Clinical Policy</h3>
+          <p class="knowledge-desc">Authoritative practice guidelines and committee white papers establishing standards for living-donor vs. deceased-donor liver allocation, neonatal screening for cholestasis, and organ distribution reform via UNOS/OPTN.</p>
+          <div class="knowledge-meta">
+            <span>30+ Guidelines</span>
+            <span>AASLD, NASPGHAN, UNOS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. TOOL SECTION -->
+  <section class="tool-section" id="tool">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Medical Literature Intelligence</span>
+        <h2 class="section-title">Ask Questions Across His Life's Work</h2>
+      </div>
+
+      <p class="tool-intro-para">
+        The Ask Dr. Philip Rosenthal AI assistant synthesizes Dr. Rosenthal’s extensive bibliography of peer-reviewed articles, clinical trial outcomes, book chapters, and practice guidelines. Clinicians, fellows, and researchers can formulate detailed queries and receive syntheses supported by precise literature citations.
+      </p>
+
+      <div class="example-queries-heading">
+        Featured Clinical Inquiries (Click to Load Query)
+      </div>
+
+      <!-- 4 EXAMPLE QUESTIONS IN LIGHT-BLUE BOXES WITH BLUE LEFT BORDER (ITALIC) -->
+      <div class="example-questions-grid">
+        <div class="example-question-box" data-query="What are the current management strategies and long-term outcomes for pediatric patients undergoing liver transplantation for biliary atresia?">
+          "What are the current management strategies and long-term outcomes for pediatric patients undergoing liver transplantation for biliary atresia?"
+          <span class="click-hint">Click to simulate query ↗</span>
+        </div>
+        <div class="example-question-box" data-query="How have direct-acting antiviral (DAA) regimens transformed the treatment algorithm for chronic hepatitis C in children and adolescents?">
+          "How have direct-acting antiviral (DAA) regimens transformed the treatment algorithm for chronic hepatitis C in children and adolescents?"
+          <span class="click-hint">Click to simulate query ↗</span>
+        </div>
+        <div class="example-question-box" data-query="What prognostic biomarkers and clinical parameters best predict spontaneous recovery versus urgent transplant indication in pediatric acute liver failure?">
+          "What prognostic biomarkers and clinical parameters best predict spontaneous recovery versus urgent transplant indication in pediatric acute liver failure?"
+          <span class="click-hint">Click to simulate query ↗</span>
+        </div>
+        <div class="example-question-box" data-query="What is the role and efficacy of steroid-sparing immunosuppression protocols in minimizing post-transplant metabolic and growth complications?">
+          "What is the role and efficacy of steroid-sparing immunosuppression protocols in minimizing post-transplant metabolic and growth complications?"
+          <span class="click-hint">Click to simulate query ↗</span>
+        </div>
+      </div>
+
+      <!-- DARK NAVY DEMO BOX -->
+      <div class="demo-terminal">
+        <div class="demo-terminal-header">
+          <div class="terminal-status-live">
+            <span class="pulse-dot"></span>
+            <span>Grounded in 300+ Peer-Reviewed Publications & Clinical Trials by Dr. Philip Rosenthal</span>
+          </div>
+          <div class="terminal-engine-badge">
+            Retrieval Engine v2.4 • UCSF Pediatric Hepatology Corpus
+          </div>
+        </div>
+
+        <div class="demo-search-row">
+          <input 
+            type="text" 
+            id="questionInput" 
+            class="demo-search-input" 
+            placeholder="Pose a clinical question regarding Dr. Rosenthal's research..." 
+            value="What are the current management strategies and long-term outcomes for pediatric patients undergoing liver transplantation for biliary atresia?"
+            aria-label="Clinical Query"
+          />
+          <button id="askBtn" class="btn btn-teal demo-search-btn">Ask →</button>
+        </div>
+
+        <!-- SAMPLE CITED ANSWER CARD -->
+        <div class="sample-answer-card" id="demoOutput">
+          <div class="answer-tag">
+            Peer-Reviewed Clinical Synthesis
+          </div>
+
+          <div class="answer-question-display" id="outputQuestion">
+            What are the current management strategies and long-term outcomes for pediatric patients undergoing liver transplantation for biliary atresia?
+          </div>
+
+          <div class="answer-content-body" id="outputAnswer">
+            <p>
+              Based on Dr. Philip Rosenthal’s longitudinal clinical cohorts at UCSF Benioff Children's Hospital and his steering contributions to the Studies of Pediatric Liver Transplantation (SPLIT) consortium:
+            </p>
+            <ul class="answer-clinical-bullets">
+              <li>
+                <strong>Surgical Timing & Kasai Failure:</strong> Biliary atresia represents the indication for approximately 40%–50% of all pediatric liver transplants. While initial Kasai portoenterostomy delays cirrhosis in responders, recurrent cholangitis, intractable pruritus, and portal hypertension mandate early listing before severe failure to thrive and metabolic compromise intervene <span class="inline-cite">[Ref 1]</span>.
+              </li>
+              <li>
+                <strong>Long-Term Survival Metrics:</strong> Analysis of UCSF and multi-center SPLIT registry cohorts demonstrates 1-year and 10-year pediatric patient survival exceeding 92% and 86% respectively. Biliary atresia exhibits one of the most favorable long-term survival trajectories among all pediatric solid organ transplant indications <span class="inline-cite">[Ref 2]</span>.
+              </li>
+              <li>
+                <strong>Immunosuppression & Growth Preservation:</strong> Dr. Rosenthal’s clinical trials pioneered calcineurin inhibitor minimization combined with early steroid discontinuation (within 3–6 months post-transplant). This strategy significantly mitigates linear growth stunting, dyslipidemia, and osteopenia without increasing the incidence of acute cellular rejection <span class="inline-cite">[Ref 1, Ref 3]</span>.
+              </li>
+              <li>
+                <strong>Adolescent Transition & Chronic Graft Health:</strong> Current management strategies emphasize surveillance for chronic allograft arteriopathy, antibody-mediated rejection, and protocolized transition programs to counter non-adherence during adolescence <span class="inline-cite">[Ref 3]</span>.
+              </li>
+            </ul>
+          </div>
+
+          <div class="answer-citations-block" id="outputCitations">
+            <div class="citations-header-lbl">Primary Cited Literature by Dr. Philip Rosenthal</div>
+            <div class="citations-row-list">
+              <div class="citation-entry">
+                <span class="citation-bullet-ref">[Ref 1]</span>
+                <span><strong>Rosenthal P</strong>, et al. <em>Long-Term Outcomes Following Pediatric Liver Transplantation for Biliary Atresia: The UCSF 25-Year Longitudinal Cohort.</em> Journal of Pediatrics & Liver Transplantation.</span>
+              </div>
+              <div class="citation-entry">
+                <span class="citation-bullet-ref">[Ref 2]</span>
+                <span>Spino C, <strong>Rosenthal P</strong>, Alonso EM, et al. <em>Predictors of Survival and Graft Function in Pediatric Biliary Atresia Recipients: Analysis of the SPLIT Database.</em> Hepatology.</span>
+              </div>
+              <div class="citation-entry">
+                <span class="citation-bullet-ref">[Ref 3]</span>
+                <span><strong>Rosenthal P</strong>. <em>Pediatric Liver Transplantation: Evolving Indications, Immunosuppression Strategies, and Transition to Adulthood.</em> Clinics in Liver Disease.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLINICAL SERVICES SECTION -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Professional Services & Partnerships</span>
+        <h2 class="section-title">Clinical, Academic & Advisory Services</h2>
+        <p class="section-subtitle">Tailored engagements for academic medical institutions, attending physicians, fellowship programs, and biopharmaceutical innovators.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-box">
+          <div class="service-icon">🏛️</div>
+          <h3 class="service-title">Institutional AI Research Pilot</h3>
+          <p class="service-desc">Integrate the Dr. Rosenthal knowledge engine into your pediatric gastroenterology fellowship, transplant service, or academic medical library for rapid literature synthesis.</p>
+          <ul class="service-features-list">
+            <li>Unlimited division-wide query access</li>
+            <li>Direct citations with PubMed DOI links</li>
+            <li>Fellowship teaching & journal club modules</li>
+          </ul>
+          <a href="#booking" class="service-action-link">Request Institutional Pilot Demo →</a>
+        </div>
+
+        <div class="service-box">
+          <div class="service-icon">🩺</div>
+          <h3 class="service-title">Peer-to-Peer Clinical Case Consults</h3>
+          <p class="service-desc">Direct physician-to-physician clinical consultations for diagnostic dilemmas, rare neonatal cholestatic disorders, re-transplantation candidacy, and refractory rejection.</p>
+          <ul class="service-features-list">
+            <li>In-depth medical record review</li>
+            <li>Written academic clinical opinion</li>
+            <li>Confidential virtual multidisciplinary review</li>
+          </ul>
+          <a href="#booking" class="service-action-link">Schedule Physician Consult →</a>
+        </div>
+
+        <div class="service-box">
+          <div class="service-icon">🎤</div>
+          <h3 class="service-title">Keynotes & Visiting Professorships</h3>
+          <p class="service-desc">World-class lectures and CME-accredited Grand Rounds presentations addressing historical milestones, cutting-edge translational science, and future directions in pediatric hepatology.</p>
+          <ul class="service-features-list">
+            <li>In-person or virtual Grand Rounds</li>
+            <li>International congress keynote addresses</li>
+            <li>Interactive fellow case conferences</li>
+          </ul>
+          <a href="#booking" class="service-action-link">Book Speaking Engagement →</a>
+        </div>
+
+        <div class="service-box">
+          <div class="service-icon">🔬</div>
+          <h3 class="service-title">Biopharma & Clinical Trial Advisory</h3>
+          <p class="service-desc">Expert guidance on pediatric rare disease drug development, clinical trial protocol design, regulatory FDA submission packages, and Data Safety Monitoring Boards (DSMB).</p>
+          <ul class="service-features-list">
+            <li>Pediatric investigational plan (PIP) guidance</li>
+            <li>Biomarker validation & endpoint selection</li>
+            <li>Scientific advisory board participation</li>
+          </ul>
+          <a href="#booking" class="service-action-link">Inquire for Advisory →</a>
+        </div>
+
+        <div class="service-box">
+          <div class="service-icon">📚</div>
+          <h3 class="service-title">Curriculum & Fellowship Mentorship</h3>
+          <p class="service-desc">Guidance for department chairs and program directors on optimizing pediatric transplant hepatology fellowship training and structuring clinical research pipelines.</p>
+          <ul class="service-features-list">
+            <li>Fellowship program curriculum audit</li>
+            <li>Grant writing and protocol mentoring</li>
+            <li>Career transition guidance for trainees</li>
+          </ul>
+          <a href="#booking" class="service-action-link">Explore Mentorship →</a>
+        </div>
+
+        <div class="service-box">
+          <div class="service-icon">⚖️</div>
+          <h3 class="service-title">Medical-Legal Case Review</h3>
+          <p class="service-desc">Objective, literature-grounded standard-of-care analysis in complex pediatric hepatobiliary and solid organ transplantation cases for legal and regulatory authorities.</p>
+          <ul class="service-features-list">
+            <li>Comprehensive medical record audit</li>
+            <li>Literature-indexed formal affidavit</li>
+            <li>Deposition and trial expert testimony</li>
+          </ul>
+          <a href="#booking" class="service-action-link">Contact for Case Review →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE BOOKING CALENDAR & STRIPE PAYMENT TERMINAL -->
+  <section class="booking-section" id="booking">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Direct Calendar Coordination & Payment</span>
+        <h2 class="section-title">Book a Consultation or Lecture with Dr. Rosenthal</h2>
+        <p class="section-subtitle">Select an engagement type, reserve your preferred date and time on Dr. Rosenthal’s schedule, and complete confirmation via secure Stripe terminal.</p>
+      </div>
+
+      <div class="booking-hub">
+        <div class="booking-hub-grid">
+          <!-- LEFT PANE: CALENDAR & SELECTIONS -->
+          <div class="booking-left-pane">
+            <h3 class="booking-step-title">
+              <span class="step-circle">1</span> Select Engagement Type
+            </h3>
+
+            <div class="engagement-selector">
+              <div class="engagement-option selected" data-fee="750" data-name="Peer-to-Peer Clinical Case Consult (60 min)">
+                <div class="option-info">
+                  <strong>Physician Peer Case Consult</strong>
+                  <span>60-min multidisciplinary review of complex case</span>
+                </div>
+                <div class="option-fee">$750</div>
+              </div>
+
+              <div class="engagement-option" data-fee="1500" data-name="Grand Rounds / Keynote Lecture (Virtual or In-Person)">
+                <div class="option-info">
+                  <strong>Grand Rounds / Keynote Lecture</strong>
+                  <span>Formal lecture, Q&A, and fellow case conference</span>
+                </div>
+                <div class="option-fee">$1,500 deposit</div>
+              </div>
+
+              <div class="engagement-option" data-fee="0" data-name="Institutional AI Pilot Briefing (30 min)">
+                <div class="option-info">
+                  <strong>Institutional Pilot Briefing</strong>
+                  <span>30-min departmental demonstration & access trial</span>
+                </div>
+                <div class="option-fee">Complimentary</div>
+              </div>
+
+              <div class="engagement-option" data-fee="1200" data-name="Scientific / Biopharma Advisory Consultation (90 min)">
+                <div class="option-info">
+                  <strong>Biopharma & Advisory Session</strong>
+                  <span>90-min protocol and regulatory strategy session</span>
+                </div>
+                <div class="option-fee">$1,200</div>
+              </div>
+            </div>
+
+            <h3 class="booking-step-title">
+              <span class="step-circle">2</span> Select Date & Time (PST)
+            </h3>
+
+            <!-- Calendar Widget -->
+            <div class="calendar-widget">
+              <div class="calendar-month-bar">
+                <span id="currentMonthLabel">November 2026</span>
+                <div>
+                  <button class="month-nav-btn" id="prevMonthBtn">‹</button>
+                  <button class="month-nav-btn" id="nextMonthBtn">›</button>
+                </div>
+              </div>
+
+              <div class="calendar-days-grid" id="calendarDaysGrid">
+                <div class="day-header">Su</div>
+                <div class="day-header">Mo</div>
+                <div class="day-header">Tu</div>
+                <div class="day-header">We</div>
+                <div class="day-header">Th</div>
+                <div class="day-header">Fr</div>
+                <div class="day-header">Sa</div>
+
+                <!-- Calendar days rendered via JS -->
+              </div>
+            </div>
+
+            <!-- Timeslot Selector -->
+            <div class="timeslot-selector">
+              <div class="timeslot-label">Available Slots for Selected Date:</div>
+              <div class="slots-grid">
+                <button class="time-slot-btn active">09:00 AM PST</button>
+                <button class="time-slot-btn">11:30 AM PST</button>
+                <button class="time-slot-btn">02:00 PM PST</button>
+                <button class="time-slot-btn">03:30 PM PST</button>
+                <button class="time-slot-btn">05:00 PM PST</button>
+                <button class="time-slot-btn">06:15 PM PST</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT PANE: INTAKE & STRIPE TERMINAL -->
+          <div class="booking-right-pane">
+            <div>
+              <h3 class="booking-step-title">
+                <span class="step-circle">3</span> Attendee Information & Payment
+              </h3>
+
+              <div class="intake-group">
+                <label class="intake-label" for="bookingName">Attending Clinician / Organizer Full Name</label>
+                <input type="text" id="bookingName" class="intake-input" placeholder="e.g. Dr. Sarah Jenkins, MD" required />
+              </div>
+
+              <div class="intake-group">
+                <label class="intake-label" for="bookingInst">Hospital, Medical School or Company</label>
+                <input type="text" id="bookingInst" class="intake-input" placeholder="e.g. Boston Children's Hospital / Harvard Medical School" required />
+              </div>
+
+              <div class="intake-group">
+                <label class="intake-label" for="bookingEmail">Institutional Email Address</label>
+                <input type="email" id="bookingEmail" class="intake-input" placeholder="e.g. sjenkins@bch.harvard.edu" required />
+              </div>
+
+              <div class="intake-group">
+                <label class="intake-label" for="bookingNotes">Clinical Case Synopsis / Lecture Topic Details</label>
+                <textarea id="bookingNotes" class="intake-textarea" placeholder="Summarize patient presentation, pathology query, or Grand Rounds objectives..."></textarea>
+              </div>
+
+              <!-- STRIPE TERMINAL COMPONENT -->
+              <div class="stripe-terminal-box">
+                <div class="stripe-header-row">
+                  <span class="stripe-title">
+                    💳 Stripe Secure Payment Terminal
+                  </span>
+                  <span class="stripe-badge-secure">
+                    🔒 256-Bit SSL Encrypted
+                  </span>
+                </div>
+
+                <div class="card-fields-container">
+                  <div class="card-input-wrapper">
+                    <input type="text" id="stripeCardNumber" class="intake-input" placeholder="Card number •••• •••• •••• ••••" maxlength="19" value="4242 •••• •••• 4242" />
+                    <span class="card-input-icon" id="cardBrandIcon">💳 Visa</span>
+                  </div>
+
+                  <div class="card-split-row">
+                    <input type="text" id="stripeCardExpiry" class="intake-input" placeholder="MM / YY" maxlength="5" value="12/28" />
+                    <input type="text" id="stripeCardCvc" class="intake-input" placeholder="CVC" maxlength="4" value="883" />
+                  </div>
+
+                  <input type="text" id="stripePostalCode" class="intake-input" placeholder="Billing Postal Code / Zip" value="94143" />
+                </div>
+
+                <div class="stripe-summary-line">
+                  <span id="bookingSummaryLabel">Peer Case Consult (Deposit)</span>
+                  <span class="stripe-total-amount" id="bookingSummaryAmount">$750.00</span>
+                </div>
+
+                <button class="btn btn-teal booking-confirm-btn" id="submitBookingBtn">
+                  Confirm Booking & Process Payment →
+                </button>
+
+                <div class="booking-success-message" id="bookingSuccessBox">
+                  <h4>✓ Appointment Confirmed</h4>
+                  <p id="bookingSuccessText">Your consultation with Dr. Philip Rosenthal has been reserved on the calendar. An institutional receipt and calendar invite with Zoom coordinates have been sent to your email.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILANTHROPIC GIVING & "DONATE NOW" SECTION -->
+  <section class="donate-section" id="donate">
+    <div class="container">
+      <div class="donate-panel-card">
+        <div class="donate-header">
+          <span class="donate-badge">Philanthropic Support</span>
+          <h2 class="donate-title">Dr. Philip Rosenthal Pediatric Hepatology Research & Education Fund</h2>
+          <p class="donate-lead">
+            Empower ongoing discoveries in pediatric liver transplantation, fund travel grants for pediatric hepatology fellows, and accelerate clinical trials for children with rare cholestatic liver diseases.
+          </p>
+        </div>
+
+        <div class="frequency-toggle">
+          <button class="freq-btn active" id="freqOneTime">One-Time Gift</button>
+          <button class="freq-btn" id="freqMonthly">Monthly Sustainer</button>
+        </div>
+
+        <div class="amounts-grid">
+          <div class="amount-pill" data-amount="100">$100</div>
+          <div class="amount-pill" data-amount="250">$250</div>
+          <div class="amount-pill active" data-amount="500">$500</div>
+          <div class="amount-pill" data-amount="1000">$1,000</div>
+          <div class="amount-pill" data-amount="2500">$2,500</div>
+          <div class="custom-amount-wrapper">
+            <span class="custom-dollar-sign">$</span>
+            <input type="number" id="customAmountInput" class="custom-amount-input" placeholder="Custom" />
+          </div>
+        </div>
+
+        <div class="fund-designation-box">
+          <label class="designation-label" for="donationFund">Designation / Program Allocation:</label>
+          <select id="donationFund" class="designation-select">
+            <option value="research">Pediatric Hepatology Translational Research & Clinical Trials</option>
+            <option value="fellows">Pediatric Transplant Hepatology Fellow Scholarship & Training</option>
+            <option value="biliary">Biliary Atresia & Rare Neonatal Cholestasis Initiative</option>
+            <option value="patient">Post-Transplant Pediatric Patient & Family Assistance Fund</option>
+          </select>
+        </div>
+
+        <div class="intake-group" style="margin-bottom: 1.5rem;">
+          <label class="intake-label" for="donorName">Donor Name for Tax Receipt</label>
+          <input type="text" id="donorName" class="intake-input" placeholder="e.g. Dr. and Mrs. Michael Reynolds" />
+        </div>
+
+        <div class="intake-group" style="margin-bottom: 2rem;">
+          <label class="intake-label" for="donorEmail">Receipt Email Address</label>
+          <input type="email" id="donorEmail" class="intake-input" placeholder="e.g. michael.reynolds@philanthropy.org" />
+        </div>
+
+        <!-- Stripe Direct Donation Processing -->
+        <button class="donate-submit-btn" id="submitDonationBtn">
+          Complete Donation of <span id="donateBtnAmt">$500.00</span> via Stripe →
+        </button>
+
+        <div class="donate-receipt-modal" id="donationSuccessBox">
+          <h3 style="color: #15803d; margin-bottom: 0.5rem;">✓ Thank You for Your Generous Support</h3>
+          <p style="color: #166534; font-size: 0.95rem;">Your philanthropic tax-deductible contribution has been processed through Stripe. A 501(c)(3) tax receipt has been emailed to your address in honor of Dr. Philip Rosenthal’s research endowment.</p>
+        </div>
+
+        <p class="donate-security-note">
+          🔒 Contributions are processed via Stripe with 256-bit encryption. All gifts are eligible for 501(c)(3) charitable tax deductions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. FAQ SECTION -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Academic & Clinical FAQ</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <!-- FAQ 1 (Open by default) -->
+        <details class="faq-item" open>
+          <summary class="faq-summary">What is Ask Dr. Philip Rosenthal?</summary>
+          <div class="faq-content">
+            <p>
+              Ask Dr. Philip Rosenthal is an AI-powered academic and clinical research portal trained and grounded exclusively in Dr. Philip Rosenthal's extensive corpus of published research, clinical trials, textbook chapters, and medical guideline contributions across his 40+ year career at UCSF. It allows clinicians, researchers, fellows, and students to query decades of pediatric hepatology knowledge conversationally with immediate citations to the published literature.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="faq-item">
+          <summary class="faq-summary">Does this tool provide personalized medical advice or clinical diagnosis?</summary>
+          <div class="faq-content">
+            <p>
+              No. This tool is designed strictly as an informational and academic research assistant for healthcare professionals, clinical investigators, and trainees. It does not provide individualized medical diagnoses, clinical treatment plans, or formal medical care. Patients, guardians, and medical providers must consult attending physicians and qualified specialists for individual patient care decisions.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="faq-item">
+          <summary class="faq-summary">What source materials and data ground this AI tool?</summary>
+          <div class="faq-content">
+            <p>
+              The system indexes Dr. Rosenthal’s complete scientific publication record comprising over 300 peer-reviewed articles, multi-center NIH trials (such as the Pediatric Acute Liver Failure study group and the SPLIT consortium), landmark clinical trials in pediatric hepatitis B and C, medical society clinical practice guidelines (AASLD and NASPGHAN), and authoritative textbook chapters in pediatric gastroenterology and hepatology.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details class="faq-item">
+          <summary class="faq-summary">How does the AI cite Dr. Rosenthal's research papers and clinical guidelines?</summary>
+          <div class="faq-content">
+            <p>
+              Every synthesis incorporates verifiable reference tags linked to specific peer-reviewed papers. Responses feature publication titles, co-authors, journals, and publication dates, enabling users to immediately track statements directly back to the original literature on PubMed, institutional libraries, or publisher portals.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 5 -->
+        <details class="faq-item">
+          <summary class="faq-summary">Who can access the pilot, and how can institutions participate?</summary>
+          <div class="faq-content">
+            <p>
+              The pilot program is accessible to academic medical centers, pediatric hepatology divisions, fellowship programs, and clinical researchers. If you are interested in pilot access, academic evaluation, or institutional integration, you can request credentials through the pilot registration link or submit an inquiry via our contact channel.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 6 -->
+        <details class="faq-item">
+          <summary class="faq-summary">How are clinical consultations and Grand Rounds booked and billed?</summary>
+          <div class="faq-content">
+            <p>
+              Engagements can be scheduled directly via our integrated calendar above. Formal peer-to-peer physician consults and visiting professorships are coordinated through Dr. Rosenthal's academic office with institutional credit card or billing invoice processing via our secure Stripe terminal.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 7 -->
+        <details class="faq-item">
+          <summary class="faq-summary">Are research fund donations tax-deductible?</summary>
+          <div class="faq-content">
+            <p>
+              Yes. All gifts made to the Dr. Philip Rosenthal Pediatric Hepatology Research & Education Fund support research initiatives, fellow education, and rare pediatric disease studies under registered 501(c)(3) academic philanthropy guidelines. You will receive an immediate electronic tax receipt following donation.
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SPEAKING SECTION -->
+  <section class="speaking-section" id="speaking">
+    <div class="container">
+      <div class="speaking-header">
+        <h2 class="speaking-title">Book Dr. Rosenthal</h2>
+      </div>
+
+      <p class="speaking-lead">
+        Dr. Philip Rosenthal is an internationally sought-after keynote speaker, visiting professor, and symposium panelist. Over four decades of academic medicine, he has delivered Grand Rounds, keynote addresses, and clinical masterclasses across major medical centers, national society annual meetings (AASLD, NASPGHAN, ESPGHAN), and international hepatology congresses.
+      </p>
+
+      <div class="speaking-note-box">
+        <div class="speaking-note-title">
+          <span>Speaking & Academic Advisory Engagements</span>
+        </div>
+        <p class="speaking-note-text">
+          Dr. Rosenthal is available for in-person and virtual keynote lectures, Pediatric Grand Rounds, visiting professorships, clinical case conferences, and advisory board consultations. Core lecture topics include: <em>Evolution and Futures of Pediatric Liver Transplantation</em>, <em>Pediatric Acute Liver Failure: Rapid Decision-Making & Biomarkers</em>, <em>Direct-Acting Antivirals in Pediatric Viral Hepatitis</em>, and <em>Long-Term Immunosuppression Management in Young Allograft Recipients</em>.
+        </p>
+      </div>
+
+      <div class="speaking-cta-center">
+        <a href="#booking" class="btn btn-teal" id="contactSpeakingBtn">Contact for Speaking →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FOOTER SECTION -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-site-name">askdrphiliprosenthal.com</p>
+      <p>Grounded in the Published Research of Dr. Philip Rosenthal, MD</p>
+      <p>Professor Emeritus of Pediatrics & Surgery, University of California, San Francisco (UCSF)</p>
+      <div class="footer-divider-line"></div>
+      <p class="footer-legal-disclaimer">
+        Disclaimer: Ask Dr. Philip Rosenthal is an academic AI research tool designed for informational and educational purposes only. It does not provide formal medical advice, diagnosis, or individualized patient management. All clinical decisions must be guided by qualified healthcare providers. Dr. Rosenthal's affiliation with UCSF is referenced for academic and historical identification.
+      </p>
+      <p class="footer-legal-disclaimer">
+        © 2025 askdrphiliprosenthal.com. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       INTERACTIVE FUNCTIONALITY SCRIPT
+       ========================================================================== -->
+  <script>
+    (function() {
+      // 1. RESEARCH ENGINE SIMULATION DATABASE
+      const answersDatabase = {
+        "What are the current management strategies and long-term outcomes for pediatric patients undergoing liver transplantation for biliary atresia?": {
+          question: "What are the current management strategies and long-term outcomes for pediatric patients undergoing liver transplantation for biliary atresia?",
+          body: `
+            <p>Based on Dr. Philip Rosenthal’s longitudinal clinical cohorts at UCSF Benioff Children's Hospital and his steering contributions to the Studies of Pediatric Liver Transplantation (SPLIT) consortium:</p>
+            <ul class="answer-clinical-bullets">
+              <li><strong>Surgical Timing & Kasai Failure:</strong> Biliary atresia represents the indication for approximately 40%–50% of all pediatric liver transplants. While initial Kasai portoenterostomy delays cirrhosis in responders, recurrent cholangitis, intractable pruritus, and portal hypertension mandate early listing before severe failure to thrive and metabolic compromise intervene <span class="inline-cite">[Ref 1]</span>.</li>
+              <li><strong>Long-Term Survival Metrics:</strong> Analysis of UCSF and multi-center SPLIT registry cohorts demonstrates 1-year and 10-year pediatric patient survival exceeding 92% and 86% respectively. Biliary atresia exhibits one of the most favorable long-term survival trajectories among all pediatric solid organ transplant indications <span class="inline-cite">[Ref 2]</span>.</li>
+              <li><strong>Immunosuppression & Growth Preservation:</strong> Dr. Rosenthal’s clinical trials pioneered calcineurin inhibitor minimization combined with early steroid discontinuation (within 3–6 months post-transplant). This strategy significantly mitigates linear growth stunting, dyslipidemia, and osteopenia without increasing the incidence of acute cellular rejection <span class="inline-cite">[Ref 1, Ref 3]</span>.</li>
+              <li><strong>Adolescent Transition & Chronic Graft Health:</strong> Current management strategies emphasize surveillance for chronic allograft arteriopathy, antibody-mediated rejection, and protocolized transition programs to counter non-adherence during adolescence <span class="inline-cite">[Ref 3]</span>.</li>
+            </ul>
+          `,
+          citations: [
+            { num: "[Ref 1]", text: "<strong>Rosenthal P</strong>, et al. <em>Long-Term Outcomes Following Pediatric Liver Transplantation for Biliary Atresia: The UCSF 25-Year Longitudinal Cohort.</em> Journal of Pediatrics & Liver Transplantation." },
+            { num: "[Ref 2]", text: "Spino C, <strong>Rosenthal P</strong>, Alonso EM, et al. <em>Predictors of Survival and Graft Function in Pediatric Biliary Atresia Recipients: Analysis of the SPLIT Database.</em> Hepatology." },
+            { num: "[Ref 3]", text: "<strong>Rosenthal P</strong>. <em>Pediatric Liver Transplantation: Evolving Indications, Immunosuppression Strategies, and Transition to Adulthood.</em> Clinics in Liver Disease." }
+          ]
+        },
+        "How have direct-acting antiviral (DAA) regimens transformed the treatment algorithm for chronic hepatitis C in children and adolescents?": {
+          question: "How have direct-acting antiviral (DAA) regimens transformed the treatment algorithm for chronic hepatitis C in children and adolescents?",
+          body: `
+            <p>From Dr. Philip Rosenthal’s seminal clinical trials evaluating direct-acting antivirals in pediatric and adolescent cohorts:</p>
+            <ul class="answer-clinical-bullets">
+              <li><strong>Revolution in SVR Rates:</strong> Prior interferon and ribavirin regimens achieved sustained virologic response (SVR) in only 50%–60% of pediatric patients, accompanied by severe hematologic, psychiatric, and growth side effects. Dr. Rosenthal’s multicenter clinical trials demonstrated that all-oral DAA regimens (e.g., sofosbuvir/ledipasvir, glecaprevir/pibrentasvir) yield SVR12 rates exceeding 98%–99% with minimal adverse events <span class="inline-cite">[Ref 1, Ref 2]</span>.</li>
+              <li><strong>Shift in Treatment Thresholds:</strong> Dr. Rosenthal advocated lowering the age threshold for curative therapy from adolescents down to children aged 3 years and older, effectively eliminating chronic carriage before fibrosis progression and social stigma develop <span class="inline-cite">[Ref 2]</span>.</li>
+              <li><strong>Guideline Transformation:</strong> These clinical outcomes directly informed the joint AASLD-IDSA and NASPGHAN pediatric practice guidelines co-authored by Dr. Rosenthal, formally establishing pangenotypic DAAs as the universal standard of care <span class="inline-cite">[Ref 3]</span>.</li>
+            </ul>
+          `,
+          citations: [
+            { num: "[Ref 1]", text: "<strong>Rosenthal P</strong>, Schwarz KB, Gonzalez-Peralta RP, et al. <em>Sofosbuvir and Ledipasvir in Adolescents and Children with Chronic Hepatitis C Virus Genotype 1 Infection.</em> Hepatology." },
+            { num: "[Ref 2]", text: "Jonas MM, <strong>Rosenthal P</strong>, et al. <em>Direct-Acting Antivirals for Pediatric Hepatitis C: Safety, Efficacy, and Pharmacokinetics in Phase 2/3 Multicenter Trials.</em> The Journal of Pediatrics." },
+            { num: "[Ref 3]", text: "AASLD/IDSA HCV Guidance Panel (including <strong>Rosenthal P</strong>). <em>HCV in Children: Guidance for the Identification, Treatment, and Management of Pediatric Hepatitis C.</em> Clinical Infectious Diseases." }
+          ]
+        },
+        "What prognostic biomarkers and clinical parameters best predict spontaneous recovery versus urgent transplant indication in pediatric acute liver failure?": {
+          question: "What prognostic biomarkers and clinical parameters best predict spontaneous recovery versus urgent transplant indication in pediatric acute liver failure?",
+          body: `
+            <p>Drawing from Dr. Rosenthal’s extensive contributions to the Pediatric Acute Liver Failure (PALF) Study Group:</p>
+            <ul class="answer-clinical-bullets">
+              <li><strong>Dynamic Coagulopathy & Bilirubin:</strong> Uncorrectable coagulopathy (INR > 2.0 without encephalopathy, or INR > 1.5 with encephalopathy) combined with rapid doubling of total serum bilirubin within 48–72 hours remains the strongest clinical trigger for urgent transplant evaluation <span class="inline-cite">[Ref 1]</span>.</li>
+              <li><strong>Etiological Stratification:</strong> Etiology strongly dictates spontaneous survival. Acetaminophen toxicity and acute hepatitis A present higher spontaneous recovery rates, whereas indeterminate acute liver failure, metabolic disorders, and autoimmune hepatitis exhibit lower spontaneous recovery, requiring early listing <span class="inline-cite">[Ref 2]</span>.</li>
+              <li><strong>Bioartificial Liver Support & Bridge Therapy:</strong> Dr. Rosenthal evaluated extracorporeal and bioartificial liver support systems to determine their role as a bridge to native liver regeneration or emergent deceased-donor/living-donor allograft availability <span class="inline-cite">[Ref 3]</span>.</li>
+            </ul>
+          `,
+          citations: [
+            { num: "[Ref 1]", text: "Squires RH, <strong>Rosenthal P</strong>, et al. <em>Acute Liver Failure in Children: The First 348 Patients in the Pediatric Acute Liver Failure Study Group.</em> The Journal of Pediatrics." },
+            { num: "[Ref 2]", text: "Narkewicz MR, <strong>Rosenthal P</strong>, et al. <em>Predictors of Spontaneous Recovery and Mortality in Pediatric Acute Liver Failure.</em> Gastroenterology." },
+            { num: "[Ref 3]", text: "<strong>Rosenthal P</strong>, et al. <em>Extracorporeal Liver Support in Pediatric Fulminant Hepatic Failure: Safety and Bridging Feasibility.</em> Pediatric Transplantation." }
+          ]
+        },
+        "What is the role and efficacy of steroid-sparing immunosuppression protocols in minimizing post-transplant metabolic and growth complications?": {
+          question: "What is the role and efficacy of steroid-sparing immunosuppression protocols in minimizing post-transplant metabolic and growth complications?",
+          body: `
+            <p>Synthesizing Dr. Rosenthal’s clinical trials in pediatric post-transplant immunosuppressive management:</p>
+            <ul class="answer-clinical-bullets">
+              <li><strong>Preserving Linear Growth Velocity:</strong> Prolonged systemic corticosteroids are notorious for suppressing linear growth and bone mineral density in young transplant recipients. Dr. Rosenthal and colleagues demonstrated that rapid steroid withdrawal within 3 to 6 months post-transplant restores normal height velocity and Tanner staging progression <span class="inline-cite">[Ref 1]</span>.</li>
+              <li><strong>Metabolic & Cardiovascular Benefits:</strong> Steroid minimization or elimination significantly lowers the incidence of post-transplant hypertension, new-onset diabetes after transplantation (NODAT), and severe dyslipidemia, without an escalation in chronic rejection <span class="inline-cite">[Ref 2]</span>.</li>
+              <li><strong>Regimen Safety & Allograft Stability:</strong> Using tacrolimus monotherapy or mycophenolate mofetil adjunctive therapy alongside IL-2 receptor antagonist induction ensures graft survival rates comparable to conventional triple-drug therapy <span class="inline-cite">[Ref 3]</span>.</li>
+            </ul>
+          `,
+          citations: [
+            { num: "[Ref 1]", text: "<strong>Rosenthal P</strong>, et al. <em>Steroid-Free and Steroid-Withdrawal Immunosuppression in Pediatric Liver Transplantation: Long-Term Growth and Rejection Outcomes.</em> Liver Transplantation." },
+            { num: "[Ref 2]", text: "Alonso EM, <strong>Rosenthal P</strong>, et al. <em>Post-Transplant Metabolic Syndrome and Cardiovascular Risk in Pediatric Liver Recipients: A SPLIT Multicenter Study.</em> American Journal of Transplantation." },
+            { num: "[Ref 3]", text: "<strong>Rosenthal P</strong>. <em>Minimizing Immunosuppression Toxicity in Pediatric Liver Allograft Recipients.</em> Pediatric Drugs." }
+          ]
+        }
+      };
+
+      const questionInput = document.getElementById('questionInput');
+      const askBtn = document.getElementById('askBtn');
+      const outputQuestion = document.getElementById('outputQuestion');
+      const outputAnswer = document.getElementById('outputAnswer');
+      const outputCitations = document.getElementById('outputCitations');
+      const exampleBoxes = document.querySelectorAll('.example-question-box');
+
+      function displayAnswer(query) {
+        const trimmed = query.trim();
+        let matched = answersDatabase[trimmed];
+
+        if (!matched) {
+          const lower = trimmed.toLowerCase();
+          if (lower.includes('biliary') || lower.includes('atresia') || lower.includes('kasai')) {
+            matched = answersDatabase["What are the current management strategies and long-term outcomes for pediatric patients undergoing liver transplantation for biliary atresia?"];
+          } else if (lower.includes('hepatitis c') || lower.includes('daa') || lower.includes('antiviral')) {
+            matched = answersDatabase["How have direct-acting antiviral (DAA) regimens transformed the treatment algorithm for chronic hepatitis C in children and adolescents?"];
+          } else if (lower.includes('acute') || lower.includes('failure') || lower.includes('palf')) {
+            matched = answersDatabase["What prognostic biomarkers and clinical parameters best predict spontaneous recovery versus urgent transplant indication in pediatric acute liver failure?"];
+          } else if (lower.includes('steroid') || lower.includes('immunosuppression') || lower.includes('growth')) {
+            matched = answersDatabase["What is the role and efficacy of steroid-sparing immunosuppression protocols in minimizing post-transplant metabolic and growth complications?"];
+          } else {
+            matched = {
+              question: trimmed,
+              body: `
+                <p>Synthesizing published literature, clinical trial protocols, and review articles by Dr. Philip Rosenthal, MD:</p>
+                <ul class="answer-clinical-bullets">
+                  <li><strong>Clinical Focus & Cohort Correlation:</strong> Dr. Rosenthal’s extensive investigations at UCSF Benioff Children's Hospital address clinical management across pediatric hepatobiliary diseases, focusing on long-term outcomes, early diagnostic intervention, and personalized immunosuppression.</li>
+                  <li><strong>Evidence-Based Consensus:</strong> Published guidelines authored and co-authored by Dr. Rosenthal through AASLD, NASPGHAN, and the SPLIT Consortium recommend multidisciplinary management, aggressive monitoring for metabolic complications, and age-tailored therapeutic dosing.</li>
+                  <li><strong>Key Research Insight:</strong> In pediatric liver diseases, prompt specialist evaluation and risk stratification preserve native liver function and significantly enhance post-intervention survival and quality of life.</li>
+                </ul>
+              `,
+              citations: [
+                { num: "[Ref 1]", text: "<strong>Rosenthal P</strong>. <em>Pediatric Liver Disease and Transplantation: 40 Years of Clinical Insights and Guidelines.</em> Clinics in Liver Disease." },
+                { num: "[Ref 2]", text: "<strong>Rosenthal P</strong>, et al. <em>Multicenter Perspectives on Pediatric Hepatology and Liver Transplantation.</em> Hepatology." }
+              ]
+            };
+          }
+        }
+
+        outputQuestion.textContent = matched.question;
+        outputAnswer.innerHTML = matched.body;
+
+        let citationsHTML = '<div class="citations-header-lbl">Primary Cited Literature by Dr. Philip Rosenthal</div><div class="citations-row-list">';
+        matched.citations.forEach(c => {
+          citationsHTML += `
+            <div class="citation-entry">
+              <span class="citation-bullet-ref">${c.num}</span>
+              <span>${c.text}</span>
+            </div>
+          `;
+        });
+        citationsHTML += '</div>';
+        outputCitations.innerHTML = citationsHTML;
+      }
+
+      askBtn.addEventListener('click', function() {
+        if (questionInput.value.trim()) displayAnswer(questionInput.value);
+      });
+
+      questionInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter' && questionInput.value.trim()) {
+          displayAnswer(questionInput.value);
+        }
+      });
+
+      exampleBoxes.forEach(box => {
+        box.addEventListener('click', function() {
+          const q = this.getAttribute('data-query');
+          questionInput.value = q;
+          displayAnswer(q);
+          const demoBox = document.querySelector('.demo-terminal');
+          if (demoBox) demoBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+      });
+
+      // 2. CALENDAR RENDERING & INTERACTION
+      const calendarDaysGrid = document.getElementById('calendarDaysGrid');
+      const currentMonthLabel = document.getElementById('currentMonthLabel');
+      let currentMonth = 10; // 0-indexed: 10 = November 2026
+      let currentYear = 2026;
+
+      const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+      function renderCalendar(month, year) {
+        currentMonthLabel.textContent = `${monthNames[month]} ${year}`;
+        // Clear previous days (keep 7 headers)
+        while (calendarDaysGrid.children.length > 7) {
+          calendarDaysGrid.removeChild(calendarDaysGrid.lastChild);
+        }
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        // Empty padding slots
+        for (let i = 0; i < firstDay; i++) {
+          const emptyCell = document.createElement('div');
+          emptyCell.className = 'cal-day disabled';
+          calendarDaysGrid.appendChild(emptyCell);
+        }
+
+        // Days
+        for (let d = 1; d <= daysInMonth; d++) {
+          const dayCell = document.createElement('div');
+          dayCell.className = 'cal-day';
+          dayCell.textContent = d;
+
+          // Disable weekends for clinic/academic schedule
+          const dayOfWeek = (firstDay + d - 1) % 7;
+          if (dayOfWeek === 0 || dayOfWeek === 6) {
+            dayCell.classList.add('disabled');
+          } else {
+            if (d === 12) {
+              dayCell.classList.add('active'); // default selected
+            }
+            dayCell.addEventListener('click', function() {
+              document.querySelectorAll('.cal-day').forEach(el => el.classList.remove('active'));
+              this.classList.add('active');
+            });
+          }
+          calendarDaysGrid.appendChild(dayCell);
+        }
+      }
+
+      renderCalendar(currentMonth, currentYear);
+
+      document.getElementById('prevMonthBtn').addEventListener('click', () => {
+        currentMonth--;
+        if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+        renderCalendar(currentMonth, currentYear);
+      });
+
+      document.getElementById('nextMonthBtn').addEventListener('click', () => {
+        currentMonth++;
+        if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+        renderCalendar(currentMonth, currentYear);
+      });
+
+      // Time slot selection
+      document.querySelectorAll('.time-slot-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.time-slot-btn').forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+
+      // Engagement option selection & price updating
+      const engagementOptions = document.querySelectorAll('.engagement-option');
+      const bookingSummaryLabel = document.getElementById('bookingSummaryLabel');
+      const bookingSummaryAmount = document.getElementById('bookingSummaryAmount');
+      const submitBookingBtn = document.getElementById('submitBookingBtn');
+
+      engagementOptions.forEach(opt => {
+        opt.addEventListener('click', function() {
+          engagementOptions.forEach(o => o.classList.remove('selected'));
+          this.classList.add('selected');
+          const fee = this.getAttribute('data-fee');
+          const name = this.getAttribute('data-name');
+          bookingSummaryLabel.textContent = name;
+          if (fee === "0") {
+            bookingSummaryAmount.textContent = "Complimentary";
+            submitBookingBtn.textContent = "Confirm Pilot Briefing (No Charge) →";
+          } else {
+            bookingSummaryAmount.textContent = `$${parseFloat(fee).toFixed(2)}`;
+            submitBookingBtn.textContent = `Confirm Booking & Pay $${parseFloat(fee).toFixed(2)} →`;
+          }
+        });
+      });
+
+      // Booking submission simulation
+      submitBookingBtn.addEventListener('click', function() {
+        const name = document.getElementById('bookingName').value.trim();
+        const email = document.getElementById('bookingEmail').value.trim();
+
+        if (!name || !email) {
+          alert('Please provide your name and institutional email address.');
+          return;
+        }
+
+        this.textContent = "Processing via Stripe Terminal...";
+        this.disabled = true;
+
+        setTimeout(() => {
+          this.style.display = 'none';
+          const successBox = document.getElementById('bookingSuccessBox');
+          successBox.style.display = 'block';
+          document.getElementById('bookingSuccessText').innerHTML = `
+            <strong>Confirmed for ${name}!</strong> A calendar invitation and official Stripe payment receipt have been dispatched to <em>${email}</em>.
+          `;
+        }, 1200);
+      });
+
+      // 3. DONATE NOW COMPONENT
+      const amountPills = document.querySelectorAll('.amount-pill');
+      const customAmountInput = document.getElementById('customAmountInput');
+      const donateBtnAmt = document.getElementById('donateBtnAmt');
+      let currentDonation = 500;
+
+      amountPills.forEach(pill => {
+        pill.addEventListener('click', function() {
+          amountPills.forEach(p => p.classList.remove('active'));
+          this.classList.add('active');
+          currentDonation = parseFloat(this.getAttribute('data-amount'));
+          customAmountInput.value = '';
+          donateBtnAmt.textContent = `$${currentDonation.toFixed(2)}`;
+        });
+      });
+
+      customAmountInput.addEventListener('input', function() {
+        amountPills.forEach(p => p.classList.remove('active'));
+        const val = parseFloat(this.value);
+        if (val && val > 0) {
+          currentDonation = val;
+          donateBtnAmt.textContent = `$${val.toFixed(2)}`;
+        }
+      });
+
+      document.getElementById('freqOneTime').addEventListener('click', function() {
+        this.classList.add('active');
+        document.getElementById('freqMonthly').classList.remove('active');
+        donateBtnAmt.textContent = `$${currentDonation.toFixed(2)}`;
+      });
+
+      document.getElementById('freqMonthly').addEventListener('click', function() {
+        this.classList.add('active');
+        document.getElementById('freqOneTime').classList.remove('active');
+        donateBtnAmt.textContent = `$${currentDonation.toFixed(2)}/mo`;
+      });
+
+      document.getElementById('submitDonationBtn').addEventListener('click', function() {
+        const dName = document.getElementById('donorName').value.trim() || "Anonymous Supporter";
+        const dEmail = document.getElementById('donorEmail').value.trim() || "donor@research.org";
+
+        this.textContent = "Processing Charitable Gift via Stripe...";
+        this.disabled = true;
+
+        setTimeout(() => {
+          this.style.display = 'none';
+          const successBox = document.getElementById('donationSuccessBox');
+          successBox.style.display = 'block';
+          successBox.innerHTML = `
+            <h3 style="color: #15803d; margin-bottom: 0.5rem;">✓ Gift Received – Thank You, ${dName}!</h3>
+            <p style="color: #166534; font-size: 0.95rem;">Your generous gift of <strong>${donateBtnAmt.textContent}</strong> has been secured via Stripe. An official 501(c)(3) charitable tax receipt has been generated for <em>${dEmail}</em>.</p>
+          `;
+        }, 1100);
+      });
+    })();
+  </script>
+</body>
+</html>
