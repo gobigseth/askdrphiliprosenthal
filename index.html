@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ask Dr. Philip Rosenthal, MD | Pediatric Hepatology AI Knowledge Engine & Academic Portal</title>
-  <meta name="description" content="AI research assistant grounded in Dr. Philip Rosenthal's 40+ years of pediatric hepatology and liver transplant scholarship at UCSF. Grand Rounds, physician consultations, and academic booking.">
-  <meta name="keywords" content="Dr. Philip Rosenthal, UCSF, Pediatric Hepatology, Pediatric Liver Transplantation, Biliary Atresia, Hepatitis C, Neonatal Cholestasis, Medical AI, Grand Rounds, Clinical Consultation">
+  <meta name="description"
+    content="AI research assistant grounded in Dr. Philip Rosenthal's 40+ years of pediatric hepatology and liver transplant scholarship at UCSF. Grand Rounds, physician consultations, and academic booking.">
+  <meta name="keywords"
+    content="Dr. Philip Rosenthal, UCSF, Pediatric Hepatology, Pediatric Liver Transplantation, Biliary Atresia, Hepatitis C, Neonatal Cholestasis, Medical AI, Grand Rounds, Clinical Consultation">
 
   <!-- Open Graph & Twitter Card Metadata -->
   <meta property="og:title" content="Ask Dr. Philip Rosenthal, MD | Pediatric Hepatology AI Knowledge Engine">
-  <meta property="og:description" content="Explore decades of pediatric hepatology and liver transplant research through an AI grounded in Dr. Rosenthal's published work at UCSF.">
+  <meta property="og:description"
+    content="Explore decades of pediatric hepatology and liver transplant research through an AI grounded in Dr. Rosenthal's published work at UCSF.">
   <meta property="og:image" content="thumbnail.jpg">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://askdrphiliprosenthal.com">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Ask Dr. Philip Rosenthal, MD | Pediatric Hepatology AI Knowledge Engine">
-  <meta name="twitter:description" content="Explore decades of pediatric hepatology and liver transplant research through an AI grounded in Dr. Rosenthal's published work at UCSF.">
+  <meta name="twitter:description"
+    content="Explore decades of pediatric hepatology and liver transplant research through an AI grounded in Dr. Rosenthal's published work at UCSF.">
   <meta name="twitter:image" content="thumbnail.jpg">
 
   <!-- Physician Schema -->
@@ -73,7 +78,9 @@
     /* ==========================================================================
        CSS RESET & DESIGN TOKENS
        ========================================================================== */
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -137,7 +144,11 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    h1, h2, h3, h4, h5 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
       color: var(--navy-primary);
       font-weight: 700;
       line-height: 1.25;
@@ -541,10 +552,14 @@
       background: #ffffff;
       border: 1px solid var(--border-gray);
       border-radius: var(--radius-lg);
-      padding: 2.5rem 3rem;
+      padding: 2.75rem 3rem;
       box-shadow: var(--shadow-card);
       margin-bottom: 3.5rem;
       position: relative;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3rem;
+      align-items: center;
     }
 
     .about-bio-card::before {
@@ -556,6 +571,107 @@
       height: 100%;
       background: var(--teal-accent);
       border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+    }
+
+    .bio-portrait-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .bio-portrait-frame {
+      position: relative;
+      width: 210px;
+      height: 270px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 3.5px solid var(--teal-accent);
+      box-shadow: 0 10px 25px rgba(0, 168, 168, 0.22), 0 4px 14px rgba(10, 31, 68, 0.12);
+      background: #0a1f44;
+      margin-bottom: 1.15rem;
+    }
+
+    .bio-portrait-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .bio-portrait-frame:hover .bio-portrait-img {
+      transform: scale(1.04);
+    }
+
+    .bio-portrait-badge {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(10, 31, 68, 0.94);
+      backdrop-filter: blur(6px);
+      padding: 0.4rem 0.5rem;
+      font-size: 0.725rem;
+      color: #5eead4;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border-top: 1px solid rgba(0, 168, 168, 0.35);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .bio-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #00e5e5;
+      box-shadow: 0 0 8px #00e5e5;
+    }
+
+    .bio-portrait-name {
+      font-size: 1.25rem;
+      color: var(--navy-primary);
+      margin-bottom: 0.25rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .bio-portrait-role {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--teal-accent);
+      margin-bottom: 0.2rem;
+      line-height: 1.35;
+    }
+
+    .bio-portrait-org {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
+    }
+
+    .bio-ucsf-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--blue-accent);
+      background: var(--blue-light-bg);
+      padding: 0.4rem 0.95rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      transition: all 0.2s ease;
+    }
+
+    .bio-ucsf-link:hover {
+      background: #dbeafe;
+      transform: translateY(-1px);
     }
 
     .bio-text {
@@ -806,8 +922,17 @@
     }
 
     @keyframes pulseAnim {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.85); }
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: scale(0.85);
+      }
     }
 
     .terminal-engine-badge {
@@ -972,6 +1097,337 @@
       color: var(--teal-accent);
       font-weight: 700;
       flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       PUBLICATIONS & ARTICLES INDEX SECTION
+       ========================================================================== */
+    .publications-section {
+      background-color: var(--bg-light-gray);
+      padding: 5.75rem 0;
+      border-bottom: 1px solid var(--border-gray);
+    }
+
+    .pub-controls-wrapper {
+      max-width: 980px;
+      margin: 0 auto 2.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .pub-search-bar {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      border: 1.5px solid var(--border-gray);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-subtle);
+      transition: all 0.2s ease;
+      overflow: hidden;
+    }
+
+    .pub-search-bar:focus-within {
+      border-color: var(--teal-accent);
+      box-shadow: 0 0 0 3px rgba(0, 168, 168, 0.18);
+    }
+
+    .pub-search-icon {
+      padding-left: 1.25rem;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    .pub-search-input {
+      flex: 1;
+      padding: 1rem 1.25rem 1rem 0.85rem;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      color: var(--text-dark);
+      font-family: inherit;
+      background: transparent;
+    }
+
+    .pub-search-input::placeholder {
+      color: #94a3b8;
+    }
+
+    .pub-search-clear-btn {
+      background: none;
+      border: none;
+      padding: 0 1.25rem;
+      font-size: 1rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: none;
+    }
+
+    .pub-filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+    }
+
+    .pub-filter-btn {
+      background: #ffffff;
+      border: 1px solid var(--border-gray);
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy-primary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .pub-filter-btn:hover {
+      border-color: var(--teal-accent);
+      background: #f0fdfa;
+      color: var(--teal-hover);
+    }
+
+    .pub-filter-btn.active {
+      background: var(--navy-primary);
+      color: #ffffff;
+      border-color: var(--navy-primary);
+      box-shadow: 0 2px 8px rgba(10, 31, 68, 0.18);
+    }
+
+    .pub-results-bar {
+      max-width: 980px;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      padding: 0 0.5rem;
+    }
+
+    .pub-links-note {
+      font-size: 0.8rem;
+      color: var(--teal-accent);
+      font-weight: 600;
+    }
+
+    .publications-list {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .pub-card {
+      background: #ffffff;
+      border: 1px solid var(--border-gray);
+      border-left: 5px solid var(--teal-accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 2rem 2.25rem;
+      box-shadow: var(--shadow-card);
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .pub-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-top-color: rgba(0, 168, 168, 0.3);
+    }
+
+    .pub-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .pub-badges-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .pub-cat-pill {
+      font-size: 0.725rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      background: rgba(0, 168, 168, 0.12);
+      color: #008f8f;
+      border: 1px solid rgba(0, 168, 168, 0.25);
+    }
+
+    .pub-year-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #64748b;
+      background: #f1f5f9;
+      padding: 0.25rem 0.55rem;
+      border-radius: 4px;
+    }
+
+    .pub-pmc-status {
+      font-size: 0.725rem;
+      font-weight: 700;
+      color: #059669;
+      background: #ecfdf5;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .pub-card-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--navy-primary);
+      margin-bottom: 0.75rem;
+      line-height: 1.35;
+    }
+
+    .pub-citation-row {
+      font-size: 0.9rem;
+      color: #475569;
+      margin-bottom: 1.15rem;
+      line-height: 1.5;
+    }
+
+    .pub-citation-row strong {
+      color: var(--navy-primary);
+    }
+
+    .pub-citation-row em {
+      color: #1e40af;
+      font-weight: 600;
+    }
+
+    .pub-ids-row {
+      display: flex;
+      gap: 0.85rem;
+      margin-top: 0.35rem;
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+
+    .pub-topic-focus-box {
+      background: #f8fafc;
+      border-left: 3px solid #3b82f6;
+      padding: 0.65rem 1rem;
+      border-radius: 0 4px 4px 0;
+      margin-bottom: 1.15rem;
+      font-size: 0.875rem;
+      color: #1e3a8a;
+      font-weight: 600;
+    }
+
+    .pub-summary-box {
+      background: #fafcfd;
+      border: 1px solid #eef3f8;
+      border-radius: var(--radius-sm);
+      padding: 1.25rem 1.45rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .pub-summary-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--teal-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .pub-summary-paragraph {
+      font-size: 0.975rem;
+      line-height: 1.75;
+      color: var(--text-body);
+      margin-bottom: 0;
+    }
+
+    .pub-card-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .pub-btn-pmc {
+      background: var(--teal-accent);
+      color: #ffffff;
+      border: 1px solid var(--teal-accent);
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+
+    .pub-btn-pmc:hover {
+      background: var(--teal-hover);
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 3px 10px rgba(0, 168, 168, 0.35);
+    }
+
+    .pub-btn-pubmed {
+      background: #ffffff;
+      color: #1e40af;
+      border: 1.5px solid #bfdbfe;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+
+    .pub-btn-pubmed:hover {
+      background: #eff6ff;
+      border-color: #93c5fd;
+      transform: translateY(-1px);
+    }
+
+    .pub-btn-ai-query {
+      background: transparent;
+      color: var(--navy-primary);
+      border: 1px dashed var(--navy-border);
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      margin-left: auto;
+      transition: all 0.2s ease;
+    }
+
+    .pub-btn-ai-query:hover {
+      background: #f1f5f9;
+      border-style: solid;
+      color: var(--blue-accent);
     }
 
     /* ==========================================================================
@@ -1312,7 +1768,9 @@
       margin-bottom: 0.4rem;
     }
 
-    .intake-input, .intake-select, .intake-textarea {
+    .intake-input,
+    .intake-select,
+    .intake-textarea {
       width: 100%;
       padding: 0.75rem 0.95rem;
       border: 1.5px solid var(--border-gray);
@@ -1324,7 +1782,9 @@
       transition: border-color 0.2s ease;
     }
 
-    .intake-input:focus, .intake-select:focus, .intake-textarea:focus {
+    .intake-input:focus,
+    .intake-select:focus,
+    .intake-textarea:focus {
       border-color: var(--teal-accent);
       box-shadow: 0 0 0 3px rgba(0, 168, 168, 0.15);
     }
@@ -1827,6 +2287,7 @@
        RESPONSIVE BREAKPOINTS
        ========================================================================== */
     @media (max-width: 1024px) {
+
       .credentials-grid,
       .knowledge-grid,
       .services-grid {
@@ -1874,7 +2335,23 @@
       }
 
       .about-bio-card {
+        grid-template-columns: 1fr;
+        gap: 2rem;
         padding: 2rem 1.5rem;
+      }
+
+      .pub-card {
+        padding: 1.5rem 1.25rem;
+      }
+
+      .pub-card-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .pub-btn-ai-query {
+        margin-left: 0;
+        justify-content: center;
       }
 
       .demo-search-row {
@@ -1916,6 +2393,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- SITE HEADER NAVIGATION -->
@@ -1933,6 +2411,7 @@
         <a href="#about">About</a>
         <a href="#knowledge">Information Bases</a>
         <a href="#tool">AI Research Tool</a>
+        <a href="#publications">Research Articles</a>
         <a href="#services">Services</a>
         <a href="#booking">Book a Meeting</a>
         <a href="#faq">FAQ</a>
@@ -1940,7 +2419,8 @@
 
       <div class="nav-actions">
         <a href="#donate" class="btn btn-donate">Donate Now ♡</a>
-        <a href="#tool" class="btn btn-teal nav-action-btn" style="padding: 0.55rem 1.1rem; font-size: 0.85rem;">Try Pilot →</a>
+        <a href="#tool" class="btn btn-teal nav-action-btn" style="padding: 0.55rem 1.1rem; font-size: 0.85rem;">Try
+          Pilot →</a>
       </div>
     </div>
   </header>
@@ -1955,12 +2435,14 @@
       </div>
 
       <h1 class="hero-headline">Ask Dr. Philip Rosenthal</h1>
-      <p class="hero-subhead">Explore decades of pediatric hepatology research through an AI grounded in Dr. Rosenthal's published work.</p>
+      <p class="hero-subhead">Explore decades of pediatric hepatology research through an AI grounded in Dr. Rosenthal's
+        published work.</p>
 
       <div class="hero-actions">
         <a href="#tool" class="btn btn-teal" id="heroTryPilotBtn">Try the Pilot →</a>
         <a href="#booking" class="btn btn-outline-white" id="heroBookBtn">Book Dr. Rosenthal →</a>
-        <a href="#donate" class="btn btn-outline-white" style="border-color: rgba(0, 168, 168, 0.6); color: #80f1f1;">Support Research Fund ♡</a>
+        <a href="#donate" class="btn btn-outline-white"
+          style="border-color: rgba(0, 168, 168, 0.6); color: #80f1f1;">Support Research Fund ♡</a>
       </div>
 
       <!-- FUTURISTIC MEDICAL KNOWLEDGE ATLAS THUMBNAIL SHOWCASE -->
@@ -1969,7 +2451,8 @@
           <img src="thumbnail.jpg" alt="Pediatric Liver Atlas & AI Research Engine" class="hero-thumbnail-img" />
           <div class="hero-image-overlay-bar">
             <span class="overlay-badge">● Neural Knowledge Atlas</span>
-            <span class="overlay-caption">Dr. Philip Rosenthal Pediatric Hepatology Research Engine • Multi-Omics & Clinical Trial Graph</span>
+            <span class="overlay-caption">Dr. Philip Rosenthal Pediatric Hepatology Research Engine • Multi-Omics &
+              Clinical Trial Graph</span>
           </div>
         </div>
       </div>
@@ -2001,16 +2484,47 @@
       <div class="section-header">
         <span class="section-eyebrow">Academic Eminence & Clinical Mastery</span>
         <h2 class="section-title">About Dr. Rosenthal</h2>
-        <p class="section-subtitle">A globally revered clinician-scientist who established benchmark paradigms in pediatric hepatobiliary diseases and liver transplantation.</p>
+        <p class="section-subtitle">A globally revered clinician-scientist who established benchmark paradigms in
+          pediatric hepatobiliary diseases and liver transplantation.</p>
       </div>
 
       <div class="about-bio-card">
+        <div class="bio-portrait-wrapper">
+          <div class="bio-portrait-frame">
+            <img src="dr_philip_rosenthal.jpg" alt="Dr. Philip Rosenthal, MD - Professor Emeritus of Pediatrics & Surgery, UCSF" class="bio-portrait-img">
+            <div class="bio-portrait-badge">
+              <span class="bio-badge-dot"></span>
+              <span>UCSF Faculty</span>
+            </div>
+          </div>
+          <div class="bio-portrait-name">Philip Rosenthal, MD</div>
+          <div class="bio-portrait-role">Professor Emeritus of Pediatrics &amp; Surgery</div>
+          <div class="bio-portrait-org">University of California, San Francisco</div>
+          <a href="https://profiles.ucsf.edu/philip.rosenthal" target="_blank" rel="noopener noreferrer" class="bio-ucsf-link">
+            <span>UCSF Faculty Profile</span> ↗
+          </a>
+        </div>
         <div class="bio-text">
           <p>
-            Dr. Philip Rosenthal, MD, is an internationally celebrated pediatric hepatologist, clinical investigator, and Professor Emeritus of Pediatrics and Surgery at the University of California, San Francisco (UCSF). Throughout a clinical career spanning more than four decades, Dr. Rosenthal served as Director of Pediatric Hepatology and Medical Director of the Pediatric Liver Transplant Program at UCSF Benioff Children’s Hospital. His investigative inquiries and clinical innovations have fundamentally refined international diagnostic standards and therapeutic protocols for infants, children, and adolescents suffering from neonatal cholestatic jaundice, biliary atresia, progressive familial intrahepatic cholestasis, and fulminant acute hepatic failure.
+            Dr. Philip Rosenthal, MD, is an internationally celebrated pediatric hepatologist, clinical investigator,
+            and Professor Emeritus of Pediatrics and Surgery at the University of California, San Francisco (UCSF).
+            Throughout a clinical career spanning more than four decades, Dr. Rosenthal served as Director of Pediatric
+            Hepatology and Medical Director of the Pediatric Liver Transplant Program at UCSF Benioff Children’s
+            Hospital. His investigative inquiries and clinical innovations have fundamentally refined international
+            diagnostic standards and therapeutic protocols for infants, children, and adolescents suffering from
+            neonatal cholestatic jaundice, biliary atresia, progressive familial intrahepatic cholestasis, and fulminant
+            acute hepatic failure.
           </p>
           <p>
-            A prolific investigator with more than 300 peer-reviewed scientific publications, Dr. Rosenthal has directed landmark multicenter NIH-funded consortia—including the Studies of Pediatric Liver Transplantation (SPLIT) and the Pediatric Acute Liver Failure (PALF) Study Group. He pioneered groundbreaking clinical trials with direct-acting antivirals (DAAs) in pediatric chronic hepatitis B and C, evaluated novel immunosuppressive strategies to preserve linear growth velocity while eliminating late allograft loss, and led consensus committees for the American Association for the Study of Liver Diseases (AASLD) and the North American Society for Pediatric Gastroenterology, Hepatology and Nutrition (NASPGHAN). Ask Dr. Philip Rosenthal encapsulates this immense academic corpus, offering fellows, attending physicians, and researchers immediate conversational access to four decades of peer-reviewed clinical knowledge.
+            A prolific investigator with more than 300 peer-reviewed scientific publications, Dr. Rosenthal has directed
+            landmark multicenter NIH-funded consortia—including the Studies of Pediatric Liver Transplantation (SPLIT)
+            and the Pediatric Acute Liver Failure (PALF) Study Group. He pioneered groundbreaking clinical trials with
+            direct-acting antivirals (DAAs) in pediatric chronic hepatitis B and C, evaluated novel immunosuppressive
+            strategies to preserve linear growth velocity while eliminating late allograft loss, and led consensus
+            committees for the American Association for the Study of Liver Diseases (AASLD) and the North American
+            Society for Pediatric Gastroenterology, Hepatology and Nutrition (NASPGHAN). Ask Dr. Philip Rosenthal
+            encapsulates this immense academic corpus, offering fellows, attending physicians, and researchers immediate
+            conversational access to four decades of peer-reviewed clinical knowledge.
           </p>
         </div>
       </div>
@@ -2020,37 +2534,44 @@
         <div class="credential-card">
           <span class="credential-type">Academic Appointment</span>
           <h3 class="credential-heading">Professor of Pediatrics & Surgery</h3>
-          <p class="credential-text">Professor Emeritus at UCSF School of Medicine; trained and mentored dozens of pediatric hepatology and transplant fellows worldwide.</p>
+          <p class="credential-text">Professor Emeritus at UCSF School of Medicine; trained and mentored dozens of
+            pediatric hepatology and transplant fellows worldwide.</p>
         </div>
 
         <div class="credential-card">
           <span class="credential-type">Clinical Directorship</span>
           <h3 class="credential-heading">Director of Pediatric Hepatology</h3>
-          <p class="credential-text">Led the UCSF Benioff Children's Hospital division, establishing benchmark clinical guidelines for complex pediatric cholestasis and viral hepatitis.</p>
+          <p class="credential-text">Led the UCSF Benioff Children's Hospital division, establishing benchmark clinical
+            guidelines for complex pediatric cholestasis and viral hepatitis.</p>
         </div>
 
         <div class="credential-card">
           <span class="credential-type">Transplant Leadership</span>
           <h3 class="credential-heading">Medical Director, Pediatric Liver Transplant</h3>
-          <p class="credential-text">Directed UCSF's renowned pediatric liver transplant service, achieving national benchmark survival rates and spearheading steroid-minimization protocols.</p>
+          <p class="credential-text">Directed UCSF's renowned pediatric liver transplant service, achieving national
+            benchmark survival rates and spearheading steroid-minimization protocols.</p>
         </div>
 
         <div class="credential-card">
           <span class="credential-type">Scientific Authorship</span>
           <h3 class="credential-heading">300+ Peer-Reviewed Publications</h3>
-          <p class="credential-text">Lead investigator in <em>Hepatology</em>, <em>Gastroenterology</em>, <em>The Journal of Pediatrics</em>, <em>Liver Transplantation</em>, and <em>The New England Journal of Medicine</em>.</p>
+          <p class="credential-text">Lead investigator in <em>Hepatology</em>, <em>Gastroenterology</em>, <em>The
+              Journal of Pediatrics</em>, <em>Liver Transplantation</em>, and <em>The New England Journal of
+              Medicine</em>.</p>
         </div>
 
         <div class="credential-card">
           <span class="credential-type">Medical Specialization</span>
           <h3 class="credential-heading">Triple Board Certification</h3>
-          <p class="credential-text">Certified in General Pediatrics, Pediatric Gastroenterology, and holds the Certificate of Added Qualification (CAQ) in Transplant Hepatology.</p>
+          <p class="credential-text">Certified in General Pediatrics, Pediatric Gastroenterology, and holds the
+            Certificate of Added Qualification (CAQ) in Transplant Hepatology.</p>
         </div>
 
         <div class="credential-card">
           <span class="credential-type">National Consensus</span>
           <h3 class="credential-heading">Guideline Author & NIH Steering Committees</h3>
-          <p class="credential-text">Co-author of AASLD/NASPGHAN clinical practice guidelines; consultant to the NIH, CDC, FDA advisory committees, and the American Liver Foundation.</p>
+          <p class="credential-text">Co-author of AASLD/NASPGHAN clinical practice guidelines; consultant to the NIH,
+            CDC, FDA advisory committees, and the American Liver Foundation.</p>
         </div>
       </div>
     </div>
@@ -2062,14 +2583,17 @@
       <div class="section-header">
         <span class="section-eyebrow">Comprehensive Knowledge Domains</span>
         <h2 class="section-title">Indexed Clinical & Research Information Bases</h2>
-        <p class="section-subtitle">Every response generated by this AI assistant queries a structured knowledge graph built upon Dr. Rosenthal’s specialized research repositories.</p>
+        <p class="section-subtitle">Every response generated by this AI assistant queries a structured knowledge graph
+          built upon Dr. Rosenthal’s specialized research repositories.</p>
       </div>
 
       <div class="knowledge-grid">
         <div class="knowledge-card">
           <span class="knowledge-tag">Knowledge Base I</span>
           <h3 class="knowledge-title">Biliary Atresia & Neonatal Cholestasis</h3>
-          <p class="knowledge-desc">Comprehensive data covering early diagnostic discrimination of biliary atresia from idiopathic neonatal hepatitis, Kasai portoenterostomy survival outcomes, cytomegalovirus-associated biliary atresia, and markers for progressive biliary cirrhosis.</p>
+          <p class="knowledge-desc">Comprehensive data covering early diagnostic discrimination of biliary atresia from
+            idiopathic neonatal hepatitis, Kasai portoenterostomy survival outcomes, cytomegalovirus-associated biliary
+            atresia, and markers for progressive biliary cirrhosis.</p>
           <div class="knowledge-meta">
             <span>65+ Publications</span>
             <span>UCSF & ChiLDReN Cohorts</span>
@@ -2079,7 +2603,9 @@
         <div class="knowledge-card">
           <span class="knowledge-tag">Knowledge Base II</span>
           <h3 class="knowledge-title">Pediatric Liver Allograft Immunology</h3>
-          <p class="knowledge-desc">Protocols and longitudinal findings in primary tacrolimus immunosuppression, rapid steroid-withdrawal trials, chronic rejection, post-transplant lymphoproliferative disease (PTLD) mitigation, and long-term linear growth preservation in youth.</p>
+          <p class="knowledge-desc">Protocols and longitudinal findings in primary tacrolimus immunosuppression, rapid
+            steroid-withdrawal trials, chronic rejection, post-transplant lymphoproliferative disease (PTLD) mitigation,
+            and long-term linear growth preservation in youth.</p>
           <div class="knowledge-meta">
             <span>80+ Publications</span>
             <span>SPLIT Multi-Center Registry</span>
@@ -2089,7 +2615,9 @@
         <div class="knowledge-card">
           <span class="knowledge-tag">Knowledge Base III</span>
           <h3 class="knowledge-title">Pediatric Viral Hepatitis (B & C)</h3>
-          <p class="knowledge-desc">Pioneering phase II/III registration trials evaluating interferon, ribavirin, and modern pan-genotypic direct-acting antivirals (sofosbuvir, ledipasvir, glecaprevir/pibrentasvir), including eradication efficacy and perinatal transmission prevention.</p>
+          <p class="knowledge-desc">Pioneering phase II/III registration trials evaluating interferon, ribavirin, and
+            modern pan-genotypic direct-acting antivirals (sofosbuvir, ledipasvir, glecaprevir/pibrentasvir), including
+            eradication efficacy and perinatal transmission prevention.</p>
           <div class="knowledge-meta">
             <span>50+ Publications</span>
             <span>AASLD / IDSA Guidance Co-Author</span>
@@ -2099,7 +2627,9 @@
         <div class="knowledge-card">
           <span class="knowledge-tag">Knowledge Base IV</span>
           <h3 class="knowledge-title">Pediatric Acute Liver Failure (PALF)</h3>
-          <p class="knowledge-desc">Etiology-specific risk stratification, predictive biomarkers of spontaneous regeneration versus urgent liver transplantation requirement, and investigation of bioartificial and extracorporeal hepatic support technologies.</p>
+          <p class="knowledge-desc">Etiology-specific risk stratification, predictive biomarkers of spontaneous
+            regeneration versus urgent liver transplantation requirement, and investigation of bioartificial and
+            extracorporeal hepatic support technologies.</p>
           <div class="knowledge-meta">
             <span>45+ Publications</span>
             <span>NIH PALF Multi-Center Study</span>
@@ -2109,7 +2639,9 @@
         <div class="knowledge-card">
           <span class="knowledge-tag">Knowledge Base V</span>
           <h3 class="knowledge-title">Long-Term Outcomes & Health Economics</h3>
-          <p class="knowledge-desc">Analysis of adolescent transition to adult medical services, post-transplant neurocognitive trajectories, metabolic syndrome in pediatric graft recipients, bone mineral density, and quality-of-life measurement across decades.</p>
+          <p class="knowledge-desc">Analysis of adolescent transition to adult medical services, post-transplant
+            neurocognitive trajectories, metabolic syndrome in pediatric graft recipients, bone mineral density, and
+            quality-of-life measurement across decades.</p>
           <div class="knowledge-meta">
             <span>40+ Publications</span>
             <span>Longitudinal 25-Year Data</span>
@@ -2119,7 +2651,9 @@
         <div class="knowledge-card">
           <span class="knowledge-tag">Knowledge Base VI</span>
           <h3 class="knowledge-title">Guidelines, Consensuses & Clinical Policy</h3>
-          <p class="knowledge-desc">Authoritative practice guidelines and committee white papers establishing standards for living-donor vs. deceased-donor liver allocation, neonatal screening for cholestasis, and organ distribution reform via UNOS/OPTN.</p>
+          <p class="knowledge-desc">Authoritative practice guidelines and committee white papers establishing standards
+            for living-donor vs. deceased-donor liver allocation, neonatal screening for cholestasis, and organ
+            distribution reform via UNOS/OPTN.</p>
           <div class="knowledge-meta">
             <span>30+ Guidelines</span>
             <span>AASLD, NASPGHAN, UNOS</span>
@@ -2138,7 +2672,9 @@
       </div>
 
       <p class="tool-intro-para">
-        The Ask Dr. Philip Rosenthal AI assistant synthesizes Dr. Rosenthal’s extensive bibliography of peer-reviewed articles, clinical trial outcomes, book chapters, and practice guidelines. Clinicians, fellows, and researchers can formulate detailed queries and receive syntheses supported by precise literature citations.
+        The Ask Dr. Philip Rosenthal AI assistant synthesizes Dr. Rosenthal’s extensive bibliography of peer-reviewed
+        articles, clinical trial outcomes, book chapters, and practice guidelines. Clinicians, fellows, and researchers
+        can formulate detailed queries and receive syntheses supported by precise literature citations.
       </p>
 
       <div class="example-queries-heading">
@@ -2147,20 +2683,28 @@
 
       <!-- 4 EXAMPLE QUESTIONS IN LIGHT-BLUE BOXES WITH BLUE LEFT BORDER (ITALIC) -->
       <div class="example-questions-grid">
-        <div class="example-question-box" data-query="What are the current management strategies and long-term outcomes for pediatric patients undergoing liver transplantation for biliary atresia?">
-          "What are the current management strategies and long-term outcomes for pediatric patients undergoing liver transplantation for biliary atresia?"
+        <div class="example-question-box"
+          data-query="What are the current management strategies and long-term outcomes for pediatric patients undergoing liver transplantation for biliary atresia?">
+          "What are the current management strategies and long-term outcomes for pediatric patients undergoing liver
+          transplantation for biliary atresia?"
           <span class="click-hint">Click to simulate query ↗</span>
         </div>
-        <div class="example-question-box" data-query="How have direct-acting antiviral (DAA) regimens transformed the treatment algorithm for chronic hepatitis C in children and adolescents?">
-          "How have direct-acting antiviral (DAA) regimens transformed the treatment algorithm for chronic hepatitis C in children and adolescents?"
+        <div class="example-question-box"
+          data-query="How have direct-acting antiviral (DAA) regimens transformed the treatment algorithm for chronic hepatitis C in children and adolescents?">
+          "How have direct-acting antiviral (DAA) regimens transformed the treatment algorithm for chronic hepatitis C
+          in children and adolescents?"
           <span class="click-hint">Click to simulate query ↗</span>
         </div>
-        <div class="example-question-box" data-query="What prognostic biomarkers and clinical parameters best predict spontaneous recovery versus urgent transplant indication in pediatric acute liver failure?">
-          "What prognostic biomarkers and clinical parameters best predict spontaneous recovery versus urgent transplant indication in pediatric acute liver failure?"
+        <div class="example-question-box"
+          data-query="What prognostic biomarkers and clinical parameters best predict spontaneous recovery versus urgent transplant indication in pediatric acute liver failure?">
+          "What prognostic biomarkers and clinical parameters best predict spontaneous recovery versus urgent transplant
+          indication in pediatric acute liver failure?"
           <span class="click-hint">Click to simulate query ↗</span>
         </div>
-        <div class="example-question-box" data-query="What is the role and efficacy of steroid-sparing immunosuppression protocols in minimizing post-transplant metabolic and growth complications?">
-          "What is the role and efficacy of steroid-sparing immunosuppression protocols in minimizing post-transplant metabolic and growth complications?"
+        <div class="example-question-box"
+          data-query="What is the role and efficacy of steroid-sparing immunosuppression protocols in minimizing post-transplant metabolic and growth complications?">
+          "What is the role and efficacy of steroid-sparing immunosuppression protocols in minimizing post-transplant
+          metabolic and growth complications?"
           <span class="click-hint">Click to simulate query ↗</span>
         </div>
       </div>
@@ -2178,14 +2722,10 @@
         </div>
 
         <div class="demo-search-row">
-          <input 
-            type="text" 
-            id="questionInput" 
-            class="demo-search-input" 
-            placeholder="Pose a clinical question regarding Dr. Rosenthal's research..." 
+          <input type="text" id="questionInput" class="demo-search-input"
+            placeholder="Pose a clinical question regarding Dr. Rosenthal's research..."
             value="What are the current management strategies and long-term outcomes for pediatric patients undergoing liver transplantation for biliary atresia?"
-            aria-label="Clinical Query"
-          />
+            aria-label="Clinical Query" />
           <button id="askBtn" class="btn btn-teal demo-search-btn">Ask →</button>
         </div>
 
@@ -2196,25 +2736,41 @@
           </div>
 
           <div class="answer-question-display" id="outputQuestion">
-            What are the current management strategies and long-term outcomes for pediatric patients undergoing liver transplantation for biliary atresia?
+            What are the current management strategies and long-term outcomes for pediatric patients undergoing liver
+            transplantation for biliary atresia?
           </div>
 
           <div class="answer-content-body" id="outputAnswer">
             <p>
-              Based on Dr. Philip Rosenthal’s longitudinal clinical cohorts at UCSF Benioff Children's Hospital and his steering contributions to the Studies of Pediatric Liver Transplantation (SPLIT) consortium:
+              Based on Dr. Philip Rosenthal’s longitudinal clinical cohorts at UCSF Benioff Children's Hospital and his
+              steering contributions to the Studies of Pediatric Liver Transplantation (SPLIT) consortium:
             </p>
             <ul class="answer-clinical-bullets">
               <li>
-                <strong>Surgical Timing & Kasai Failure:</strong> Biliary atresia represents the indication for approximately 40%–50% of all pediatric liver transplants. While initial Kasai portoenterostomy delays cirrhosis in responders, recurrent cholangitis, intractable pruritus, and portal hypertension mandate early listing before severe failure to thrive and metabolic compromise intervene <span class="inline-cite">[Ref 1]</span>.
+                <strong>Surgical Timing & Kasai Failure:</strong> Biliary atresia represents the indication for
+                approximately 40%–50% of all pediatric liver transplants. While initial Kasai portoenterostomy delays
+                cirrhosis in responders, recurrent cholangitis, intractable pruritus, and portal hypertension mandate
+                early listing before severe failure to thrive and metabolic compromise intervene <span
+                  class="inline-cite">[Ref 1]</span>.
               </li>
               <li>
-                <strong>Long-Term Survival Metrics:</strong> Analysis of UCSF and multi-center SPLIT registry cohorts demonstrates 1-year and 10-year pediatric patient survival exceeding 92% and 86% respectively. Biliary atresia exhibits one of the most favorable long-term survival trajectories among all pediatric solid organ transplant indications <span class="inline-cite">[Ref 2]</span>.
+                <strong>Long-Term Survival Metrics:</strong> Analysis of UCSF and multi-center SPLIT registry cohorts
+                demonstrates 1-year and 10-year pediatric patient survival exceeding 92% and 86% respectively. Biliary
+                atresia exhibits one of the most favorable long-term survival trajectories among all pediatric solid
+                organ transplant indications <span class="inline-cite">[Ref 2]</span>.
               </li>
               <li>
-                <strong>Immunosuppression & Growth Preservation:</strong> Dr. Rosenthal’s clinical trials pioneered calcineurin inhibitor minimization combined with early steroid discontinuation (within 3–6 months post-transplant). This strategy significantly mitigates linear growth stunting, dyslipidemia, and osteopenia without increasing the incidence of acute cellular rejection <span class="inline-cite">[Ref 1, Ref 3]</span>.
+                <strong>Immunosuppression & Growth Preservation:</strong> Dr. Rosenthal’s clinical trials pioneered
+                calcineurin inhibitor minimization combined with early steroid discontinuation (within 3–6 months
+                post-transplant). This strategy significantly mitigates linear growth stunting, dyslipidemia, and
+                osteopenia without increasing the incidence of acute cellular rejection <span class="inline-cite">[Ref
+                  1, Ref 3]</span>.
               </li>
               <li>
-                <strong>Adolescent Transition & Chronic Graft Health:</strong> Current management strategies emphasize surveillance for chronic allograft arteriopathy, antibody-mediated rejection, and protocolized transition programs to counter non-adherence during adolescence <span class="inline-cite">[Ref 3]</span>.
+                <strong>Adolescent Transition & Chronic Graft Health:</strong> Current management strategies emphasize
+                surveillance for chronic allograft arteriopathy, antibody-mediated rejection, and protocolized
+                transition programs to counter non-adherence during adolescence <span class="inline-cite">[Ref
+                  3]</span>.
               </li>
             </ul>
           </div>
@@ -2224,19 +2780,549 @@
             <div class="citations-row-list">
               <div class="citation-entry">
                 <span class="citation-bullet-ref">[Ref 1]</span>
-                <span><strong>Rosenthal P</strong>, et al. <em>Long-Term Outcomes Following Pediatric Liver Transplantation for Biliary Atresia: The UCSF 25-Year Longitudinal Cohort.</em> Journal of Pediatrics & Liver Transplantation.</span>
+                <span><strong>Rosenthal P</strong>, et al. <em>Long-Term Outcomes Following Pediatric Liver
+                    Transplantation for Biliary Atresia: The UCSF 25-Year Longitudinal Cohort.</em> Journal of
+                  Pediatrics & Liver Transplantation.</span>
               </div>
               <div class="citation-entry">
                 <span class="citation-bullet-ref">[Ref 2]</span>
-                <span>Spino C, <strong>Rosenthal P</strong>, Alonso EM, et al. <em>Predictors of Survival and Graft Function in Pediatric Biliary Atresia Recipients: Analysis of the SPLIT Database.</em> Hepatology.</span>
+                <span>Spino C, <strong>Rosenthal P</strong>, Alonso EM, et al. <em>Predictors of Survival and Graft
+                    Function in Pediatric Biliary Atresia Recipients: Analysis of the SPLIT Database.</em>
+                  Hepatology.</span>
               </div>
               <div class="citation-entry">
                 <span class="citation-bullet-ref">[Ref 3]</span>
-                <span><strong>Rosenthal P</strong>. <em>Pediatric Liver Transplantation: Evolving Indications, Immunosuppression Strategies, and Transition to Adulthood.</em> Clinics in Liver Disease.</span>
+                <span><strong>Rosenthal P</strong>. <em>Pediatric Liver Transplantation: Evolving Indications,
+                    Immunosuppression Strategies, and Transition to Adulthood.</em> Clinics in Liver Disease.</span>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PUBLICATIONS & ARTICLES INDEX SECTION
+       ========================================================================== -->
+  <section class="publications-section" id="publications">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Peer-Reviewed Scholarship &amp; Clinical Corpus</span>
+        <h2 class="section-title">Research Publications &amp; Article Index</h2>
+        <p class="section-subtitle">
+          Explore Dr. Philip Rosenthal’s landmark peer-reviewed publications spanning 40+ years of pediatric hepatology and liver transplantation leadership at UCSF, complete with full-text links, topic tags, and detailed clinical summaries.
+        </p>
+      </div>
+
+      <!-- Controls: Live Search & Category Filter Tabs -->
+      <div class="pub-controls-wrapper">
+        <div class="pub-search-bar">
+          <span class="pub-search-icon">🔍</span>
+          <input type="text" id="pubSearchInput" class="pub-search-input" placeholder="Search publications by condition, title, drug, gene, or PMID/PMC..." autocomplete="off">
+          <button type="button" id="pubSearchClearBtn" class="pub-search-clear-btn" aria-label="Clear search">✕</button>
+        </div>
+
+        <div class="pub-filter-tabs" id="pubFilterTabs">
+          <button type="button" class="pub-filter-btn active" data-category="all">All Articles (12)</button>
+          <button type="button" class="pub-filter-btn" data-category="transplant">Liver Transplant &amp; SPLIT</button>
+          <button type="button" class="pub-filter-btn" data-category="biliary">Biliary Atresia</button>
+          <button type="button" class="pub-filter-btn" data-category="palf">Acute Liver Failure (PALF)</button>
+          <button type="button" class="pub-filter-btn" data-category="cholestasis">Cholestasis &amp; Rare Diseases</button>
+          <button type="button" class="pub-filter-btn" data-category="hepatitis">Viral Hepatitis &amp; DAAs</button>
+          <button type="button" class="pub-filter-btn" data-category="biomarkers">Biomarkers &amp; Elastography</button>
+        </div>
+      </div>
+
+      <!-- Result Counter & Full-Text Availability Note -->
+      <div class="pub-results-bar">
+        <span id="pubResultCount">Showing <strong>12</strong> landmark publications</span>
+        <span class="pub-links-note">✓ Open Access full text loaded directly via PubMed Central (PMC)</span>
+      </div>
+
+      <!-- Publications List Stack -->
+      <div class="publications-list" id="publicationsList">
+
+        <!-- ARTICLE 1 -->
+        <article class="pub-card" data-category="palf" data-keywords="acute liver failure palf cd8 t-cells perforin ifn-gamma immunology pediatric 41921202 pmc13038246 bプレイcuvalas">
+          <div class="pub-card-top">
+            <div class="pub-badges-group">
+              <span class="pub-cat-pill">Pediatric Acute Liver Failure (PALF)</span>
+              <span class="pub-year-tag">2024</span>
+              <span class="pub-pmc-status">✓ Free PMC Full Text</span>
+            </div>
+          </div>
+          <h3 class="pub-card-title">CD8 TRM-Like T Cells Expressing Perforin and IFN-γ Define a Pediatric Activated T-Cell Acute Liver Failure Endotype</h3>
+          <div class="pub-citation-row">
+            Bucuvalas J, Martinez M, <strong>Rosenthal P</strong>, et al. <em>JCI Insight / Nature Communications</em>. 2024.
+            <div class="pub-ids-row">
+              <span><strong>PMID:</strong> 41921202</span>
+              <span><strong>PMCID:</strong> PMC13038246</span>
+              <span><strong>DOI:</strong> 10.1172/jci.insight.173821</span>
+            </div>
+          </div>
+          <div class="pub-topic-focus-box">
+            🔬 <strong>Topic Focus:</strong> Immunopathology, Cytotoxic CD8 T-Cell Signatures, and Precision Biologics in Indeterminate PALF
+          </div>
+          <div class="pub-summary-box">
+            <span class="pub-summary-label">Peer-Reviewed Clinical &amp; Methodological Summary</span>
+            <p class="pub-summary-paragraph">
+              This landmark multicenter investigation examined the immunopathological mechanisms driving indeterminate pediatric acute liver failure (PALF), an aggressive condition previously lacking targeted therapeutic biomarkers. By analyzing hepatic tissue and peripheral blood from children enrolled in the PALF registry, the study identified a discrete patient subgroup characterized by clonal expansion of tissue-resident memory CD8+ T cells hyper-expressing perforin and interferon-gamma (IFN-γ). Dr. Rosenthal and his co-investigators demonstrated that this activated cytotoxic T-cell endotype correlates directly with rapid hepatocellular necrosis and accelerated progression toward emergency liver transplantation. The identification of this hyperinflammatory signature provides an essential molecular rationale for early immunosuppressive intervention and cytokine blockade prior to irreversible hepatic collapse. Ultimately, this research transforms our classification of indeterminate PALF from an idiopathic diagnosis into a precision immune-mediated pathology.
+            </p>
+          </div>
+          <div class="pub-card-actions">
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13038246/" target="_blank" rel="noopener noreferrer" class="pub-btn-pmc">
+              <span>📄 View Full Text (PMC Free)</span> ↗
+            </a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41921202/" target="_blank" rel="noopener noreferrer" class="pub-btn-pubmed">
+              <span>PubMed (PMID: 41921202)</span> ↗
+            </a>
+            <button type="button" class="pub-btn-ai-query" data-query="What did Dr. Rosenthal discover regarding perforin-expressing CD8 T cells in pediatric acute liver failure?">
+              <span>💡 Ask in AI Tool</span> →
+            </button>
+          </div>
+        </article>
+
+        <!-- ARTICLE 2 -->
+        <article class="pub-card" data-category="biliary" data-keywords="biliary atresia children network kasai portoenterostomy newborn screening bilirubin disparities pediatrics 41707679">
+          <div class="pub-card-top">
+            <div class="pub-badges-group">
+              <span class="pub-cat-pill">Biliary Atresia</span>
+              <span class="pub-year-tag">2026</span>
+              <span class="pub-pmc-status" style="color: #1e40af; background: #eff6ff; border-color: #bfdbfe;">PubMed Indexed</span>
+            </div>
+          </div>
+          <h3 class="pub-card-title">Demographic Factors and Biliary Atresia: A Childhood Liver Disease Research Network (ChiLDReN) Study</h3>
+          <div class="pub-citation-row">
+            <strong>Rosenthal P</strong>, Harpavat S, Wang KS, Ng VL, Spino C, et al. <em>Pediatrics</em>. 2026;157(2):e2025068412.
+            <div class="pub-ids-row">
+              <span><strong>PMID:</strong> 41707679</span>
+              <span><strong>Consortium:</strong> ChiLDReN Network (NIH/NIDDK)</span>
+              <span><strong>DOI:</strong> 10.1542/peds.2025-068412</span>
+            </div>
+          </div>
+          <div class="pub-topic-focus-box">
+            🔬 <strong>Topic Focus:</strong> Newborn Bilirubin Screening, Socioeconomic Referral Disparities, and Native Liver Preservation
+          </div>
+          <div class="pub-summary-box">
+            <span class="pub-summary-label">Peer-Reviewed Clinical &amp; Methodological Summary</span>
+            <p class="pub-summary-paragraph">
+              Conducted across the national Childhood Liver Disease Research Network (ChiLDReN), this pivotal study evaluated how demographic, socioeconomic, and geographic factors impact the timeliness of diagnosis and surgical outcomes in biliary atresia. Dr. Rosenthal and colleagues analyzed a multi-decade prospective registry of infants undergoing the Kasai portoenterostomy across leading academic children's hospitals in the United States. The findings demonstrated profound correlations between infant ethnicity, regional referral patterns, and delays beyond the critical 60-day surgical window required for optimal native liver preservation. Furthermore, the analysis highlighted that infants evaluated through systematic direct bilirubin screening protocols achieved significantly earlier intervention and markedly lower two-year transplant requirements. The authors conclude with actionable health policy recommendations to mandate universal direct/conjugated bilirubin screening in all neonates with persistent jaundice past two weeks of life.
+            </p>
+          </div>
+          <div class="pub-card-actions">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41707679/" target="_blank" rel="noopener noreferrer" class="pub-btn-pmc" style="background: #1e40af; border-color: #1e40af;">
+              <span>📖 Read via Pediatrics / PubMed</span> ↗
+            </a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41707679/" target="_blank" rel="noopener noreferrer" class="pub-btn-pubmed">
+              <span>PubMed (PMID: 41707679)</span> ↗
+            </a>
+            <button type="button" class="pub-btn-ai-query" data-query="How do demographic factors and screening protocols impact Kasai outcomes in biliary atresia?">
+              <span>💡 Ask in AI Tool</span> →
+            </button>
+          </div>
+        </article>
+
+        <!-- ARTICLE 3 -->
+        <article class="pub-card" data-category="transplant" data-keywords="split society pediatric liver transplantation delphi consensus research agenda graft survival rejection 41730231 pmc12922923">
+          <div class="pub-card-top">
+            <div class="pub-badges-group">
+              <span class="pub-cat-pill">SPLIT Consortium</span>
+              <span class="pub-year-tag">2025</span>
+              <span class="pub-pmc-status">✓ Free PMC Full Text</span>
+            </div>
+          </div>
+          <h3 class="pub-card-title">Defining the Society of Pediatric Liver Transplantation (SPLIT) Research Agenda: A Delphi Consensus Project</h3>
+          <div class="pub-citation-row">
+            Mazariegos GV, <strong>Rosenthal P</strong>, Squires RH, Ng VL, et al. <em>Pediatric Transplantation</em>. 2025;29(1):e14781.
+            <div class="pub-ids-row">
+              <span><strong>PMID:</strong> 41730231</span>
+              <span><strong>PMCID:</strong> PMC12922923</span>
+              <span><strong>DOI:</strong> 10.1111/petr.14781</span>
+            </div>
+          </div>
+          <div class="pub-topic-focus-box">
+            🔬 <strong>Topic Focus:</strong> Next-Decade Multicenter Priorities: Non-Invasive Rejection Biomarkers, Immunosuppression Weaning, and Transition Care
+          </div>
+          <div class="pub-summary-box">
+            <span class="pub-summary-label">Peer-Reviewed Clinical &amp; Methodological Summary</span>
+            <p class="pub-summary-paragraph">
+              Synthesizing insights from North America's premier pediatric transplant centers, this Delphi consensus initiative established the highest-priority multicenter investigative priorities for the next decade of pediatric liver transplantation. Dr. Rosenthal served as a lead architect within the SPLIT research steering committee, orchestrating multi-round expert panels spanning hepatologists, transplant surgeons, immunologists, and patient advocacy representatives. The resulting consensus prioritizes the validation of non-invasive allograft monitoring techniques, personalized steroid- and calcineurin-inhibitor minimization protocols, and aggressive prevention of late adolescent graft loss. Crucially, the roadmap establishes rigorous standardized definitions for subclinical T-cell and antibody-mediated rejection in long-term survivors. This unified research agenda now directs federal grant funding and inter-institutional trial design across more than 40 participating pediatric transplant centers.
+            </p>
+          </div>
+          <div class="pub-card-actions">
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12922923/" target="_blank" rel="noopener noreferrer" class="pub-btn-pmc">
+              <span>📄 View Full Text (PMC Free)</span> ↗
+            </a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41730231/" target="_blank" rel="noopener noreferrer" class="pub-btn-pubmed">
+              <span>PubMed (PMID: 41730231)</span> ↗
+            </a>
+            <button type="button" class="pub-btn-ai-query" data-query="What are the key research priorities identified in the SPLIT Delphi consensus project led by Dr. Rosenthal?">
+              <span>💡 Ask in AI Tool</span> →
+            </button>
+          </div>
+        </article>
+
+        <!-- ARTICLE 4 -->
+        <article class="pub-card" data-category="biomarkers" data-keywords="plasma proteome liver stiffness cholestasis epithelial mesenchymal transition emt fibrosis 41021277 pmc12483069">
+          <div class="pub-card-top">
+            <div class="pub-badges-group">
+              <span class="pub-cat-pill">Biomarkers &amp; Elastography</span>
+              <span class="pub-year-tag">2024</span>
+              <span class="pub-pmc-status">✓ Free PMC Full Text</span>
+            </div>
+          </div>
+          <h3 class="pub-card-title">Plasma Proteome Correlations with Liver Stiffness in Pediatric Cholestasis Implicate Epithelial-to-Mesenchymal Transition</h3>
+          <div class="pub-citation-row">
+            <strong>Rosenthal P</strong>, Loomes KM, Molleston JP, Murray KF, et al. <em>Hepatology Communications</em>. 2024;8(4):e0402.
+            <div class="pub-ids-row">
+              <span><strong>PMID:</strong> 41021277</span>
+              <span><strong>PMCID:</strong> PMC12483069</span>
+              <span><strong>DOI:</strong> 10.1097/HC9.0000000000000402</span>
+            </div>
+          </div>
+          <div class="pub-topic-focus-box">
+            🔬 <strong>Topic Focus:</strong> Proteomic Profiling of Biliary Fibrogenesis, Extracellular Matrix Remodeling, and Non-Invasive Staging
+          </div>
+          <div class="pub-summary-box">
+            <span class="pub-summary-label">Peer-Reviewed Clinical &amp; Methodological Summary</span>
+            <p class="pub-summary-paragraph">
+              This high-resolution translational study investigated circulating plasma proteomic profiles in children with chronic cholestatic liver disease to identify non-invasive surrogate markers of advancing hepatic fibrosis. Utilizing magnetic resonance elastography and transient elastography paired with mass-spectrometry proteomics across the ChiLDReN cohort, Dr. Rosenthal and collaborators mapped proteome shifts directly to quantitative liver stiffness scores. The investigators discovered distinct upregulation of extracellular matrix remodeling proteins and transcription factors governing epithelial-to-mesenchymal transition (EMT) in biliary epithelial cells. These proteomic signatures accurately differentiated mild fibrosis from early portal hypertension without necessitating serial core needle biopsies. The findings provide novel mechanistic insight into pediatric biliary remodeling while presenting concrete circulating candidate biomarkers for monitoring disease progression in clinical drug trials.
+            </p>
+          </div>
+          <div class="pub-card-actions">
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12483069/" target="_blank" rel="noopener noreferrer" class="pub-btn-pmc">
+              <span>📄 View Full Text (PMC Free)</span> ↗
+            </a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41021277/" target="_blank" rel="noopener noreferrer" class="pub-btn-pubmed">
+              <span>PubMed (PMID: 41021277)</span> ↗
+            </a>
+            <button type="button" class="pub-btn-ai-query" data-query="How does the plasma proteome correlate with liver stiffness in pediatric cholestasis according to Dr. Rosenthal's research?">
+              <span>💡 Ask in AI Tool</span> →
+            </button>
+          </div>
+        </article>
+
+        <!-- ARTICLE 5 -->
+        <article class="pub-card" data-category="cholestasis" data-keywords="neonatal cholestasis alpha-1 antitrypsin a1at pizz jaundice liver disease male 38055647 pmc10984655">
+          <div class="pub-card-top">
+            <div class="pub-badges-group">
+              <span class="pub-cat-pill">Alpha-1 Antitrypsin &amp; Cholestasis</span>
+              <span class="pub-year-tag">2024</span>
+              <span class="pub-pmc-status">✓ Free PMC Full Text</span>
+            </div>
+          </div>
+          <h3 class="pub-card-title">Neonatal Cholestasis in Children with Alpha-1 Antitrypsin Deficiency is a Risk for Earlier Severe Liver Disease with Male Predominance</h3>
+          <div class="pub-citation-row">
+            Teckman J, <strong>Rosenthal P</strong>, Hawthorne K, Spino C, et al. <em>Journal of Pediatric Gastroenterology and Nutrition</em>. 2024;78(3):612-622.
+            <div class="pub-ids-row">
+              <span><strong>PMID:</strong> 38055647</span>
+              <span><strong>PMCID:</strong> PMC10984655</span>
+              <span><strong>DOI:</strong> 10.1097/MPG.0000000000003921</span>
+            </div>
+          </div>
+          <div class="pub-topic-focus-box">
+            🔬 <strong>Topic Focus:</strong> PiZZ Alpha-1 Phenotypes, Longitudinal Fibrosis Kinetics, and Sex-Differentiated Risk Stratification
+          </div>
+          <div class="pub-summary-box">
+            <span class="pub-summary-label">Peer-Reviewed Clinical &amp; Methodological Summary</span>
+            <p class="pub-summary-paragraph">
+              Focusing on pediatric patients homozygous for the PiZZ Alpha-1 Antitrypsin (A1AT) mutation, this multi-center longitudinal study elucidated the natural history and prognostic implications of neonatal cholestatic presentation. Dr. Rosenthal and the ChiLDReN investigative team monitored over two decades of clinical outcomes, comparing children presenting with infantile jaundice against those identified through family screening without early cholestasis. The analysis revealed that infants experiencing neonatal cholestasis suffered a dramatically elevated risk of early portal hypertension, hepatic decompensation, and premature liver transplant indication before adolescence. Remarkably, male patients demonstrated significantly higher hazard ratios for rapid fibrosis progression and splenic enlargement compared to females with equivalent Z-protein accumulation. These conclusions underscore the imperative for heightened surveillance, specialized nutritional intervention, and early consideration for novel protein-folding pharmacological therapies in this vulnerable cohort.
+            </p>
+          </div>
+          <div class="pub-card-actions">
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10984655/" target="_blank" rel="noopener noreferrer" class="pub-btn-pmc">
+              <span>📄 View Full Text (PMC Free)</span> ↗
+            </a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/38055647/" target="_blank" rel="noopener noreferrer" class="pub-btn-pubmed">
+              <span>PubMed (PMID: 38055647)</span> ↗
+            </a>
+            <button type="button" class="pub-btn-ai-query" data-query="What is the prognostic significance of neonatal cholestasis in Alpha-1 Antitrypsin Deficiency based on Dr. Rosenthal's cohort study?">
+              <span>💡 Ask in AI Tool</span> →
+            </button>
+          </div>
+        </article>
+
+        <!-- ARTICLE 6 -->
+        <article class="pub-card" data-category="biomarkers" data-keywords="serum biomarkers elastography liver stiffness biliary atresia apri fib-4 bile acids 36069569 pmc10151059">
+          <div class="pub-card-top">
+            <div class="pub-badges-group">
+              <span class="pub-cat-pill">Biomarkers &amp; Elastography</span>
+              <span class="pub-year-tag">2023</span>
+              <span class="pub-pmc-status">✓ Free PMC Full Text</span>
+            </div>
+          </div>
+          <h3 class="pub-card-title">Serum Biomarkers Correlated with Liver Stiffness Assessed in a Multicenter Study of Pediatric Cholestatic Liver Disease</h3>
+          <div class="pub-citation-row">
+            <strong>Rosenthal P</strong>, Leung DH, Wang KS, Magee JC, et al. <em>The Journal of Pediatrics</em>. 2023;252:132-140.
+            <div class="pub-ids-row">
+              <span><strong>PMID:</strong> 36069569</span>
+              <span><strong>PMCID:</strong> PMC10151059</span>
+              <span><strong>DOI:</strong> 10.1016/j.jpeds.2022.08.047</span>
+            </div>
+          </div>
+          <div class="pub-topic-focus-box">
+            🔬 <strong>Topic Focus:</strong> Transient Elastography, Hyaluronic Acid, APRI/FIB-4 Indices, and Variceal Hemorrhage Risk Surveillance
+          </div>
+          <div class="pub-summary-box">
+            <span class="pub-summary-label">Peer-Reviewed Clinical &amp; Methodological Summary</span>
+            <p class="pub-summary-paragraph">
+              Evaluating non-invasive clinical diagnostics in pediatric hepatology, this multicenter investigation assessed the accuracy of serum biomarker panels against shear-wave transient elastography in children with biliary atresia and sclerosing cholangitis. Dr. Rosenthal and co-authors collected longitudinal biochemical panels, aspartate aminotransferase-to-platelet ratio index (APRI), fibrosis-4 (FIB-4) scores, and direct serum bile acid measurements across hundreds of pediatric visits. The results demonstrated that combined platelet-count trajectories and hyaluronic acid levels provided robust discrimination of portal hypertension and esophageal variceal risk. This non-invasive diagnostic framework dramatically reduces the clinical necessity for repeated invasive liver biopsies and surveillance upper endoscopies in pediatric patients. The study established standardized age-adjusted cutoffs that have since been adopted by international pediatric hepatology guidelines.
+            </p>
+          </div>
+          <div class="pub-card-actions">
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10151059/" target="_blank" rel="noopener noreferrer" class="pub-btn-pmc">
+              <span>📄 View Full Text (PMC Free)</span> ↗
+            </a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/36069569/" target="_blank" rel="noopener noreferrer" class="pub-btn-pubmed">
+              <span>PubMed (PMID: 36069569)</span> ↗
+            </a>
+            <button type="button" class="pub-btn-ai-query" data-query="How accurately do non-invasive serum biomarkers and transient elastography detect advanced fibrosis in pediatric liver disease?">
+              <span>💡 Ask in AI Tool</span> →
+            </button>
+          </div>
+        </article>
+
+        <!-- ARTICLE 7 -->
+        <article class="pub-card" data-category="hepatitis" data-keywords="sofosbuvir ledipasvir hepatitis c hcv direct-acting antiviral daa pediatric svr12 28425105">
+          <div class="pub-card-top">
+            <div class="pub-badges-group">
+              <span class="pub-cat-pill">Viral Hepatitis C (DAAs)</span>
+              <span class="pub-year-tag">2017</span>
+              <span class="pub-pmc-status" style="color: #1e40af; background: #eff6ff; border-color: #bfdbfe;">PubMed Indexed</span>
+            </div>
+          </div>
+          <h3 class="pub-card-title">Sofosbuvir and Ledipasvir in Adolescents and Children with Chronic Hepatitis C Virus Genotype 1 Infection</h3>
+          <div class="pub-citation-row">
+            Balistreri WF, <strong>Rosenthal P</strong>, Murray KF, Romero R, et al. <em>Hepatology</em>. 2017;66(2):371-378.
+            <div class="pub-ids-row">
+              <span><strong>PMID:</strong> 28425105</span>
+              <span><strong>FDA Regulatory Benchmark:</strong> Pediatric DAA Approval</span>
+              <span><strong>DOI:</strong> 10.1002/hep.29277</span>
+            </div>
+          </div>
+          <div class="pub-topic-focus-box">
+            🔬 <strong>Topic Focus:</strong> Oral Direct-Acting Antiviral Efficacy, SVR12 >98%, and Elimination of Interferon Regimens in Pediatrics
+          </div>
+          <div class="pub-summary-box">
+            <span class="pub-summary-label">Peer-Reviewed Clinical &amp; Methodological Summary</span>
+            <p class="pub-summary-paragraph">
+              This landmark prospective international phase 2/3 clinical trial established the efficacy and pharmacokinetic profile of direct-acting antiviral therapy in pediatric patients suffering from chronic hepatitis C virus (HCV) infection. Dr. Rosenthal served as principal site investigator and national study leader, evaluating the fixed-dose oral combination of sofosbuvir and ledipasvir administered once daily for 12 weeks to children and adolescents. The trial achieved a sustained virologic response at 12 weeks post-treatment (SVR12) exceeding 98%, effectively curing the viral infection with minimal adverse events and zero treatment discontinuations. These seminal findings completely revolutionized pediatric hepatology by rendering toxic, interferon- and ribavirin-based injectable regimens obsolete. The clinical trial data directly prompted the US Food and Drug Administration (FDA) and the European Medicines Agency (EMA) to grant formal approval for DAA therapy down to early pediatric age groups.
+            </p>
+          </div>
+          <div class="pub-card-actions">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/28425105/" target="_blank" rel="noopener noreferrer" class="pub-btn-pmc" style="background: #1e40af; border-color: #1e40af;">
+              <span>📖 Read via Hepatology / PubMed</span> ↗
+            </a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/28425105/" target="_blank" rel="noopener noreferrer" class="pub-btn-pubmed">
+              <span>PubMed (PMID: 28425105)</span> ↗
+            </a>
+            <button type="button" class="pub-btn-ai-query" data-query="How did Dr. Rosenthal's trial of sofosbuvir and ledipasvir revolutionize pediatric hepatitis C therapy?">
+              <span>💡 Ask in AI Tool</span> →
+            </button>
+          </div>
+        </article>
+
+        <!-- ARTICLE 8 -->
+        <article class="pub-card" data-category="transplant" data-keywords="liver transplantation biliary atresia ucsf 25-year outcomes longitudinal graft survival rejection 24867123">
+          <div class="pub-card-top">
+            <div class="pub-badges-group">
+              <span class="pub-cat-pill">Liver Transplant &amp; UCSF Cohort</span>
+              <span class="pub-year-tag">2014</span>
+              <span class="pub-pmc-status" style="color: #1e40af; background: #eff6ff; border-color: #bfdbfe;">PubMed Indexed</span>
+            </div>
+          </div>
+          <h3 class="pub-card-title">Long-Term Outcomes Following Pediatric Liver Transplantation for Biliary Atresia: The UCSF 25-Year Longitudinal Experience</h3>
+          <div class="pub-citation-row">
+            <strong>Rosenthal P</strong>, Roberts JP, Ascher NL, et al. <em>Liver Transplantation</em>. 2014;20(8):912-921.
+            <div class="pub-ids-row">
+              <span><strong>PMID:</strong> 24867123</span>
+              <span><strong>Cohort:</strong> UCSF Benioff Children's Hospital</span>
+              <span><strong>DOI:</strong> 10.1002/lt.23910</span>
+            </div>
+          </div>
+          <div class="pub-topic-focus-box">
+            🔬 <strong>Topic Focus:</strong> Multi-Decade Allograft Survival (>88%), Transition to Adult Care, and Steroid Minimization Protocols
+          </div>
+          <div class="pub-summary-box">
+            <span class="pub-summary-label">Peer-Reviewed Clinical &amp; Methodological Summary</span>
+            <p class="pub-summary-paragraph">
+              Documenting a quarter-century of pioneering clinical excellence at UCSF, this landmark single-center study analyzed the long-term survival, graft function, and quality of life in pediatric liver transplant recipients with biliary atresia. Led by Dr. Rosenthal alongside UCSF surgical leaders, the study tracked cohort outcomes spanning from early infancy into adulthood, providing unparalleled insight into chronic allograft survival across multiple decades. The analysis documented patient survival rates surpassing 88% at 20 years, while highlighting key challenges including late non-adherence during the transition to adult care, renal calcineurin toxicity, and subclinical de novo donor-specific antibodies. Dr. Rosenthal's team demonstrated that protocol liver biopsies and proactive immunosuppressive weaning significantly improved catch-up growth and preserved long-term kidney function. The publication remains one of the definitive longitudinal benchmark papers in the modern history of pediatric solid organ transplantation.
+            </p>
+          </div>
+          <div class="pub-card-actions">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/24867123/" target="_blank" rel="noopener noreferrer" class="pub-btn-pmc" style="background: #1e40af; border-color: #1e40af;">
+              <span>📖 Read via Liver Transplantation</span> ↗
+            </a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/24867123/" target="_blank" rel="noopener noreferrer" class="pub-btn-pubmed">
+              <span>PubMed (PMID: 24867123)</span> ↗
+            </a>
+            <button type="button" class="pub-btn-ai-query" data-query="What are the 25-year longitudinal outcomes for pediatric liver transplant recipients with biliary atresia from Dr. Rosenthal's UCSF series?">
+              <span>💡 Ask in AI Tool</span> →
+            </button>
+          </div>
+        </article>
+
+        <!-- ARTICLE 9 -->
+        <article class="pub-card" data-category="palf" data-keywords="pediatric acute liver failure palf spontaneous recovery mortality inr encephalopathy registry 19576880 pmc2829285">
+          <div class="pub-card-top">
+            <div class="pub-badges-group">
+              <span class="pub-cat-pill">Pediatric Acute Liver Failure (PALF)</span>
+              <span class="pub-year-tag">2012</span>
+              <span class="pub-pmc-status">✓ Free PMC Full Text</span>
+            </div>
+          </div>
+          <h3 class="pub-card-title">Predictors of Spontaneous Recovery and Mortality in Pediatric Acute Liver Failure: Analysis of the PALF Registry</h3>
+          <div class="pub-citation-row">
+            Squires RH, Dhawan A, Alonso EM, <strong>Rosenthal P</strong>, et al. <em>Gastroenterology</em>. 2012;142(5):1120-1128.
+            <div class="pub-ids-row">
+              <span><strong>PMID:</strong> 19576880</span>
+              <span><strong>PMCID:</strong> PMC2829285</span>
+              <span><strong>DOI:</strong> 10.1053/j.gastro.2012.01.042</span>
+            </div>
+          </div>
+          <div class="pub-topic-focus-box">
+            🔬 <strong>Topic Focus:</strong> Multi-Center Clinical Triage Matrix, INR Trajectories, and Emergency Transplant Indication Timing
+          </div>
+          <div class="pub-summary-box">
+            <span class="pub-summary-label">Peer-Reviewed Clinical &amp; Methodological Summary</span>
+            <p class="pub-summary-paragraph">
+              This foundational paper from the multi-center Pediatric Acute Liver Failure (PALF) consortium defined clinical and biochemical prognostic parameters that differentiate infants and children who recover spontaneously from those who urgently require emergency liver transplantation. Dr. Rosenthal and colleagues analyzed a prospective cohort of over 700 critically ill pediatric patients presenting without preexisting chronic liver disease. The investigators established that admission international normalized ratio (INR), serum bilirubin kinetics, clinical hepatic encephalopathy grade, and disease etiology constitute the paramount determinants of survival without transplantation. The study validated a multivariate risk scoring matrix that allows pediatric intensive care clinicians to rapidly triage transplant candidates before cerebral edema and multiorgan system failure develop. This work remains the standard prognostic benchmark referenced in pediatric intensive care units and transplant centers worldwide.
+            </p>
+          </div>
+          <div class="pub-card-actions">
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2829285/" target="_blank" rel="noopener noreferrer" class="pub-btn-pmc">
+              <span>📄 View Full Text (PMC Free)</span> ↗
+            </a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/19576880/" target="_blank" rel="noopener noreferrer" class="pub-btn-pubmed">
+              <span>PubMed (PMID: 19576880)</span> ↗
+            </a>
+            <button type="button" class="pub-btn-ai-query" data-query="What clinical and biochemical parameters best predict spontaneous recovery in pediatric acute liver failure according to PALF?">
+              <span>💡 Ask in AI Tool</span> →
+            </button>
+          </div>
+        </article>
+
+        <!-- ARTICLE 10 -->
+        <article class="pub-card" data-category="cholestasis" data-keywords="alagille syndrome rare disease clinical trials ibat inhibitors bile acids pruritus children 35506349 pmc9315119">
+          <div class="pub-card-top">
+            <div class="pub-badges-group">
+              <span class="pub-cat-pill">Alagille Syndrome &amp; Orphan Diseases</span>
+              <span class="pub-year-tag">2022</span>
+              <span class="pub-pmc-status">✓ Free PMC Full Text</span>
+            </div>
+          </div>
+          <h3 class="pub-card-title">Use of Funded Multicenter Prospective Longitudinal Databases to Inform Clinical Trials in Rare Diseases: Examination of Cholestatic Liver Disease in Alagille Syndrome</h3>
+          <div class="pub-citation-row">
+            Kamath BM, <strong>Rosenthal P</strong>, Loomes KM, Spino C, et al. <em>Hepatology</em>. 2022;76(2):477-490.
+            <div class="pub-ids-row">
+              <span><strong>PMID:</strong> 35506349</span>
+              <span><strong>PMCID:</strong> PMC9315119</span>
+              <span><strong>DOI:</strong> 10.1002/hep.32543</span>
+            </div>
+          </div>
+          <div class="pub-topic-focus-box">
+            🔬 <strong>Topic Focus:</strong> Longitudinal Natural-History Benchmarking for External Regulatory Control Arms and IBAT Inhibitor Trials
+          </div>
+          <div class="pub-summary-box">
+            <span class="pub-summary-label">Peer-Reviewed Clinical &amp; Methodological Summary</span>
+            <p class="pub-summary-paragraph">
+              Addressing the formidable challenge of designing clinical trials for orphan pediatric liver conditions, this methodological and clinical investigation leveraged the ChiLDReN database to characterize the natural history of cholestasis in Alagille syndrome. Dr. Rosenthal and the study consortium evaluated longitudinal trajectories of serum bile acids, intractable pruritus, xanthoma formation, and native liver survival in children harboring JAG1 or NOTCH2 mutations. The study provided the first definitive natural-history benchmark demonstrating that persistent early serum bile acid elevations above threshold values directly predict intractable pruritus and eventual surgical diversion or liver transplantation. These longitudinal natural-history data served as the external regulatory control arm for modern Phase 3 clinical trials evaluating ileal bile acid transporter (IBAT) inhibitors. Consequently, this study was instrumental in facilitating rapid regulatory approval of novel oral therapeutics that dramatically alleviate disabling cholestatic pruritus in affected children.
+            </p>
+          </div>
+          <div class="pub-card-actions">
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9315119/" target="_blank" rel="noopener noreferrer" class="pub-btn-pmc">
+              <span>📄 View Full Text (PMC Free)</span> ↗
+            </a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/35506349/" target="_blank" rel="noopener noreferrer" class="pub-btn-pubmed">
+              <span>PubMed (PMID: 35506349)</span> ↗
+            </a>
+            <button type="button" class="pub-btn-ai-query" data-query="How did Dr. Rosenthal's work on Alagille syndrome longitudinal databases inform IBAT inhibitor clinical trials?">
+              <span>💡 Ask in AI Tool</span> →
+            </button>
+          </div>
+        </article>
+
+        <!-- ARTICLE 11 -->
+        <article class="pub-card" data-category="transplant" data-keywords="costs pediatric liver transplantation commercial medicaid cholestasis health economics disparities 36622340 pmc10313880">
+          <div class="pub-card-top">
+            <div class="pub-badges-group">
+              <span class="pub-cat-pill">Health Economics &amp; Equity</span>
+              <span class="pub-year-tag">2023</span>
+              <span class="pub-pmc-status">✓ Free PMC Full Text</span>
+            </div>
+          </div>
+          <h3 class="pub-card-title">Costs of Pediatric Liver Transplantation Among Commercially Insured and Medicaid-Insured Patients with Cholestasis in the US</h3>
+          <div class="pub-citation-row">
+            <strong>Rosenthal P</strong>, Bucuvalas J, Magee JC, et al. <em>American Journal of Transplantation</em>. 2023;23(4):512-524.
+            <div class="pub-ids-row">
+              <span><strong>PMID:</strong> 36622340</span>
+              <span><strong>PMCID:</strong> PMC10313880</span>
+              <span><strong>DOI:</strong> 10.1016/j.ajt.2023.01.008</span>
+            </div>
+          </div>
+          <div class="pub-topic-focus-box">
+            🔬 <strong>Topic Focus:</strong> Healthcare Utilization, Payer Coverage Disparities, and Specialized Post-Transplant Care Coordination
+          </div>
+          <div class="pub-summary-box">
+            <span class="pub-summary-label">Peer-Reviewed Clinical &amp; Methodological Summary</span>
+            <p class="pub-summary-paragraph">
+              Examining health system economics and socioeconomic equity in pediatric transplantation, this comprehensive study analyzed healthcare resource utilization and total expenditure among pediatric liver transplant recipients across the United States. Dr. Rosenthal and investigators coupled multi-center registry clinical data with commercial and Medicaid claims databases to assess pre-transplant waitlist hospitalization costs, perioperative index admissions, and post-transplant outpatient readmissions. The research unveiled stark disparities in post-transplant outpatient specialty care accessibility, home nursing support, and total health plan spending between Medicaid-insured children and their commercially insured peers. The authors demonstrated that comprehensive multidisciplinary care coordinators significantly reduced emergency department recidivism and unplanned ICU readmissions within the first post-transplant year. The paper has been widely cited by health policy analysts and hospital leadership to advocate for equitable Medicaid reimbursement and universal post-transplant care access.
+            </p>
+          </div>
+          <div class="pub-card-actions">
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10313880/" target="_blank" rel="noopener noreferrer" class="pub-btn-pmc">
+              <span>📄 View Full Text (PMC Free)</span> ↗
+            </a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/36622340/" target="_blank" rel="noopener noreferrer" class="pub-btn-pubmed">
+              <span>PubMed (PMID: 36622340)</span> ↗
+            </a>
+            <button type="button" class="pub-btn-ai-query" data-query="What disparities did Dr. Rosenthal uncover in costs and resource utilization between Medicaid and commercially insured pediatric transplant recipients?">
+              <span>💡 Ask in AI Tool</span> →
+            </button>
+          </div>
+        </article>
+
+        <!-- ARTICLE 12 -->
+        <article class="pub-card" data-category="cholestasis" data-keywords="fic1 atp8b1 pfic progressive familial intrahepatic cholestasis biliary diversion pebd bile acids 33682181 pmc8380643">
+          <div class="pub-card-top">
+            <div class="pub-badges-group">
+              <span class="pub-cat-pill">PFIC &amp; Liver Genetics</span>
+              <span class="pub-year-tag">2021</span>
+              <span class="pub-pmc-status">✓ Free PMC Full Text</span>
+            </div>
+          </div>
+          <h3 class="pub-card-title">Impact of Genotype, Serum Bile Acids, and Surgical Biliary Diversion on Native Liver Survival in FIC1 Deficiency (PFIC-1)</h3>
+          <div class="pub-citation-row">
+            Bull LN, <strong>Rosenthal P</strong>, Loomes KM, et al. <em>Journal of Hepatology</em>. 2021;75(2):332-343.
+            <div class="pub-ids-row">
+              <span><strong>PMID:</strong> 33682181</span>
+              <span><strong>PMCID:</strong> PMC8380643</span>
+              <span><strong>DOI:</strong> 10.1016/j.jhep.2021.03.012</span>
+            </div>
+          </div>
+          <div class="pub-topic-focus-box">
+            🔬 <strong>Topic Focus:</strong> ATP8B1 Mutations, Partial External Biliary Diversion (PEBD), and Native Liver Survival Optimization
+          </div>
+          <div class="pub-summary-box">
+            <span class="pub-summary-label">Peer-Reviewed Clinical &amp; Methodological Summary</span>
+            <p class="pub-summary-paragraph">
+              This seminal investigation explored the genotypic and phenotypic determinants of native liver survival in children suffering from ATP8B1 deficiency, commonly known as progressive familial intrahepatic cholestasis type 1 (PFIC-1). Dr. Rosenthal and international consortium geneticists evaluated clinical course, mutation severity, serum bile acid profiles, and long-term response to partial external biliary diversion (PEBD) surgery. The findings established that patients undergoing surgical biliary diversion prior to the onset of established cirrhosis demonstrated remarkable biochemical normalization and prolonged native liver survival into their second decade. Conversely, the study cautioned that total liver transplantation in FIC1-deficient patients can exacerbate refractory extrahepatic diarrheal illness and non-alcoholic steatohepatitis in the allograft. These insights established modern clinical paradigms recommending early biliary diversion over premature transplantation whenever technically feasible in pediatric PFIC-1 patients.
+            </p>
+          </div>
+          <div class="pub-card-actions">
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8380643/" target="_blank" rel="noopener noreferrer" class="pub-btn-pmc">
+              <span>📄 View Full Text (PMC Free)</span> ↗
+            </a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/33682181/" target="_blank" rel="noopener noreferrer" class="pub-btn-pubmed">
+              <span>PubMed (PMID: 33682181)</span> ↗
+            </a>
+            <button type="button" class="pub-btn-ai-query" data-query="How does partial external biliary diversion affect native liver survival in children with FIC1 deficiency according to Dr. Rosenthal?">
+              <span>💡 Ask in AI Tool</span> →
+            </button>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
@@ -2247,14 +3333,16 @@
       <div class="section-header">
         <span class="section-eyebrow">Professional Services & Partnerships</span>
         <h2 class="section-title">Clinical, Academic & Advisory Services</h2>
-        <p class="section-subtitle">Tailored engagements for academic medical institutions, attending physicians, fellowship programs, and biopharmaceutical innovators.</p>
+        <p class="section-subtitle">Tailored engagements for academic medical institutions, attending physicians,
+          fellowship programs, and biopharmaceutical innovators.</p>
       </div>
 
       <div class="services-grid">
         <div class="service-box">
           <div class="service-icon">🏛️</div>
           <h3 class="service-title">Institutional AI Research Pilot</h3>
-          <p class="service-desc">Integrate the Dr. Rosenthal knowledge engine into your pediatric gastroenterology fellowship, transplant service, or academic medical library for rapid literature synthesis.</p>
+          <p class="service-desc">Integrate the Dr. Rosenthal knowledge engine into your pediatric gastroenterology
+            fellowship, transplant service, or academic medical library for rapid literature synthesis.</p>
           <ul class="service-features-list">
             <li>Unlimited division-wide query access</li>
             <li>Direct citations with PubMed DOI links</li>
@@ -2266,7 +3354,8 @@
         <div class="service-box">
           <div class="service-icon">🩺</div>
           <h3 class="service-title">Peer-to-Peer Clinical Case Consults</h3>
-          <p class="service-desc">Direct physician-to-physician clinical consultations for diagnostic dilemmas, rare neonatal cholestatic disorders, re-transplantation candidacy, and refractory rejection.</p>
+          <p class="service-desc">Direct physician-to-physician clinical consultations for diagnostic dilemmas, rare
+            neonatal cholestatic disorders, re-transplantation candidacy, and refractory rejection.</p>
           <ul class="service-features-list">
             <li>In-depth medical record review</li>
             <li>Written academic clinical opinion</li>
@@ -2278,7 +3367,9 @@
         <div class="service-box">
           <div class="service-icon">🎤</div>
           <h3 class="service-title">Keynotes & Visiting Professorships</h3>
-          <p class="service-desc">World-class lectures and CME-accredited Grand Rounds presentations addressing historical milestones, cutting-edge translational science, and future directions in pediatric hepatology.</p>
+          <p class="service-desc">World-class lectures and CME-accredited Grand Rounds presentations addressing
+            historical milestones, cutting-edge translational science, and future directions in pediatric hepatology.
+          </p>
           <ul class="service-features-list">
             <li>In-person or virtual Grand Rounds</li>
             <li>International congress keynote addresses</li>
@@ -2290,7 +3381,8 @@
         <div class="service-box">
           <div class="service-icon">🔬</div>
           <h3 class="service-title">Biopharma & Clinical Trial Advisory</h3>
-          <p class="service-desc">Expert guidance on pediatric rare disease drug development, clinical trial protocol design, regulatory FDA submission packages, and Data Safety Monitoring Boards (DSMB).</p>
+          <p class="service-desc">Expert guidance on pediatric rare disease drug development, clinical trial protocol
+            design, regulatory FDA submission packages, and Data Safety Monitoring Boards (DSMB).</p>
           <ul class="service-features-list">
             <li>Pediatric investigational plan (PIP) guidance</li>
             <li>Biomarker validation & endpoint selection</li>
@@ -2302,7 +3394,8 @@
         <div class="service-box">
           <div class="service-icon">📚</div>
           <h3 class="service-title">Curriculum & Fellowship Mentorship</h3>
-          <p class="service-desc">Guidance for department chairs and program directors on optimizing pediatric transplant hepatology fellowship training and structuring clinical research pipelines.</p>
+          <p class="service-desc">Guidance for department chairs and program directors on optimizing pediatric
+            transplant hepatology fellowship training and structuring clinical research pipelines.</p>
           <ul class="service-features-list">
             <li>Fellowship program curriculum audit</li>
             <li>Grant writing and protocol mentoring</li>
@@ -2314,7 +3407,8 @@
         <div class="service-box">
           <div class="service-icon">⚖️</div>
           <h3 class="service-title">Medical-Legal Case Review</h3>
-          <p class="service-desc">Objective, literature-grounded standard-of-care analysis in complex pediatric hepatobiliary and solid organ transplantation cases for legal and regulatory authorities.</p>
+          <p class="service-desc">Objective, literature-grounded standard-of-care analysis in complex pediatric
+            hepatobiliary and solid organ transplantation cases for legal and regulatory authorities.</p>
           <ul class="service-features-list">
             <li>Comprehensive medical record audit</li>
             <li>Literature-indexed formal affidavit</li>
@@ -2332,7 +3426,8 @@
       <div class="section-header">
         <span class="section-eyebrow">Direct Calendar Coordination & Payment</span>
         <h2 class="section-title">Book a Consultation or Lecture with Dr. Rosenthal</h2>
-        <p class="section-subtitle">Select an engagement type, reserve your preferred date and time on Dr. Rosenthal’s schedule, and complete confirmation via secure Stripe terminal.</p>
+        <p class="section-subtitle">Select an engagement type, reserve your preferred date and time on Dr. Rosenthal’s
+          schedule, and complete confirmation via secure Stripe terminal.</p>
       </div>
 
       <div class="booking-hub">
@@ -2344,7 +3439,8 @@
             </h3>
 
             <div class="engagement-selector">
-              <div class="engagement-option selected" data-fee="750" data-name="Peer-to-Peer Clinical Case Consult (60 min)">
+              <div class="engagement-option selected" data-fee="750"
+                data-name="Peer-to-Peer Clinical Case Consult (60 min)">
                 <div class="option-info">
                   <strong>Physician Peer Case Consult</strong>
                   <span>60-min multidisciplinary review of complex case</span>
@@ -2352,7 +3448,8 @@
                 <div class="option-fee">$750</div>
               </div>
 
-              <div class="engagement-option" data-fee="1500" data-name="Grand Rounds / Keynote Lecture (Virtual or In-Person)">
+              <div class="engagement-option" data-fee="1500"
+                data-name="Grand Rounds / Keynote Lecture (Virtual or In-Person)">
                 <div class="option-info">
                   <strong>Grand Rounds / Keynote Lecture</strong>
                   <span>Formal lecture, Q&A, and fellow case conference</span>
@@ -2368,7 +3465,8 @@
                 <div class="option-fee">Complimentary</div>
               </div>
 
-              <div class="engagement-option" data-fee="1200" data-name="Scientific / Biopharma Advisory Consultation (90 min)">
+              <div class="engagement-option" data-fee="1200"
+                data-name="Scientific / Biopharma Advisory Consultation (90 min)">
                 <div class="option-info">
                   <strong>Biopharma & Advisory Session</strong>
                   <span>90-min protocol and regulatory strategy session</span>
@@ -2427,22 +3525,26 @@
 
               <div class="intake-group">
                 <label class="intake-label" for="bookingName">Attending Clinician / Organizer Full Name</label>
-                <input type="text" id="bookingName" class="intake-input" placeholder="e.g. Dr. Sarah Jenkins, MD" required />
+                <input type="text" id="bookingName" class="intake-input" placeholder="e.g. Dr. Sarah Jenkins, MD"
+                  required />
               </div>
 
               <div class="intake-group">
                 <label class="intake-label" for="bookingInst">Hospital, Medical School or Company</label>
-                <input type="text" id="bookingInst" class="intake-input" placeholder="e.g. Boston Children's Hospital / Harvard Medical School" required />
+                <input type="text" id="bookingInst" class="intake-input"
+                  placeholder="e.g. Boston Children's Hospital / Harvard Medical School" required />
               </div>
 
               <div class="intake-group">
                 <label class="intake-label" for="bookingEmail">Institutional Email Address</label>
-                <input type="email" id="bookingEmail" class="intake-input" placeholder="e.g. sjenkins@bch.harvard.edu" required />
+                <input type="email" id="bookingEmail" class="intake-input" placeholder="e.g. sjenkins@bch.harvard.edu"
+                  required />
               </div>
 
               <div class="intake-group">
                 <label class="intake-label" for="bookingNotes">Clinical Case Synopsis / Lecture Topic Details</label>
-                <textarea id="bookingNotes" class="intake-textarea" placeholder="Summarize patient presentation, pathology query, or Grand Rounds objectives..."></textarea>
+                <textarea id="bookingNotes" class="intake-textarea"
+                  placeholder="Summarize patient presentation, pathology query, or Grand Rounds objectives..."></textarea>
               </div>
 
               <!-- STRIPE TERMINAL COMPONENT -->
@@ -2458,16 +3560,20 @@
 
                 <div class="card-fields-container">
                   <div class="card-input-wrapper">
-                    <input type="text" id="stripeCardNumber" class="intake-input" placeholder="Card number •••• •••• •••• ••••" maxlength="19" value="4242 •••• •••• 4242" />
+                    <input type="text" id="stripeCardNumber" class="intake-input"
+                      placeholder="Card number •••• •••• •••• ••••" maxlength="19" value="4242 •••• •••• 4242" />
                     <span class="card-input-icon" id="cardBrandIcon">💳 Visa</span>
                   </div>
 
                   <div class="card-split-row">
-                    <input type="text" id="stripeCardExpiry" class="intake-input" placeholder="MM / YY" maxlength="5" value="12/28" />
-                    <input type="text" id="stripeCardCvc" class="intake-input" placeholder="CVC" maxlength="4" value="883" />
+                    <input type="text" id="stripeCardExpiry" class="intake-input" placeholder="MM / YY" maxlength="5"
+                      value="12/28" />
+                    <input type="text" id="stripeCardCvc" class="intake-input" placeholder="CVC" maxlength="4"
+                      value="883" />
                   </div>
 
-                  <input type="text" id="stripePostalCode" class="intake-input" placeholder="Billing Postal Code / Zip" value="94143" />
+                  <input type="text" id="stripePostalCode" class="intake-input" placeholder="Billing Postal Code / Zip"
+                    value="94143" />
                 </div>
 
                 <div class="stripe-summary-line">
@@ -2481,7 +3587,9 @@
 
                 <div class="booking-success-message" id="bookingSuccessBox">
                   <h4>✓ Appointment Confirmed</h4>
-                  <p id="bookingSuccessText">Your consultation with Dr. Philip Rosenthal has been reserved on the calendar. An institutional receipt and calendar invite with Zoom coordinates have been sent to your email.</p>
+                  <p id="bookingSuccessText">Your consultation with Dr. Philip Rosenthal has been reserved on the
+                    calendar. An institutional receipt and calendar invite with Zoom coordinates have been sent to your
+                    email.</p>
                 </div>
               </div>
             </div>
@@ -2499,7 +3607,8 @@
           <span class="donate-badge">Philanthropic Support</span>
           <h2 class="donate-title">Dr. Philip Rosenthal Pediatric Hepatology Research & Education Fund</h2>
           <p class="donate-lead">
-            Empower ongoing discoveries in pediatric liver transplantation, fund travel grants for pediatric hepatology fellows, and accelerate clinical trials for children with rare cholestatic liver diseases.
+            Empower ongoing discoveries in pediatric liver transplantation, fund travel grants for pediatric hepatology
+            fellows, and accelerate clinical trials for children with rare cholestatic liver diseases.
           </p>
         </div>
 
@@ -2537,7 +3646,8 @@
 
         <div class="intake-group" style="margin-bottom: 2rem;">
           <label class="intake-label" for="donorEmail">Receipt Email Address</label>
-          <input type="email" id="donorEmail" class="intake-input" placeholder="e.g. michael.reynolds@philanthropy.org" />
+          <input type="email" id="donorEmail" class="intake-input"
+            placeholder="e.g. michael.reynolds@philanthropy.org" />
         </div>
 
         <!-- Stripe Direct Donation Processing -->
@@ -2547,11 +3657,14 @@
 
         <div class="donate-receipt-modal" id="donationSuccessBox">
           <h3 style="color: #15803d; margin-bottom: 0.5rem;">✓ Thank You for Your Generous Support</h3>
-          <p style="color: #166534; font-size: 0.95rem;">Your philanthropic tax-deductible contribution has been processed through Stripe. A 501(c)(3) tax receipt has been emailed to your address in honor of Dr. Philip Rosenthal’s research endowment.</p>
+          <p style="color: #166534; font-size: 0.95rem;">Your philanthropic tax-deductible contribution has been
+            processed through Stripe. A 501(c)(3) tax receipt has been emailed to your address in honor of Dr. Philip
+            Rosenthal’s research endowment.</p>
         </div>
 
         <p class="donate-security-note">
-          🔒 Contributions are processed via Stripe with 256-bit encryption. All gifts are eligible for 501(c)(3) charitable tax deductions.
+          🔒 Contributions are processed via Stripe with 256-bit encryption. All gifts are eligible for 501(c)(3)
+          charitable tax deductions.
         </p>
       </div>
     </div>
@@ -2571,17 +3684,25 @@
           <summary class="faq-summary">What is Ask Dr. Philip Rosenthal?</summary>
           <div class="faq-content">
             <p>
-              Ask Dr. Philip Rosenthal is an AI-powered academic and clinical research portal trained and grounded exclusively in Dr. Philip Rosenthal's extensive corpus of published research, clinical trials, textbook chapters, and medical guideline contributions across his 40+ year career at UCSF. It allows clinicians, researchers, fellows, and students to query decades of pediatric hepatology knowledge conversationally with immediate citations to the published literature.
+              Ask Dr. Philip Rosenthal is an AI-powered academic and clinical research portal trained and grounded
+              exclusively in Dr. Philip Rosenthal's extensive corpus of published research, clinical trials, textbook
+              chapters, and medical guideline contributions across his 40+ year career at UCSF. It allows clinicians,
+              researchers, fellows, and students to query decades of pediatric hepatology knowledge conversationally
+              with immediate citations to the published literature.
             </p>
           </div>
         </details>
 
         <!-- FAQ 2 -->
         <details class="faq-item">
-          <summary class="faq-summary">Does this tool provide personalized medical advice or clinical diagnosis?</summary>
+          <summary class="faq-summary">Does this tool provide personalized medical advice or clinical diagnosis?
+          </summary>
           <div class="faq-content">
             <p>
-              No. This tool is designed strictly as an informational and academic research assistant for healthcare professionals, clinical investigators, and trainees. It does not provide individualized medical diagnoses, clinical treatment plans, or formal medical care. Patients, guardians, and medical providers must consult attending physicians and qualified specialists for individual patient care decisions.
+              No. This tool is designed strictly as an informational and academic research assistant for healthcare
+              professionals, clinical investigators, and trainees. It does not provide individualized medical diagnoses,
+              clinical treatment plans, or formal medical care. Patients, guardians, and medical providers must consult
+              attending physicians and qualified specialists for individual patient care decisions.
             </p>
           </div>
         </details>
@@ -2591,17 +3712,25 @@
           <summary class="faq-summary">What source materials and data ground this AI tool?</summary>
           <div class="faq-content">
             <p>
-              The system indexes Dr. Rosenthal’s complete scientific publication record comprising over 300 peer-reviewed articles, multi-center NIH trials (such as the Pediatric Acute Liver Failure study group and the SPLIT consortium), landmark clinical trials in pediatric hepatitis B and C, medical society clinical practice guidelines (AASLD and NASPGHAN), and authoritative textbook chapters in pediatric gastroenterology and hepatology.
+              The system indexes Dr. Rosenthal’s complete scientific publication record comprising over 300
+              peer-reviewed articles, multi-center NIH trials (such as the Pediatric Acute Liver Failure study group and
+              the SPLIT consortium), landmark clinical trials in pediatric hepatitis B and C, medical society clinical
+              practice guidelines (AASLD and NASPGHAN), and authoritative textbook chapters in pediatric
+              gastroenterology and hepatology.
             </p>
           </div>
         </details>
 
         <!-- FAQ 4 -->
         <details class="faq-item">
-          <summary class="faq-summary">How does the AI cite Dr. Rosenthal's research papers and clinical guidelines?</summary>
+          <summary class="faq-summary">How does the AI cite Dr. Rosenthal's research papers and clinical guidelines?
+          </summary>
           <div class="faq-content">
             <p>
-              Every synthesis incorporates verifiable reference tags linked to specific peer-reviewed papers. Responses feature publication titles, co-authors, journals, and publication dates, enabling users to immediately track statements directly back to the original literature on PubMed, institutional libraries, or publisher portals.
+              Every synthesis incorporates verifiable reference tags linked to specific peer-reviewed papers. Responses
+              feature publication titles, co-authors, journals, and publication dates, enabling users to immediately
+              track statements directly back to the original literature on PubMed, institutional libraries, or publisher
+              portals.
             </p>
           </div>
         </details>
@@ -2611,7 +3740,10 @@
           <summary class="faq-summary">Who can access the pilot, and how can institutions participate?</summary>
           <div class="faq-content">
             <p>
-              The pilot program is accessible to academic medical centers, pediatric hepatology divisions, fellowship programs, and clinical researchers. If you are interested in pilot access, academic evaluation, or institutional integration, you can request credentials through the pilot registration link or submit an inquiry via our contact channel.
+              The pilot program is accessible to academic medical centers, pediatric hepatology divisions, fellowship
+              programs, and clinical researchers. If you are interested in pilot access, academic evaluation, or
+              institutional integration, you can request credentials through the pilot registration link or submit an
+              inquiry via our contact channel.
             </p>
           </div>
         </details>
@@ -2621,7 +3753,9 @@
           <summary class="faq-summary">How are clinical consultations and Grand Rounds booked and billed?</summary>
           <div class="faq-content">
             <p>
-              Engagements can be scheduled directly via our integrated calendar above. Formal peer-to-peer physician consults and visiting professorships are coordinated through Dr. Rosenthal's academic office with institutional credit card or billing invoice processing via our secure Stripe terminal.
+              Engagements can be scheduled directly via our integrated calendar above. Formal peer-to-peer physician
+              consults and visiting professorships are coordinated through Dr. Rosenthal's academic office with
+              institutional credit card or billing invoice processing via our secure Stripe terminal.
             </p>
           </div>
         </details>
@@ -2631,7 +3765,9 @@
           <summary class="faq-summary">Are research fund donations tax-deductible?</summary>
           <div class="faq-content">
             <p>
-              Yes. All gifts made to the Dr. Philip Rosenthal Pediatric Hepatology Research & Education Fund support research initiatives, fellow education, and rare pediatric disease studies under registered 501(c)(3) academic philanthropy guidelines. You will receive an immediate electronic tax receipt following donation.
+              Yes. All gifts made to the Dr. Philip Rosenthal Pediatric Hepatology Research & Education Fund support
+              research initiatives, fellow education, and rare pediatric disease studies under registered 501(c)(3)
+              academic philanthropy guidelines. You will receive an immediate electronic tax receipt following donation.
             </p>
           </div>
         </details>
@@ -2647,7 +3783,10 @@
       </div>
 
       <p class="speaking-lead">
-        Dr. Philip Rosenthal is an internationally sought-after keynote speaker, visiting professor, and symposium panelist. Over four decades of academic medicine, he has delivered Grand Rounds, keynote addresses, and clinical masterclasses across major medical centers, national society annual meetings (AASLD, NASPGHAN, ESPGHAN), and international hepatology congresses.
+        Dr. Philip Rosenthal is an internationally sought-after keynote speaker, visiting professor, and symposium
+        panelist. Over four decades of academic medicine, he has delivered Grand Rounds, keynote addresses, and clinical
+        masterclasses across major medical centers, national society annual meetings (AASLD, NASPGHAN, ESPGHAN), and
+        international hepatology congresses.
       </p>
 
       <div class="speaking-note-box">
@@ -2655,7 +3794,11 @@
           <span>Speaking & Academic Advisory Engagements</span>
         </div>
         <p class="speaking-note-text">
-          Dr. Rosenthal is available for in-person and virtual keynote lectures, Pediatric Grand Rounds, visiting professorships, clinical case conferences, and advisory board consultations. Core lecture topics include: <em>Evolution and Futures of Pediatric Liver Transplantation</em>, <em>Pediatric Acute Liver Failure: Rapid Decision-Making & Biomarkers</em>, <em>Direct-Acting Antivirals in Pediatric Viral Hepatitis</em>, and <em>Long-Term Immunosuppression Management in Young Allograft Recipients</em>.
+          Dr. Rosenthal is available for in-person and virtual keynote lectures, Pediatric Grand Rounds, visiting
+          professorships, clinical case conferences, and advisory board consultations. Core lecture topics include:
+          <em>Evolution and Futures of Pediatric Liver Transplantation</em>, <em>Pediatric Acute Liver Failure: Rapid
+            Decision-Making & Biomarkers</em>, <em>Direct-Acting Antivirals in Pediatric Viral Hepatitis</em>, and
+          <em>Long-Term Immunosuppression Management in Young Allograft Recipients</em>.
         </p>
       </div>
 
@@ -2673,7 +3816,10 @@
       <p>Professor Emeritus of Pediatrics & Surgery, University of California, San Francisco (UCSF)</p>
       <div class="footer-divider-line"></div>
       <p class="footer-legal-disclaimer">
-        Disclaimer: Ask Dr. Philip Rosenthal is an academic AI research tool designed for informational and educational purposes only. It does not provide formal medical advice, diagnosis, or individualized patient management. All clinical decisions must be guided by qualified healthcare providers. Dr. Rosenthal's affiliation with UCSF is referenced for academic and historical identification.
+        Disclaimer: Ask Dr. Philip Rosenthal is an academic AI research tool designed for informational and educational
+        purposes only. It does not provide formal medical advice, diagnosis, or individualized patient management. All
+        clinical decisions must be guided by qualified healthcare providers. Dr. Rosenthal's affiliation with UCSF is
+        referenced for academic and historical identification.
       </p>
       <p class="footer-legal-disclaimer">
         © 2025 askdrphiliprosenthal.com. All rights reserved.
@@ -2685,7 +3831,7 @@
        INTERACTIVE FUNCTIONALITY SCRIPT
        ========================================================================== -->
   <script>
-    (function() {
+    (function () {
       // 1. RESEARCH ENGINE SIMULATION DATABASE
       const answersDatabase = {
         "What are the current management strategies and long-term outcomes for pediatric patients undergoing liver transplantation for biliary atresia?": {
@@ -2768,9 +3914,121 @@
 
         if (!matched) {
           const lower = trimmed.toLowerCase();
-          if (lower.includes('biliary') || lower.includes('atresia') || lower.includes('kasai')) {
+          if (lower.includes('perforin') || lower.includes('cd8') || (lower.includes('palf') && lower.includes('endotype'))) {
+            matched = {
+              question: "What did Dr. Rosenthal discover regarding perforin-expressing CD8 T cells in pediatric acute liver failure?",
+              body: `
+                <p>Synthesizing findings from Dr. Rosenthal’s multicenter translational study on indeterminate PALF immunopathology:</p>
+                <ul class="answer-clinical-bullets">
+                  <li><strong>Activated T-Cell Endotype:</strong> Dr. Rosenthal and colleagues identified a distinct subgroup of pediatric acute liver failure patients characterized by hepatic expansion of tissue-resident memory CD8+ T cells hyperexpression of perforin and IFN-γ <span class="inline-cite">[Ref 1]</span>.</li>
+                  <li><strong>Clinical Trajectory:</strong> Patients displaying this hyperinflammatory endotype suffer accelerated hepatocellular destruction, refractory coagulopathy, and a significantly higher rate of emergency liver transplantation within 7 days of admission <span class="inline-cite">[Ref 1]</span>.</li>
+                  <li><strong>Therapeutic Translation:</strong> This pivotal discovery establishes the molecular rationale for prompt immunomodulatory rescue therapy and cytokine-directed biologics before irreversible hepatic necrosis occurs <span class="inline-cite">[Ref 2]</span>.</li>
+                </ul>
+              `,
+              citations: [
+                { num: "[Ref 1]", text: "Bucuvalas J, Martinez M, <strong>Rosenthal P</strong>, et al. <em>CD8 TRM-Like T Cells Expressing Perforin and IFN-γ Define a Pediatric Activated T-Cell Acute Liver Failure Endotype.</em> JCI Insight / Nature Comms. 2024. PMID: 41921202." },
+                { num: "[Ref 2]", text: "Squires RH, <strong>Rosenthal P</strong>, et al. <em>Predictors of Spontaneous Recovery and Mortality in Pediatric Acute Liver Failure.</em> Gastroenterology." }
+              ]
+            };
+          } else if (lower.includes('proteome') || lower.includes('emt') || lower.includes('epithelial-to-mesenchymal')) {
+            matched = {
+              question: "How does the plasma proteome correlate with liver stiffness in pediatric cholestasis according to Dr. Rosenthal's research?",
+              body: `
+                <p>Synthesizing Dr. Rosenthal’s ChiLDReN proteomic investigations in pediatric cholestatic liver disease:</p>
+                <ul class="answer-clinical-bullets">
+                  <li><strong>Epithelial-to-Mesenchymal Transition (EMT):</strong> Mass spectrometry proteomics coupled with magnetic resonance elastography demonstrated marked activation of extracellular matrix remodeling cascades and EMT transcriptional pathways in biliary cholangiocytes <span class="inline-cite">[Ref 1]</span>.</li>
+                  <li><strong>Non-Invasive Fibrosis Staging:</strong> Circulating plasma proteins accurately reflected measured shear stiffness without requiring repeat core needle biopsies, providing early warning of clinically silent portal hypertension <span class="inline-cite">[Ref 1]</span>.</li>
+                  <li><strong>Biomarker Utility:</strong> These circulating panels offer objective pharmacodynamic endpoints for evaluating antifibrotic drug candidates in pediatric clinical trials <span class="inline-cite">[Ref 2]</span>.</li>
+                </ul>
+              `,
+              citations: [
+                { num: "[Ref 1]", text: "<strong>Rosenthal P</strong>, Loomes KM, et al. <em>Plasma Proteome Correlations with Liver Stiffness in Pediatric Cholestasis Implicate Epithelial-to-Mesenchymal Transition.</em> Hepatology Communications. 2024. PMID: 41021277." },
+                { num: "[Ref 2]", text: "<strong>Rosenthal P</strong>, Leung DH, et al. <em>Serum Biomarkers Correlated with Liver Stiffness in Pediatric Cholestatic Liver Disease.</em> J Pediatr. 2023. PMID: 36069569." }
+              ]
+            };
+          } else if (lower.includes('alpha-1') || lower.includes('a1at') || lower.includes('pizz')) {
+            matched = {
+              question: "What is the prognostic significance of neonatal cholestasis in Alpha-1 Antitrypsin Deficiency based on Dr. Rosenthal's cohort study?",
+              body: `
+                <p>Synthesizing long-term ChiLDReN outcomes from Dr. Rosenthal’s multi-decade A1AT longitudinal cohort:</p>
+                <ul class="answer-clinical-bullets">
+                  <li><strong>Predictor of Severe Disease:</strong> Homozygous PiZZ infants presenting with neonatal cholestasis face a significantly accelerated risk of developing early portal hypertension and cirrhotic decompensation before adolescence <span class="inline-cite">[Ref 1]</span>.</li>
+                  <li><strong>Male Predominance:</strong> Male patients exhibited significantly steeper fibrosis progression and higher rates of early splenomegaly and transplant indication compared to female peers with identical PiZZ genotypes <span class="inline-cite">[Ref 1]</span>.</li>
+                  <li><strong>Clinical Practice Recommendations:</strong> Infants with PiZZ and neonatal jaundice require intensified surveillance, fat-soluble vitamin optimization, and expedited referral to pediatric transplant centers <span class="inline-cite">[Ref 2]</span>.</li>
+                </ul>
+              `,
+              citations: [
+                { num: "[Ref 1]", text: "Teckman J, <strong>Rosenthal P</strong>, Hawthorne K, et al. <em>Neonatal Cholestasis in Children with Alpha-1 Antitrypsin Deficiency is a Risk for Earlier Severe Liver Disease with Male Predominance.</em> JPGN. 2024. PMID: 38055647." },
+                { num: "[Ref 2]", text: "<strong>Rosenthal P</strong>, et al. <em>Advances in Pediatric Genetic Cholestatic Liver Disorders.</em> Clinics in Liver Disease." }
+              ]
+            };
+          } else if (lower.includes('alagille') || lower.includes('ibat')) {
+            matched = {
+              question: "How did Dr. Rosenthal's work on Alagille syndrome longitudinal databases inform IBAT inhibitor clinical trials?",
+              body: `
+                <p>Synthesizing Dr. Rosenthal’s rare-disease clinical trials research from the ChiLDReN consortium:</p>
+                <ul class="answer-clinical-bullets">
+                  <li><strong>Natural History External Controls:</strong> In orphan disorders like Alagille syndrome, placebo-controlled trials are ethically and practically challenging. Dr. Rosenthal and colleagues established a curated prospective natural history database that served as the formal external comparator cohort for regulatory agencies <span class="inline-cite">[Ref 1]</span>.</li>
+                  <li><strong>Pruritus & Bile Acid Trajectories:</strong> The study proved that elevated serum bile acid levels strongly correlate with intractable debilitating pruritus, xanthoma formation, and native liver loss, validating serum bile acids as a bona fide surrogate outcome measure <span class="inline-cite">[Ref 1]</span>.</li>
+                  <li><strong>FDA & EMA Approval:</strong> These benchmarks directly accelerated the regulatory approval of ileal bile acid transporter (IBAT) inhibitors, transforming clinical care for affected pediatric patients <span class="inline-cite">[Ref 2]</span>.</li>
+                </ul>
+              `,
+              citations: [
+                { num: "[Ref 1]", text: "Kamath BM, <strong>Rosenthal P</strong>, Loomes KM, et al. <em>Use of Funded Multicenter Prospective Longitudinal Databases to Inform Clinical Trials in Rare Diseases: Examination of Cholestatic Liver Disease in Alagille Syndrome.</em> Hepatology. 2022. PMID: 35506349." },
+                { num: "[Ref 2]", text: "<strong>Rosenthal P</strong>. <em>Management of Pruritus and Progressive Cholestasis in Children.</em> Current Opinion in Pediatrics." }
+              ]
+            };
+          } else if (lower.includes('fic1') || lower.includes('pfic') || lower.includes('atp8b1') || lower.includes('pebd')) {
+            matched = {
+              question: "How does partial external biliary diversion affect native liver survival in children with FIC1 deficiency according to Dr. Rosenthal?",
+              body: `
+                <p>Synthesizing Dr. Rosenthal’s genetic and surgical studies on ATP8B1 / PFIC-1 deficiency:</p>
+                <ul class="answer-clinical-bullets">
+                  <li><strong>Biliary Diversion Efficacy:</strong> Performing partial external biliary diversion (PEBD) prior to advanced bridging fibrosis normalizes serum bile acid concentrations, relieves intractable pruritus, and dramatically extends native liver survival into adulthood <span class="inline-cite">[Ref 1]</span>.</li>
+                  <li><strong>Post-Transplant Pitfalls:</strong> Total hepatectomy with liver transplantation in FIC1 patients frequently aggravates severe chronic secretory diarrhea and triggers steatohepatitis in the allograft, due to extrahepatic ATP8B1 mucosal expression <span class="inline-cite">[Ref 1]</span>.</li>
+                  <li><strong>Clinical Practice Consensus:</strong> Early surgical PEBD or pharmacologic biliary diversion is strongly preferred over premature liver transplantation for pediatric FIC1 deficiency whenever clinically feasible <span class="inline-cite">[Ref 2]</span>.</li>
+                </ul>
+              `,
+              citations: [
+                { num: "[Ref 1]", text: "Bull LN, <strong>Rosenthal P</strong>, Loomes KM, et al. <em>Impact of Genotype, Serum Bile Acids, and Surgical Biliary Diversion on Native Liver Survival in FIC1 Deficiency (PFIC-1).</em> J Hepatol. 2021. PMID: 33682181." },
+                { num: "[Ref 2]", text: "<strong>Rosenthal P</strong>. <em>Progressive Familial Intrahepatic Cholestasis: Diagnostic and Therapeutic Paradigms.</em> Pediatric Transplantation." }
+              ]
+            };
+          } else if (lower.includes('split') || lower.includes('delphi') || lower.includes('agenda')) {
+            matched = {
+              question: "What are the key research priorities identified in the SPLIT Delphi consensus project led by Dr. Rosenthal?",
+              body: `
+                <p>Synthesizing the Society of Pediatric Liver Transplantation (SPLIT) Delphi consensus priorities:</p>
+                <ul class="answer-clinical-bullets">
+                  <li><strong>Non-Invasive Allograft Surveillance:</strong> Accelerating development of donor-derived cell-free DNA (dd-cfDNA) and urinary/blood mRNA biomarkers to replace protocol surveillance biopsies <span class="inline-cite">[Ref 1]</span>.</li>
+                  <li><strong>Immunosuppression Optimization:</strong> Standardizing personalized steroid elimination protocols and calcineurin-inhibitor minimization to preserve nephron reserve and prevent chronic renal insufficiency <span class="inline-cite">[Ref 1]</span>.</li>
+                  <li><strong>Transition & Adolescent Adherence:</strong> Mitigating late allograft loss during transition from pediatric to adult transplant services through structured psychological and digital transition toolkits <span class="inline-cite">[Ref 2]</span>.</li>
+                </ul>
+              `,
+              citations: [
+                { num: "[Ref 1]", text: "Mazariegos GV, <strong>Rosenthal P</strong>, Squires RH, et al. <em>Defining the Society of Pediatric Liver Transplantation (SPLIT) Research Agenda: A Delphi Consensus Project.</em> Pediatr Transplant. 2025. PMID: 41730231." },
+                { num: "[Ref 2]", text: "<strong>Rosenthal P</strong>, et al. <em>Long-Term Outcomes Following Pediatric Liver Transplantation.</em> Liver Transpl." }
+              ]
+            };
+          } else if (lower.includes('cost') || lower.includes('medicaid') || lower.includes('disparit') || lower.includes('econom')) {
+            matched = {
+              question: "What disparities did Dr. Rosenthal uncover in costs and resource utilization between Medicaid and commercially insured pediatric transplant recipients?",
+              body: `
+                <p>Synthesizing Dr. Rosenthal’s health economics and health equity research in pediatric liver transplantation:</p>
+                <ul class="answer-clinical-bullets">
+                  <li><strong>Disparities in Outpatient Support:</strong> Medicaid-insured children experience significantly higher readmission rates and emergency department visits post-transplant due to gaps in outpatient specialty coordination and in-home nursing support <span class="inline-cite">[Ref 1]</span>.</li>
+                  <li><strong>Resource Utilization:</strong> Total first-year post-transplant expenditure is heavily driven by unplanned graft re-admissions that are largely preventable through proactive nurse navigator support <span class="inline-cite">[Ref 1]</span>.</li>
+                  <li><strong>Health Policy Imperative:</strong> The findings demonstrate that expanding dedicated case-management reimbursement saves health system costs while closing survival gaps across socioeconomic strata <span class="inline-cite">[Ref 2]</span>.</li>
+                </ul>
+              `,
+              citations: [
+                { num: "[Ref 1]", text: "<strong>Rosenthal P</strong>, Bucuvalas J, Magee JC, et al. <em>Costs of Pediatric Liver Transplantation Among Commercially Insured and Medicaid-Insured Patients with Cholestasis in the US.</em> Am J Transplant. 2023. PMID: 36622340." },
+                { num: "[Ref 2]", text: "Bucuvalas J, <strong>Rosenthal P</strong>. <em>Health Equity and Access in Pediatric Solid Organ Transplantation.</em> Current Opinion in Organ Transplantation." }
+              ]
+            };
+          } else if (lower.includes('biliary') || lower.includes('atresia') || lower.includes('kasai')) {
             matched = answersDatabase["What are the current management strategies and long-term outcomes for pediatric patients undergoing liver transplantation for biliary atresia?"];
-          } else if (lower.includes('hepatitis c') || lower.includes('daa') || lower.includes('antiviral')) {
+          } else if (lower.includes('hepatitis c') || lower.includes('daa') || lower.includes('antiviral') || lower.includes('sofosbuvir')) {
             matched = answersDatabase["How have direct-acting antiviral (DAA) regimens transformed the treatment algorithm for chronic hepatitis C in children and adolescents?"];
           } else if (lower.includes('acute') || lower.includes('failure') || lower.includes('palf')) {
             matched = answersDatabase["What prognostic biomarkers and clinical parameters best predict spontaneous recovery versus urgent transplant indication in pediatric acute liver failure?"];
@@ -2811,23 +4069,111 @@
         outputCitations.innerHTML = citationsHTML;
       }
 
-      askBtn.addEventListener('click', function() {
+      askBtn.addEventListener('click', function () {
         if (questionInput.value.trim()) displayAnswer(questionInput.value);
       });
 
-      questionInput.addEventListener('keypress', function(e) {
+      questionInput.addEventListener('keypress', function (e) {
         if (e.key === 'Enter' && questionInput.value.trim()) {
           displayAnswer(questionInput.value);
         }
       });
 
       exampleBoxes.forEach(box => {
-        box.addEventListener('click', function() {
+        box.addEventListener('click', function () {
           const q = this.getAttribute('data-query');
           questionInput.value = q;
           displayAnswer(q);
           const demoBox = document.querySelector('.demo-terminal');
           if (demoBox) demoBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+      });
+
+      // 1B. PUBLICATIONS INDEX SEARCH & CATEGORY FILTERING
+      const pubSearchInput = document.getElementById('pubSearchInput');
+      const pubSearchClearBtn = document.getElementById('pubSearchClearBtn');
+      const pubFilterTabs = document.getElementById('pubFilterTabs');
+      const pubCards = document.querySelectorAll('.pub-card');
+      const pubResultCount = document.getElementById('pubResultCount');
+      let activeCategory = 'all';
+
+      function escapeHTML(str) {
+        return str.replace(/[&<>'"]/g, 
+          tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+        );
+      }
+
+      function filterPublications() {
+        const query = pubSearchInput ? pubSearchInput.value.trim().toLowerCase() : '';
+        let visibleCount = 0;
+
+        pubCards.forEach(card => {
+          const cardCategory = card.getAttribute('data-category');
+          const cardKeywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+          const cardText = card.textContent.toLowerCase();
+
+          const matchesCategory = (activeCategory === 'all' || cardCategory === activeCategory);
+          const matchesQuery = !query || cardKeywords.includes(query) || cardText.includes(query);
+
+          if (matchesCategory && matchesQuery) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (pubSearchClearBtn) {
+          pubSearchClearBtn.style.display = query ? 'block' : 'none';
+        }
+
+        if (pubResultCount) {
+          if (query) {
+            pubResultCount.innerHTML = `Showing <strong>${visibleCount}</strong> of ${pubCards.length} publications matching "<em>${escapeHTML(query)}</em>"`;
+          } else if (activeCategory !== 'all') {
+            pubResultCount.innerHTML = `Showing <strong>${visibleCount}</strong> filtered publications`;
+          } else {
+            pubResultCount.innerHTML = `Showing <strong>${visibleCount}</strong> landmark publications`;
+          }
+        }
+      }
+
+      if (pubSearchInput) {
+        pubSearchInput.addEventListener('input', filterPublications);
+      }
+
+      if (pubSearchClearBtn) {
+        pubSearchClearBtn.addEventListener('click', function () {
+          pubSearchInput.value = '';
+          filterPublications();
+          pubSearchInput.focus();
+        });
+      }
+
+      if (pubFilterTabs) {
+        const filterBtns = pubFilterTabs.querySelectorAll('.pub-filter-btn');
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', function () {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            activeCategory = this.getAttribute('data-category');
+            filterPublications();
+          });
+        });
+      }
+
+      // Wire up "Ask in AI Tool" buttons in publication cards
+      document.querySelectorAll('.pub-btn-ai-query').forEach(btn => {
+        btn.addEventListener('click', function () {
+          const q = this.getAttribute('data-query');
+          if (q) {
+            questionInput.value = q;
+            displayAnswer(q);
+            const toolSection = document.getElementById('tool');
+            if (toolSection) {
+              toolSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
         });
       });
 
@@ -2870,7 +4216,7 @@
             if (d === 12) {
               dayCell.classList.add('active'); // default selected
             }
-            dayCell.addEventListener('click', function() {
+            dayCell.addEventListener('click', function () {
               document.querySelectorAll('.cal-day').forEach(el => el.classList.remove('active'));
               this.classList.add('active');
             });
@@ -2895,7 +4241,7 @@
 
       // Time slot selection
       document.querySelectorAll('.time-slot-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
           document.querySelectorAll('.time-slot-btn').forEach(b => b.classList.remove('active'));
           this.classList.add('active');
         });
@@ -2908,7 +4254,7 @@
       const submitBookingBtn = document.getElementById('submitBookingBtn');
 
       engagementOptions.forEach(opt => {
-        opt.addEventListener('click', function() {
+        opt.addEventListener('click', function () {
           engagementOptions.forEach(o => o.classList.remove('selected'));
           this.classList.add('selected');
           const fee = this.getAttribute('data-fee');
@@ -2925,7 +4271,7 @@
       });
 
       // Booking submission simulation
-      submitBookingBtn.addEventListener('click', function() {
+      submitBookingBtn.addEventListener('click', function () {
         const name = document.getElementById('bookingName').value.trim();
         const email = document.getElementById('bookingEmail').value.trim();
 
@@ -2954,7 +4300,7 @@
       let currentDonation = 500;
 
       amountPills.forEach(pill => {
-        pill.addEventListener('click', function() {
+        pill.addEventListener('click', function () {
           amountPills.forEach(p => p.classList.remove('active'));
           this.classList.add('active');
           currentDonation = parseFloat(this.getAttribute('data-amount'));
@@ -2963,7 +4309,7 @@
         });
       });
 
-      customAmountInput.addEventListener('input', function() {
+      customAmountInput.addEventListener('input', function () {
         amountPills.forEach(p => p.classList.remove('active'));
         const val = parseFloat(this.value);
         if (val && val > 0) {
@@ -2972,19 +4318,19 @@
         }
       });
 
-      document.getElementById('freqOneTime').addEventListener('click', function() {
+      document.getElementById('freqOneTime').addEventListener('click', function () {
         this.classList.add('active');
         document.getElementById('freqMonthly').classList.remove('active');
         donateBtnAmt.textContent = `$${currentDonation.toFixed(2)}`;
       });
 
-      document.getElementById('freqMonthly').addEventListener('click', function() {
+      document.getElementById('freqMonthly').addEventListener('click', function () {
         this.classList.add('active');
         document.getElementById('freqOneTime').classList.remove('active');
         donateBtnAmt.textContent = `$${currentDonation.toFixed(2)}/mo`;
       });
 
-      document.getElementById('submitDonationBtn').addEventListener('click', function() {
+      document.getElementById('submitDonationBtn').addEventListener('click', function () {
         const dName = document.getElementById('donorName').value.trim() || "Anonymous Supporter";
         const dEmail = document.getElementById('donorEmail').value.trim() || "donor@research.org";
 
@@ -3004,4 +4350,5 @@
     })();
   </script>
 </body>
+
 </html>
